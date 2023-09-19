@@ -1,11 +1,10 @@
 # Team8_Eight
 
 ## 구성
-=======
-|**팀장**|**팀원**|**팀원**|**팀원**|  
-|-----------| ----------- | -----------| ------------|  
-|ㅇㅇㅇ|[<img src="https://user-images.githubusercontent.com/96968834/212670363-ae5dbf8f-dc1a-41b2-a08e-21a6f5f345b1.jpg" width="100">](./Members/Dongho.md)| [<img src="https://avatars.githubusercontent.com/u/120264964?v=4" width="100">](./Members/sungjin.md)|[<img src="https://i.ibb.co/dWrn9Tb/Kakao-Talk-Photo-2023-09-19-15-30-11.jpg" alt="Kakao-Talk-Photo-2023-09-19-15-30-11" width="100">](./Members/sungyeop.md) |  
-|ㅇㅇㅇ|최동호|황성진|김성엽|
+|**팀장**|**팀원**|**팀원**|**팀원**| **팀원**| 
+|-----------| ----------- | -----------| ------------| ------------|
+|ㅇㅇㅇ|[<img src="https://user-images.githubusercontent.com/96968834/212670363-ae5dbf8f-dc1a-41b2-a08e-21a6f5f345b1.jpg" width="100">](./Members/Dongho.md)| [<img src="https://avatars.githubusercontent.com/u/120264964?v=4" width="100">](./Members/sungjin.md)|[<img src="https://i.ibb.co/dWrn9Tb/Kakao-Talk-Photo-2023-09-19-15-30-11.jpg" alt="Kakao-Talk-Photo-2023-09-19-15-30-11" width="100">](./Members/sungyeop.md) |  [<img src="https://github.com/APP-iOS3rd/Team8_Eight/assets/37105602/0b284a93-6d68-4f68-b1b6-841235082f8d" width="100">](./Members/Junseong.md)|
+|ㅇㅇㅇ|최동호|황성진|김성엽|윤준성|
 
 ## 💡 Introduce & Rules
 ```
@@ -20,7 +19,7 @@
 - 공결시엔 디코에 한 줄 남겨주기
 - 좋은정보 공유하기
 - 의견조율 시 존칭 사용하기
-- 호칭은 ~님으로 부르기
+- 호칭은 `ㅇㅇㅇ님`으로 부르기
 
 ### 🙋🏻‍♂️ **멘토님께 바라는 점**
 
