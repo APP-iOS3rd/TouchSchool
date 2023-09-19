@@ -3,7 +3,7 @@
 ## 구성
 |**팀장**|**팀원**|**팀원**|**팀원**| **팀원**| 
 |-----------| ----------- | -----------| ------------| ------------|
-|ㅇㅇㅇ|[<img src="https://user-images.githubusercontent.com/96968834/212670363-ae5dbf8f-dc1a-41b2-a08e-21a6f5f345b1.jpg" width="100">](./Members/Dongho.md)| [<img src="https://avatars.githubusercontent.com/u/120264964?v=4" width="100">](./Members/sungjin.md)|[<img src="https://i.ibb.co/dWrn9Tb/Kakao-Talk-Photo-2023-09-19-15-30-11.jpg" alt="Kakao-Talk-Photo-2023-09-19-15-30-11" width="100">](./Members/sungyeop.md) |  [<img src="https://github.com/APP-iOS3rd/Team8_Eight/assets/37105602/0b284a93-6d68-4f68-b1b6-841235082f8d" width="100">](./Members/Junseong.md)|
+|ㅇㅇㅇ|[<img src="https://user-images.githubusercontent.com/96968834/212670363-ae5dbf8f-dc1a-41b2-a08e-21a6f5f345b1.jpg" width="100">](./Members/Dongho.md)| [<img src="https://avatars.githubusercontent.com/u/120264964?v=4" width="100">](./Members/sungjin.md)|[<img src="https://i.ibb.co/dWrn9Tb/Kakao-Talk-Photo-2023-09-19-15-30-11.jpg" alt="Kakao-Talk-Photo-2023-09-19-15-30-11" width="100">](./Members/sungyeop.md) |  [<img src="https://avatars.githubusercontent.com/u/127680963?v=4" width="100">](./Members/Junseong.md)|
 |ㅇㅇㅇ|최동호|황성진|김성엽|윤준성|
 
 ## 💡 Introduce & Rules
