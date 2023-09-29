@@ -45,6 +45,10 @@
 
 ## 수업 - 팁 참고 문헌
 
+### 객체 지향
+[객체지향 프로그래밍](https://github.com/hamfan524/Today-We-Learn/blob/main/Object-Oriented/OOP.md)
+[Solid원칙](https://github.com/hamfan524/Today-We-Learn/blob/main/Object-Oriented/Solid.md)
+
 ### Swift
 [고차함수](https://github.com/hamfan524/with_Swift/blob/main/Swift/Basic/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98.md)
 
