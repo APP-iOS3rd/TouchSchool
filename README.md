@@ -7,9 +7,22 @@
 |김혜란|최동호|황성진|김성엽|윤준성|
 
 ## 💡 Introduce & Rules
+
+### 🎯 **Study Goal**
+
 ```
 ⏰ 멘토링: 매주 목요일 7:00 PM
 ```
+
+`10월 ~ 11월`
+- 토이프로젝트 진행(Swift UI)
+    - Github 협업 공부 및 진행
+    - 10월 5일 아이디어 토의 및 진행방향 설정
+    - 매일 애자일 방법론 적용으로 토의 진행
+    - MVVM패턴, git-flow 각자 공부(10/5)
+</aside>
+
+
 ### 🎯 **Study Goal** 
 서로 서로 도우며 취뽀하자!
 
@@ -28,3 +41,23 @@
 - WWDC를 통한 향후 ios 및 애플제품에 대한 방향성 및 전망
 - 협업시에 도움이 될 노하우나 팁들을 알고 싶습니다!
 - 현업에 대한 이야기가 궁금합니다. (업무 시 이슈사항, 처리방법, 프리랜서의 삶 등)
+
+
+## 수업 - 팁 참고 문헌
+
+### 객체 지향
+[객체지향 프로그래밍](https://github.com/hamfan524/Today-We-Learn/blob/main/Object-Oriented/OOP.md)
+[Solid원칙](https://github.com/hamfan524/Today-We-Learn/blob/main/Object-Oriented/Solid.md)
+
+### Swift
+[고차함수](https://github.com/hamfan524/with_Swift/blob/main/Swift/Basic/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98.md)
+
+### Git
+[깃 협업 시 참고](https://github.com/hamfan524/Today-We-Learn/blob/main/Git/%EA%B9%83-%ED%98%91%EC%97%85-%ED%8C%80%EC%9B%90.md)  
+[Merge/Rebase](https://www.atlassian.com/ko/git/tutorials/merging-vs-rebasing)  
+[GitFlow](https://github.com/hamfan524/Today-We-Learn/blob/main/Git/Git-Flow.md)  
+[커밋컨벤션](https://github.com/hamfan524/Today-We-Learn/blob/main/Git/%EC%BB%A4%EB%B0%8B%EC%BB%A8%EB%B2%A4%EC%85%98.md)
+
+### Design Pattern
+[MVC, MVP, MVVM 차이 설명](https://velog.io/@sangjin98/iOS-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4MVC-MVP-MVVM-VIPER)  
+[MVVM 설명 영상](https://www.youtube.com/watch?v=TLX7MjtOPd0)
