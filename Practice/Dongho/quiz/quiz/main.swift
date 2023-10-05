@@ -1069,4 +1069,205 @@ array.forEach { num in
     }
     print()
 }
- */
+
+
+// stack 예제 1
+func checkParentheses(_ s: String) -> Bool {
+    var stack = [Character]()
+    
+    for char in s {
+        if char == "(" || char == "{" || char == "[" {
+            stack.append(char)
+        } else if char == ")" {
+            if stack.isEmpty || stack.removeLast() != "(" {
+                return false
+            }
+        } else if char == "}" {
+            if stack.isEmpty || stack.removeLast() != "{" {
+                return false
+            }
+        } else if char == "]" {
+            if stack.isEmpty || stack.removeLast() != "[" {
+                return false
+            }
+        }
+    }
+    
+    return stack.isEmpty
+}
+
+
+// stack 예제 2
+func postfixExpression(_ expression: String) -> Int? {
+    var stack = [Int]()
+    let tokens = expression.split(separator: " ")
+    
+    for token in tokens {
+        if let num = Int(token) {
+            stack.append(num)
+        } else {
+            guard stack.count >= 2 else {
+                return nil
+            }
+            
+            var tmp: Int
+            switch token {
+            case "+":
+                tmp = stack.removeLast() + stack.removeLast()
+            case "-":
+                tmp = stack.removeLast() - stack.removeLast()
+            case "*":
+                tmp = stack.removeLast() * stack.removeLast()
+            case "/":
+                tmp = stack.removeLast() / stack.removeLast()
+            default:
+                return nil
+            }
+            stack.append(tmp)
+        }
+    
+    }
+    return stack.removeFirst()
+}
+
+// staqk 예제 3
+
+func intfixToPostfix(_ expression: String) -> String {
+    var result = ""
+    
+    var stack: [String] = []
+    
+    let tokens = expression.split(separator: " ")
+    
+    for token in tokens {
+        if let _ = Int(token) {
+            result += token + " "
+        }
+        else if token == "(" {
+            stack.append(String(token))
+        }
+        
+        else if token == ")" {
+            while let top = stack.popLast(), top != "(" {
+                result += top + " "
+            }
+        }
+        else {
+            stack.append(String(token))
+        }
+    }
+    
+    while let top = stack.popLast() {
+        result += top + " "
+    }
+    
+    return result
+}
+//
+
+func bubbleSort(_ arr: [Int]) -> [Int] {
+    var array = arr
+    for _ in 1...array.count {
+        for i in 0...(array.count-2) {
+            if array[i] > array[i+1] {
+                array.swapAt(i, i+1)
+            }
+        }
+    }
+    return array
+}
+
+print(bubbleSort([5, 3, 6, 2, 1]))
+
+*/
+
+// 선택정렬
+func seletionSort(_ arr: [Int]) -> [Int] {
+    var array = arr
+    var minIndex = 0
+    for i in 0...(array.count-1) {
+        minIndex = i
+        for j in i...(array.count-1) {
+            if array[j] < array[minIndex] {
+                minIndex = j
+            }
+        }
+        if i != minIndex {
+            array.swapAt(i, minIndex)
+        }
+    }
+    return array
+}
+
+// 정렬 예제 1
+
+func favoriteSongsRanking(_ songs: [[Any]]) -> [String] {
+    var dict = [String: Int]()
+    
+    for song in songs {
+        if let name = song[0] as? String, let count = song[2] as? Int {
+            dict[name] = count
+        }
+    }
+    
+    let sortedSongs = dict.sorted { $0.value > $1.value }
+    let favoriteSongs = sortedSongs.map { $0.key }
+    
+    return favoriteSongs
+}
+
+// 재귀함수 예제 1
+func count(_ array: [Int]) -> Int {
+    if array.isEmpty {
+        return 0
+    } else {
+        return 1 + count(array.dropLast())
+    }
+}
+
+// 재귀함수 예제 3
+var dp: [Int: Int] = [
+    0: 0,
+    1: 1,
+    2: 1
+]
+
+// 3-1
+func loopFibo(_ n: Int) -> Int {
+    for i in 3...n {
+        dp[i] = dp[i - 1]! + dp[i - 2]!
+    }
+    return dp[n]!
+}
+
+
+// 3-2
+func recursionFibo(_ n: Int) -> Int {
+    if dp[n] == nil {
+        dp[n] = (recursionFibo(n - 1) + recursionFibo(n - 2))
+    }
+    return dp[n]!
+}
+
+
+// 재귀함수 예제 4
+func divideSquare(_ x: Int, _ y: Int) -> Int {
+    if x == y {
+        return x
+    }
+    if x > y {
+        let tmp = x % y
+        if tmp == 0 {
+            return y
+        } else {
+            return divideSquare(y, tmp)
+        }
+    } else {
+        let tmp = y % x
+        if tmp == 0 {
+            return x
+        } else {
+            return divideSquare(x, tmp)
+        }
+    }
+}
