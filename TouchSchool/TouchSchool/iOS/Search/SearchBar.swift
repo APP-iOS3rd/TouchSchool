@@ -9,5 +9,14 @@ import Foundation
 import SwiftUI
 
 struct SearchBar: View {
-    
+    var body: some View {
+        HStack{
+            
+        }
+    }
+}
+
+
+#Preview {
+    SearchBar()
 }
