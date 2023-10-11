@@ -19,6 +19,10 @@
 		419CE56E2AD63A0A00EC4105 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE56D2AD63A0A00EC4105 /* SearchBar.swift */; };
 		419CE5702AD63A1900EC4105 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE56F2AD63A1900EC4105 /* Colors.swift */; };
 		419CE5722AD63A3200EC4105 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */; };
+		419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5762AD66E6D00EC4105 /* GameView.swift */; };
+		419CE5792AD66E7800EC4105 /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5782AD66E7800EC4105 /* GameVM.swift */; };
+		419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57A2AD66E8900EC4105 /* RankView.swift */; };
+		419CE57D2AD66EA000EC4105 /* RankVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57C2AD66EA000EC4105 /* RankVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		419CE56D2AD63A0A00EC4105 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		419CE56F2AD63A1900EC4105 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		419CE5762AD66E6D00EC4105 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		419CE5782AD66E7800EC4105 /* GameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
+		419CE57A2AD66E8900EC4105 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
+		419CE57C2AD66EA000EC4105 /* RankVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,8 @@
 			children = (
 				419CE5642AD62F8700EC4105 /* Main */,
 				419CE5632AD62F5700EC4105 /* Search */,
+				419CE5732AD66E4300EC4105 /* Game */,
+				419CE5742AD66E5100EC4105 /* Rank */,
 				419CE55F2AD62ECA00EC4105 /* Model */,
 				419CE5622AD62F2B00EC4105 /* Helpers */,
 			);
@@ -129,6 +139,24 @@
 				419CE56B2AD639E300EC4105 /* MainVM.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		419CE5732AD66E4300EC4105 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				419CE5762AD66E6D00EC4105 /* GameView.swift */,
+				419CE5782AD66E7800EC4105 /* GameVM.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		419CE5742AD66E5100EC4105 /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				419CE57A2AD66E8900EC4105 /* RankView.swift */,
+				419CE57C2AD66EA000EC4105 /* RankVM.swift */,
+			);
+			path = Rank;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,12 +233,16 @@
 				419CE5702AD63A1900EC4105 /* Colors.swift in Sources */,
 				419CE56A2AD639D800EC4105 /* SearchVM.swift in Sources */,
 				419CE5662AD636C600EC4105 /* SearchView.swift in Sources */,
+				419CE5792AD66E7800EC4105 /* GameVM.swift in Sources */,
 				419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */,
+				419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */,
 				419CE5612AD62EFE00EC4105 /* School.swift in Sources */,
 				419CE5722AD63A3200EC4105 /* ActivityIndicator.swift in Sources */,
 				419CE56E2AD63A0A00EC4105 /* SearchBar.swift in Sources */,
 				419CE5682AD636E600EC4105 /* MainView.swift in Sources */,
 				419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */,
+				419CE57D2AD66EA000EC4105 /* RankVM.swift in Sources */,
+				419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
