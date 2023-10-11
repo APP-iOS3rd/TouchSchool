@@ -9,5 +9,6 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    
+    static let navyBackground = Color("search_background")
+    static let navyText = Color("search_text")
 }
