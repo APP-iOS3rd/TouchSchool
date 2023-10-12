@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showSearch = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack{
+            if showSearch {
+                SearchView(showSearch: self.$showSearch)
+            } else {
+                VStack{
+                    Button {
+                        self.showSearch = true
+                    } label: {
+                        Text("학교 선택하기")
+                            .foregroundColor(Color.navyText)
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
 

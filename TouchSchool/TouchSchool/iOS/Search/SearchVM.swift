@@ -9,5 +9,5 @@ import Foundation
 import SwiftUI
 
 class SearchVM: ObservableObject {
-    
+    @Published var isLoading: Bool = false
 }
