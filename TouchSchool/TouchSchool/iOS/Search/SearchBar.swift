@@ -11,7 +11,7 @@ import SwiftUI
 struct SearchBar: View {
     @Binding var text: String
     
-    @State private var isEditing = true
+    @State private var isEditing = false
     
     @Binding var isLoading: Bool
     
@@ -35,11 +35,12 @@ struct SearchBar: View {
                 .padding(7)
                 .padding(.leading, -7)
                 .background(Color.navyBackground)
+                .foregroundColor(Color.navyText)
                 .cornerRadius(8)
                 .onTapGesture {
                     isEditing = true
                 }
-                .animation(.default, value: 1)
+                .animation(.default)
                 
                 if isEditing {
                     Button {
@@ -52,7 +53,8 @@ struct SearchBar: View {
                     }
                     .padding(.trailing, 10)
                     .transition(.move(edge: .trailing))
-                    .animation(.default, value: 1)
+                    .animation(.default)
+                    
 
                 }
             }
