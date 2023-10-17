@@ -97,7 +97,7 @@ struct MainView2:View {
                             self.showSearch = true
                         } label: {
                             Text("학교 선택하기")
-                                .foregroundColor(Color.navyText)
+                                .foregroundColor(Color.grayText)
                         }
                     }
                 }

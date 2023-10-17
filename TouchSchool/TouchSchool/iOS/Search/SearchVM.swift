@@ -10,4 +10,15 @@ import SwiftUI
 
 class SearchVM: ObservableObject {
     @Published var isLoading: Bool = false
+    
+    @Published var viewState: ViewState = ViewState.ready
+    
+}
+
+
+enum ViewState {
+    case empty
+    case loading
+    case ready
+    case error
 }

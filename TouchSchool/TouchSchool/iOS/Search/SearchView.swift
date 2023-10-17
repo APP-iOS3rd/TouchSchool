@@ -24,28 +24,32 @@ struct SearchView: View {
         ZStack{
             Color.white.edgesIgnoringSafeArea(.all)
             VStack{
-                HStack{
-                    Spacer()
-                    Button(action: {
-                        self.showSearch = false
-                    }) {
-                        Text(Image(systemName: "xmark.app.fill"))
-                            .foregroundColor(Color.navyText)
-                    }
-                    .padding(.trailing, 10)
-                }
-                HStack{
-                    Text("학교 검색")
-                        .foregroundColor(Color.navyText)
-                        .padding(.leading, 20)
-                    Spacer()
-                }
-                SearchBar(text: searchTextBinding, isLoading: $vm.isLoading)
+                SearchBar(text: searchTextBinding,
+                          isLoading: $vm.isLoading)
+                .padding()
                 
-                ScrollView{
-                    
+                ScrollView {
+                    if searchText.isEmpty {
+                        SearchGuide()
+                    }
+                    if vm.viewState == .empty {
+                        Text("검색 결과가 없습니다.")
+                            .foregroundColor(Color.grayText)
+                            .font(.title3)
+                            .bold()
+                            .padding(.top, 150)
+                    } else if vm.viewState == .ready {
+                        VStack {
+                            
+                        }
+                    }
                 }
+                .padding()
             }
         }
     }
+}
+
+#Preview {
+    SearchView(showSearch: ContentView().$showSearch)
 }
