@@ -16,31 +16,58 @@ struct SearchBar: View {
     @Binding var isLoading: Bool
     
     var body: some View {
-        ZStack(alignment: .leading, content: {
-            
-            Color.navyBackground
+        ZStack(alignment: .leading) {
+            Color(.systemGray6)
                 .frame(width: 270, height: 36)
                 .cornerRadius(8)
-            
+        
             HStack{
                 Image(systemName: "magnifyingglass")
-                    .foregroundColor(Color.navyText)
+                    .foregroundColor(Color.grayText)
                     .padding(.leading, 10)
-                TextField("Search",
-                          text: $text, onEditingChanged: { check in
-                    if check {
-                        //
+                
+                TextField("", text: $text,
+                          prompt: Text("검색")
+                    .foregroundColor(Color.grayText))
+                    .padding(7)
+                    .padding(.leading, -7)
+                    .background(Color(.systemGray6))
+                    .foregroundColor(Color.darkGrayText)
+                    .accentColor(Color.grayText)
+                    .cornerRadius(8)
+                    .onTapGesture {
+                        isEditing = true
                     }
-                })
-                .padding(7)
-                .padding(.leading, -7)
-                .background(Color.navyBackground)
-                .foregroundColor(Color.navyText)
-                .cornerRadius(8)
-                .onTapGesture {
-                    isEditing = true
-                }
-                .animation(.default)
+                    .animation(.default)
+                    .overlay{
+                        HStack{
+                            Spacer()
+                            if !text.isEmpty {
+                                if isLoading {
+                                    Button {
+                                        text = ""
+                                    } label: {
+                                        ActivityIndicator(style: .medium,
+                                                          animate: .constant(true))
+                                        .configure({
+                                            $0.color = .white
+                                        })
+                                    }
+                                    .padding(.trailing, 15)
+                                    .frame(width: 35, height: 35)
+                                } else {
+                                    Button(action: {
+                                        text = ""
+                                    }) {
+                                        Image(systemName: "xmark.circle.fill")
+                                            .foregroundColor(Color.grayText)
+                                            .frame(width: 35, height: 35)
+                                    }
+                                    .padding(.trailing, 5)
+                                }
+                            }
+                        }
+                    }
                 
                 if isEditing {
                     Button {
@@ -48,19 +75,15 @@ struct SearchBar: View {
                         isEditing = false
                         hideKeyboard()
                     } label: {
-                        Text("Cancel")
-                            .foregroundColor(Color.navyText)
+                        Text("취소")
+                            .foregroundColor(Color.darkGrayText)
                     }
                     .padding(.trailing, 10)
                     .transition(.move(edge: .trailing))
                     .animation(.default)
-                    
-
                 }
             }
-            
-        })
-        
+        }
     }
 }
 
