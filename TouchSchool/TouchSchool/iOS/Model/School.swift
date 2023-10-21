@@ -7,8 +7,16 @@
 
 import Foundation
 
-struct School: Identifiable {
-    var id: String
-    var school: String
-    var score: Int
+struct DataSearch: Codable {
+    var content: [School]
+}
+
+struct School: Codable {
+    var link: String
+    var adres: String
+    var schoolName: String
+    var region: String
+    var totalCount: String
+    var estType: String
+    var seq: String
 }

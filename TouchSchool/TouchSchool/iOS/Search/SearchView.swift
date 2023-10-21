@@ -21,6 +21,7 @@ struct SearchView: View {
         } set: {
             searchText = $0
         }
+       
         ZStack{
             Color.white.edgesIgnoringSafeArea(.all)
             VStack{
@@ -39,9 +40,19 @@ struct SearchView: View {
                             .bold()
                             .padding(.top, 150)
                     } else if vm.viewState == .ready {
-                        VStack {
-                            
-                        }
+                            List(vm.schools, id: \.seq) { school in
+                                VStack(alignment: .leading) {
+                                    Text("School Name: \(school.schoolName)")
+                                    Text("Region: \(school.region)")
+                                    Text("Address: \(school.adres)")
+                                }
+                            }
+                            .navigationBarTitle("Schools")
+                            .onAppear {
+                                Task{
+                                    await vm.fetchData()
+                                }
+                            }
                     }
                 }
                 .padding()
