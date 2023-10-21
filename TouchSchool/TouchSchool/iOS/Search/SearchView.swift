@@ -43,7 +43,7 @@ struct SearchView: View {
                             List(vm.schools, id: \.seq) { school in
                                 VStack(alignment: .leading) {
                                     Text("School Name: \(school.schoolName)")
-                                    Text("Region: \(school.region)")
+                                    Text("Region: \(school.region.rawValue)")
                                     Text("Address: \(school.adres)")
                                 }
                             }
