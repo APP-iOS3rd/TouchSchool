@@ -46,25 +46,27 @@ class SearchVM: ObservableObject {
     }
     
     func fetchData() async {
-           Task {
-               do {
-                   let data = try await fetchDataAsync()
-                   schools = data.content
-               } catch {
-                   print("Error fetching data: \(error)")
-               }
-           }
-       }
-
-       private func fetchDataAsync() async throws -> DataSearch {
-           guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=1000000") else {
-               throw MyError.invalidURL
-           }
-
-           let (data, _) = try await URLSession.shared.data(from: url)
-           let decodedData = try JSONDecoder().decode(DataSearch.self, from: data)
-           return decodedData
-       }
+        Task {
+            do {
+                let data = try await fetchDataAsync()
+                schools = data.dataSearch.content
+            } catch {
+                print("Error fetching data: \(error)")
+            }
+        }
+        print(schools.count)
+    }
+    
+    private func fetchDataAsync() async throws -> schoolData {
+        guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=1000000") else {
+            throw MyError.invalidURL
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let decodedData = try JSONDecoder().decode(schoolData.self, from: data)
+        print(decodedData)
+        return decodedData
+    }
 }
 
 enum MyError: Error {

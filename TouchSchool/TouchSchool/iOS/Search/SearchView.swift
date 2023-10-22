@@ -31,29 +31,28 @@ struct SearchView: View {
                 
                 ScrollView {
                     if searchText.isEmpty {
-                        SearchGuide()
-                    }
+                        List(vm.schools, id: \.seq) { school in
+                            VStack(alignment: .leading) {
+                                Text("School Name: \(school.schoolName)")
+                                Text("Region: \(school.region.rawValue)")
+                                Text("Address: \(school.adres)")
+                            }
+                        }
+                        .navigationBarTitle("Schools")
+                        .onAppear {
+                            Task{
+                                await vm.fetchData()
+                            }
+                        }                    }
                     if vm.viewState == .empty {
                         Text("검색 결과가 없습니다.")
                             .foregroundColor(Color.grayText)
                             .font(.title3)
                             .bold()
                             .padding(.top, 150)
-                    } else if vm.viewState == .ready {
-                            List(vm.schools, id: \.seq) { school in
-                                VStack(alignment: .leading) {
-                                    Text("School Name: \(school.schoolName)")
-                                    Text("Region: \(school.region.rawValue)")
-                                    Text("Address: \(school.adres)")
-                                }
-                            }
-                            .navigationBarTitle("Schools")
-                            .onAppear {
-                                Task{
-                                    await vm.fetchData()
-                                }
-                            }
                     }
+                            
+                    
                 }
                 .padding()
             }
