@@ -20,14 +20,12 @@ struct SearchView: View {
             return searchText
         } set: {
             searchText = $0
+            vm.updateSearchText(with: $0)
         }
        
         ZStack{
             Color.white.edgesIgnoringSafeArea(.all)
             VStack{
-                SearchBar(text: searchTextBinding,
-                          isLoading: $vm.isLoading)
-                .padding()
                 
                 ScrollView {
                     if searchText.isEmpty {
@@ -43,7 +41,8 @@ struct SearchView: View {
                             Task{
                                 await vm.fetchData()
                             }
-                        }                    }
+                        }
+                    }
                     if vm.viewState == .empty {
                         Text("검색 결과가 없습니다.")
                             .foregroundColor(Color.grayText)
@@ -51,8 +50,6 @@ struct SearchView: View {
                             .bold()
                             .padding(.top, 150)
                     }
-                            
-                    
                 }
                 .padding()
             }
