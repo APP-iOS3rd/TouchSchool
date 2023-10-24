@@ -8,13 +8,9 @@
 import Foundation
 import SwiftUI
 
-
-
-
 struct MainView: View {
     @State var showSearch = false
 
-    
     var body: some View {
         NavigationView {
             ZStack{

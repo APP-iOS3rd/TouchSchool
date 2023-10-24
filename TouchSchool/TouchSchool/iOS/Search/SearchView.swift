@@ -26,22 +26,12 @@ struct SearchView: View {
         ZStack{
             Color.white.edgesIgnoringSafeArea(.all)
             VStack{
+                SearchBar(text: searchTextBinding, isLoading: $vm.isLoading)
+                    .padding()
                 
                 ScrollView {
                     if searchText.isEmpty {
-                        List(vm.schools, id: \.seq) { school in
-                            VStack(alignment: .leading) {
-                                Text("School Name: \(school.schoolName)")
-                                Text("Region: \(school.region.rawValue)")
-                                Text("Address: \(school.adres)")
-                            }
-                        }
-                        .navigationBarTitle("Schools")
-                        .onAppear {
-                            Task{
-                                await vm.fetchData()
-                            }
-                        }
+                        SearchGuide()
                     }
                     if vm.viewState == .empty {
                         Text("검색 결과가 없습니다.")
