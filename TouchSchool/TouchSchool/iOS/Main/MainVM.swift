@@ -29,7 +29,7 @@ class MainVM: ObservableObject {
             }
             print(schools.startIndex)
             print(schools)
-            print(schools.endIndex)
+            
         }
     }
     

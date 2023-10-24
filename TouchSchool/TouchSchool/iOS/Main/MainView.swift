@@ -40,7 +40,7 @@ struct MainView: View {
 //                            )})
 //                    
                     
-                    NavigationLink(destination: MainView2()) {
+                    NavigationLink(destination: GameView()) {
                         Text("게임 시작")
                     }  .font(.largeTitle)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -77,30 +77,6 @@ struct MainView: View {
              }
          }
 }
-
-
-
-struct MainView2:View {
-        @State var showSearch = false
-        
-        var body: some View {
-            ZStack{
-                if showSearch {
-                    SearchView(showSearch: self.$showSearch)
-                } else {
-                    VStack{
-                        Button {
-                            self.showSearch = true
-                        } label: {
-                            Text("학교 선택하기")
-                                .foregroundColor(Color.grayText)
-                        }
-                    }
-                }
-            }
-        }
-    }
-
 
 
 #Preview {

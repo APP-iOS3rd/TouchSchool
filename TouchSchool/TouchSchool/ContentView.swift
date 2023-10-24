@@ -8,7 +8,6 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    @State var showSearch = false
     
     @ObservedObject var vm = MainVM()
     
@@ -25,18 +24,7 @@ struct ContentView: View {
                             }
                         }
                 } else {
-                    if showSearch {
-                        SearchView(showSearch: self.$showSearch)
-                    } else {
-                        VStack{
-                            Button {
-                                self.showSearch = true
-                            } label: {
-                                Text("학교 선택하기")
-                                    .foregroundColor(Color.grayText)
-                            }
-                        }
-                    }
+                    SearchView()
                 }
    
             }

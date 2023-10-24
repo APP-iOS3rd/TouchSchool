@@ -11,8 +11,6 @@ import SwiftUI
 struct SearchView: View {
     @ObservedObject var vm = SearchVM()
     
-    @Binding var showSearch: Bool
-    
     @State private var searchText = ""
     
     var body: some View {
@@ -39,6 +37,17 @@ struct SearchView: View {
                             .font(.title3)
                             .bold()
                             .padding(.top, 150)
+                    } else if vm.viewState == .ready {
+                        List(vm.searchResult, id: \.adres) { school in
+                            VStack(alignment: .leading) {
+                                Text(school.schoolName)
+                                    .font(.headline)
+                                Text(school.adres)
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                                
+                            }
+                        }
                     }
                 }
                 .padding()
@@ -48,5 +57,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(showSearch: ContentView().$showSearch)
+    SearchView()
 }

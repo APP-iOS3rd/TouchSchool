@@ -16,6 +16,8 @@ class SearchVM: ObservableObject {
     
     @Published var viewState: ViewState = ViewState.ready
     
+    @ObservedObject var mainVm = MainVM()
+    
     public func updateSearchText(with text: String) {
         setViewState(to: .loading)
         if text.count > 0 {
@@ -26,17 +28,15 @@ class SearchVM: ObservableObject {
     private func getSearchResults(forText text: String) {
         let haveResult = Int.random(in: 0...3)
         
-        // await
-        
-        if haveResult == 0 {
-            // Empty view
-            self.searchResult = []
-            setViewState(to: .empty)
-        } else {
-            
-            // Ready view
-            self.searchResult = []
-            setViewState(to: .ready)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            if haveResult == 0 {
+                // Empty view
+                self.searchResult = []
+                self.setViewState(to: .empty)
+            } else {
+                self.searchResult = self.mainVm.schools
+                self.setViewState(to: .ready)
+            }
         }
     }
     
