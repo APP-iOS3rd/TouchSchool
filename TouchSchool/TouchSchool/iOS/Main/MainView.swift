@@ -8,24 +8,39 @@
 import Foundation
 import SwiftUI
 
-
-
-
 struct MainView: View {
-    @State var showSearch = false
+    @Binding var showMain: Bool
 
-    
     var body: some View {
         NavigationView {
             ZStack{
                 Color(red: 132/255, green: 194/255, blue: 65/255).edgesIgnoringSafeArea(.bottom)
-                
                 VStack{
-                    Image("school1")
-                        .resizable()
-                        .frame(height: 200)
-                        .edgesIgnoringSafeArea(.top)
-                    
+                    ZStack{
+                        Image("school1")
+                            .resizable()
+                            .frame(height: 200)
+                            .edgesIgnoringSafeArea(.top)
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                self.showMain = false
+                            }) {
+                                Text("학교 선택")
+                                    .font(.system(size: 15))
+                                    .padding(3)
+                                    .fontWeight(.heavy)
+                                    .foregroundStyle(.white)
+                                    .background(Color.cyan)
+                                    .cornerRadius(30)
+                                    .padding(5)
+                                    .overlay(RoundedRectangle(cornerRadius: 30)
+                                        .stroke(Color.cyan, lineWidth: 3)
+                                    )
+                            }
+                            .padding(.trailing, 5)
+                        }
+                    }
                     Text("TouchSchool")
                         .font(.system(size: 60, weight: .black, design: .rounded))
                         .fontWeight(.heavy)
@@ -44,7 +59,7 @@ struct MainView: View {
 //                            )})
 //                    
                     
-                    NavigationLink(destination: MainView2()) {
+                    NavigationLink(destination: GameView()) {
                         Text("게임 시작")
                     }  .font(.largeTitle)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -83,30 +98,6 @@ struct MainView: View {
 }
 
 
-
-struct MainView2:View {
-        @State var showSearch = false
-        
-        var body: some View {
-            ZStack{
-                if showSearch {
-                    SearchView(showSearch: self.$showSearch)
-                } else {
-                    VStack{
-                        Button {
-                            self.showSearch = true
-                        } label: {
-                            Text("학교 선택하기")
-                                .foregroundColor(Color.grayText)
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-
-
 #Preview {
-    MainView()
+    MainView(showMain: SearchView().$showMain)
 }

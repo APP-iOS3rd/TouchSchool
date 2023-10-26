@@ -50,7 +50,7 @@ struct SearchBar: View {
                                         ActivityIndicator(style: .medium,
                                                           animate: .constant(true))
                                         .configure({
-                                            $0.color = .white
+                                            $0.color = .darkGray
                                         })
                                     }
                                     .padding(.trailing, 15)

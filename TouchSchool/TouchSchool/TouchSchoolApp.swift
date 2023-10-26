@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct TouchSchoolApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(SearchVM())
         }
     }
 }

@@ -9,5 +9,13 @@ import Foundation
 import SwiftUI
 
 class MainVM: ObservableObject {
+    @Published var schoolName: String = ""
+    
+    @Published var count: Int = 0
+    
+    @Published var adres: String = ""
+    
+    @Published var seq: String = ""
     
 }
+
