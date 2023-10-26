@@ -9,19 +9,38 @@ import Foundation
 import SwiftUI
 
 struct MainView: View {
-    @State var showSearch = false
+    @Binding var showMain: Bool
 
     var body: some View {
         NavigationView {
             ZStack{
                 Color(red: 132/255, green: 194/255, blue: 65/255).edgesIgnoringSafeArea(.bottom)
-                
                 VStack{
-                    Image("school1")
-                        .resizable()
-                        .frame(height: 200)
-                        .edgesIgnoringSafeArea(.top)
-                    
+                    ZStack{
+                        Image("school1")
+                            .resizable()
+                            .frame(height: 200)
+                            .edgesIgnoringSafeArea(.top)
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                self.showMain = false
+                            }) {
+                                Text("학교 선택")
+                                    .font(.system(size: 15))
+                                    .padding(3)
+                                    .fontWeight(.heavy)
+                                    .foregroundStyle(.white)
+                                    .background(Color.cyan)
+                                    .cornerRadius(30)
+                                    .padding(5)
+                                    .overlay(RoundedRectangle(cornerRadius: 30)
+                                        .stroke(Color.cyan, lineWidth: 3)
+                                    )
+                            }
+                            .padding(.trailing, 5)
+                        }
+                    }
                     Text("TouchSchool")
                         .font(.system(size: 60, weight: .black, design: .rounded))
                         .fontWeight(.heavy)
@@ -80,5 +99,5 @@ struct MainView: View {
 
 
 #Preview {
-    MainView()
+    MainView(showMain: SearchView().$showMain)
 }
