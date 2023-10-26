@@ -39,8 +39,14 @@ struct SearchView: View {
                             .padding(.top, 150)
 
                     } else if vm.viewState == .ready {
-                        List(vm.schools, id:\.seq) { school in
-                            Text(school.schoolName)
+                        List(vm.searchResult, id:\.seq) { school in
+                            VStack(alignment: .leading) {
+                                           Text(school.schoolName)
+                                               .font(.headline)
+                                           Text(school.adres)
+                                               .font(.subheadline)
+                                               .foregroundColor(.gray)
+                                       }
                         }
                     }
                     Spacer()

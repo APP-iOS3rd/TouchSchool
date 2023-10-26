@@ -18,7 +18,7 @@ class SearchVM: ObservableObject {
     
     @Published var schools: [School] = []
     
-    @Published var searchResult: [String] = []
+    @Published var searchResult: [School] = []
     
     @Published var viewState: ViewState = ViewState.empty
         
@@ -30,12 +30,12 @@ class SearchVM: ObservableObject {
     }
     
     private func getSearchResults(forText text: String) {
-        let haveResult = Int.random(in: 0...3)
         
+        searchResult = schools.filter { $0.schoolName.contains(text) }
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if haveResult == 0 {
+            if self.searchResult.count == 0 {
                 // Empty view
-                self.searchResult = []
                 self.setViewState(to: .empty)
             } else {
                 self.setViewState(to: .ready)
