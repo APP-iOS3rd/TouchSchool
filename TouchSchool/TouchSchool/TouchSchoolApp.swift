@@ -13,7 +13,7 @@ struct TouchSchoolApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(MainVM())
+                .environmentObject(SearchVM())
         }
     }
 }

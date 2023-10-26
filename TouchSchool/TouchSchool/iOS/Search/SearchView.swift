@@ -9,9 +9,8 @@ import Foundation
 import SwiftUI
 
 struct SearchView: View {
-    @ObservedObject var vm = SearchVM()
     
-    @EnvironmentObject var mainVM: MainVM
+    @EnvironmentObject var vm: SearchVM
     
     @State private var searchText = ""
     
@@ -40,7 +39,7 @@ struct SearchView: View {
                             .padding(.top, 150)
 
                     } else if vm.viewState == .ready {
-                        List(mainVM.schools, id:\.seq) { school in
+                        List(vm.schools, id:\.seq) { school in
                             Text(school.schoolName)
                         }
                     }

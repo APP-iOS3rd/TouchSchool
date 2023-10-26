@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var vm: MainVM
+    @EnvironmentObject var vm: SearchVM
     
     var body: some View {
         ZStack{
