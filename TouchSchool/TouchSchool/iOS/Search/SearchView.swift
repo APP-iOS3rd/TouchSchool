@@ -47,7 +47,7 @@ struct SearchView: View {
                                 Button(action: {
                                     // Set the selected school when the button is tapped
                                     self.showMain = true
-                                    
+                                    self.searchText = ""
                                 }) {
                                     VStack(alignment: .leading) {
                                         Text(school.schoolName)
