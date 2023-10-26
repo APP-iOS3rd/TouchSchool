@@ -14,10 +14,8 @@ class SearchVM: ObservableObject {
     
     @Published var searchResult: [School] = []
     
-    @Published var viewState: ViewState = ViewState.ready
-    
-    @ObservedObject var mainVm = MainVM()
-    
+    @Published var viewState: ViewState = ViewState.empty
+        
     public func updateSearchText(with text: String) {
         setViewState(to: .loading)
         if text.count > 0 {
@@ -34,7 +32,6 @@ class SearchVM: ObservableObject {
                 self.searchResult = []
                 self.setViewState(to: .empty)
             } else {
-                self.searchResult = self.mainVm.schools
                 self.setViewState(to: .ready)
             }
         }
@@ -46,9 +43,6 @@ class SearchVM: ObservableObject {
             self.isLoading = state == . loading
         }
     }
-        
-    
-    
 }
 //
 //class SearchVM: ObservableObject {
@@ -108,30 +102,30 @@ class SearchVM: ObservableObject {
 //
 //        return decodedData
 //    }
-//    
-//    
+//
+//
 //   // 고등학교 api url
 //    private let HighSchool_URL = "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=high_list&perPage=1000000"
-//    
+//
 //    // alamofire 동시성
 //    // alamofire에서 쉽게 동시성으로 json get해오기 위해서 작성??
 //    final class AppNetworking {
 //        static let shared = AppNetworking()
-//        
+//
 //        private init() { }
-//        
+//
 //        private let session: Session = {
 //            let configuration = URLSessionConfiguration.default
 //            configuration.timeoutIntervalForRequest = 10
 //            configuration.timeoutIntervalForResource = 10
 //            return Session(configuration: configuration)
 //        }()
-//        
+//
 //        func requestJSON<T: Decodable>(_ url: String,
 //                                       type: T.Type,
 //                                       method: HTTPMethod,
 //                                       parameters: Parameters? = nil) async throws -> T {
-//            
+//
 //            return try await session.request(url,
 //                                             method: method,
 //                                             parameters: parameters,
@@ -140,8 +134,8 @@ class SearchVM: ObservableObject {
 //            .value
 //        }
 //    }
-//    
-//    
+//
+//
 //    // 위의 class로 인해 이렇게 간결해지는듯 함
 //    private func retrieveJokes(url: String) async {
 //        do {
@@ -158,7 +152,7 @@ class SearchVM: ObservableObject {
     
 
 
-enum ViewState {
+enum ViewState: String {
     case empty
     case loading
     case ready

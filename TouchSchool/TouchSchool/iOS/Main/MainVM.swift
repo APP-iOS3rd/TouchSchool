@@ -13,7 +13,7 @@ class MainVM: ObservableObject {
     
     @State var progress: Double = 0
     
-    @Published var isLoading = true
+    @Published var isDownloading = true
     
     func fetchData() async {
         Task {
@@ -21,7 +21,7 @@ class MainVM: ObservableObject {
                 let data = try await fetchDataAsync()
                 DispatchQueue.main.async {
                     self.schools = data.dataSearch.content // Update on the main thread
-                    self.isLoading = false
+                    self.isDownloading = false
                 }
             } catch {
                 print("Error fetching data: \(error)")
@@ -34,7 +34,7 @@ class MainVM: ObservableObject {
     }
     
     private func fetchDataAsync() async throws -> schoolData {
-        guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=1000000") else {
+        guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=100000") else {
             throw MyError.invalidURL
         }
         let (data, _) = try await URLSession.shared.data(from: url)

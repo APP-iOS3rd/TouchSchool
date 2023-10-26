@@ -11,6 +11,8 @@ import SwiftUI
 struct SearchView: View {
     @ObservedObject var vm = SearchVM()
     
+    @EnvironmentObject var mainVM: MainVM
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -20,37 +22,31 @@ struct SearchView: View {
             searchText = $0
             vm.updateSearchText(with: $0)
         }
-       
+        
         ZStack{
             Color.white.edgesIgnoringSafeArea(.all)
             VStack{
                 SearchBar(text: searchTextBinding, isLoading: $vm.isLoading)
                     .padding()
-                
-                ScrollView {
+                    
+                VStack{
                     if searchText.isEmpty {
                         SearchGuide()
-                    }
-                    if vm.viewState == .empty {
+                    } else if vm.viewState == .empty {
                         Text("검색 결과가 없습니다.")
                             .foregroundColor(Color.grayText)
                             .font(.title3)
                             .bold()
                             .padding(.top, 150)
+
                     } else if vm.viewState == .ready {
-                        List(vm.searchResult, id: \.adres) { school in
-                            VStack(alignment: .leading) {
-                                Text(school.schoolName)
-                                    .font(.headline)
-                                Text(school.adres)
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
-                                
-                            }
+                        List(mainVM.schools, id:\.seq) { school in
+                            Text(school.schoolName)
                         }
                     }
+                    Spacer()
                 }
-                .padding()
+                
             }
         }
     }
