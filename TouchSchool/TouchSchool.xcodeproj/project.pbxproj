@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28350C322AF3D22C0068853A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* FirebaseManager.swift */; };
+		28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */; };
 		419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */; };
 		419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5522AD62DA700EC4105 /* ContentView.swift */; };
 		419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 419CE5542AD62DA800EC4105 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28350C312AF3D22C0068853A /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		419CE54D2AD62DA700EC4105 /* TouchSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSchoolApp.swift; sourceTree = "<group>"; };
 		419CE5522AD62DA700EC4105 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		419CE54F2AD62DA700EC4105 /* TouchSchool */ = {
 			isa = PBXGroup;
 			children = (
+				28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */,
 				419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */,
 				419CE5522AD62DA700EC4105 /* ContentView.swift */,
 				419CE5542AD62DA800EC4105 /* Assets.xcassets */,
@@ -168,6 +173,7 @@
 		419CE55F2AD62ECA00EC4105 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				28350C312AF3D22C0068853A /* FirebaseManager.swift */,
 				419CE5602AD62EFE00EC4105 /* School.swift */,
 			);
 			path = Model;
@@ -315,6 +321,7 @@
 			files = (
 				419CE5582AD62DA800EC4105 /* Preview Assets.xcassets in Resources */,
 				419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */,
+				28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +348,7 @@
 				419CE57D2AD66EA000EC4105 /* RankVM.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
 				419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */,
+				28350C322AF3D22C0068853A /* FirebaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -56,9 +56,11 @@ extension SearchVM {
     func fetchData() async {
         Task {
             do {
-                let data = try await fetchDataAsync()
+                let data1 = try await fetchSchool1().dataSearch.content
+                let data2 = try await fetchSchool2().dataSearch.content
+                let data3 = try await fetchSchool3().dataSearch.content
                 DispatchQueue.main.async {
-                    self.schools = data.dataSearch.content // Update on the main thread
+                    self.schools = data1 + data2 + data3 // Update on the main thread
                     self.isDownloading = false
                 }
             } catch {
@@ -71,20 +73,34 @@ extension SearchVM {
         }
     }
     
-    private func fetchDataAsync() async throws -> schoolData {
-        guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=100000") else {
-            throw MyError.invalidURL
-        }
-        let (data, _) = try await URLSession.shared.data(from: url)
-        for i in 1...10 {
-            DispatchQueue.main.async {
-                self.progress = Double(i) / 10.0
-            }
-            try await Task.sleep(nanoseconds: 1) // Simulate a delay
-        }
-        let decodedData = try JSONDecoder().decode(schoolData.self, from: data)
-        return decodedData
+
+    private func fetchSchool1() async throws -> schoolData{
+        return try await AF.request(eSchoolUrl, method: .get, headers: headers).serializingDecodable(schoolData.self).value
     }
+    
+    private func fetchSchool2() async throws -> schoolData{
+        return try await AF.request(mSchoolUrl, method: .get, headers: headers).serializingDecodable(schoolData.self).value
+    }
+
+    private func fetchSchool3() async throws -> schoolData{
+        return try await AF.request(hSchoolUrl, method: .get, headers: headers).serializingDecodable(schoolData.self).value
+    }
+    
+
+//    private func fetchDataAsync() async throws -> schoolData {
+//        guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=100000") else {
+//            throw MyError.invalidURL
+//        }
+//        let (data, _) = try await URLSession.shared.data(from: url)
+//        for i in 1...10 {
+//            DispatchQueue.main.async {
+//                self.progress = Double(i) / 10.0
+//            }
+//            try await Task.sleep(nanoseconds: 1) // Simulate a delay
+//        }
+//        let decodedData = try JSONDecoder().decode(schoolData.self, from: data)
+//        return decodedData
+//    }
 }
 
 enum ViewState: String {
