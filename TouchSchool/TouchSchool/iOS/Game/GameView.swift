@@ -9,9 +9,11 @@ import Foundation
 import SwiftUI
 
 struct GameView: View {
+    
     var body: some View {
         VStack{
             
         }
     }
 }
+
