@@ -62,7 +62,7 @@ struct ContentView: View {
         
         var body: some View {
             HStack {
-                Image(school.img ?? "")
+                Image(school.img ?? "lion")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 150,height: 40)
