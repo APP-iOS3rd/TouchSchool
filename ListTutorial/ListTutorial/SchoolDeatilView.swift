@@ -13,26 +13,57 @@ struct SchoolDeatilView: View {
     
     var body: some View {
         
-    let linkURL = URL(string: selectedSchool.link)
+        let linkURL = URL(string: selectedSchool.link)
+
+        ZStack{
         
-        Form {
-            Section {
-                Image(selectedSchool.img)
+            Form {
+                Section("학교 로고") {
+                    Image(selectedSchool.img)
+                        .resizable()
+                        .cornerRadius(12)
+                        .aspectRatio(contentMode: .fit)
+                        .padding()
+                }
+                .foregroundColor(.white)
+                .listRowBackground(Color.clear)
+                .font(.title)
+                .bold()
+                
+                Section("학교명") {
+                    Text(selectedSchool.schoolName)
+                        .font(.headline)
+                        .bold()
+                }
+                .foregroundColor(.white)
+                .listRowBackground(Color.clear)
+                .font(.title)
+                .bold()
+                
+                Section("주소") {
+                    Text(selectedSchool.adres)
+                        .font(.body)
+                }
+                .foregroundColor(.white)
+                .listRowBackground(Color.clear)
+                .font(.title)
+                .bold()
+                
+                Section("홈페이지") {
+                    Link("학교 홈페이지 바로가기", destination: linkURL!)
+                        .font(.body)
+                }
+                .foregroundColor(.white)
+                .listRowBackground(Color.clear)
+                .font(.title)
+                .bold()
+            }
+            .scrollContentBackground(.hidden) // new in iOS 16
+            .background {
+                Image("blackboard")
                     .resizable()
-                    .cornerRadius(12)
-                    .aspectRatio(contentMode: .fit)
-                    .padding()
-                
-                Text(selectedSchool.schoolName)
-                    .font(.headline)
-                
-                Text(selectedSchool.adres)
-                    .font(.body)
-                
-                Text(selectedSchool.link)
-                
-                Link("학교 홈페이지", destination: linkURL!)
-                
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
             }
         }
     }
