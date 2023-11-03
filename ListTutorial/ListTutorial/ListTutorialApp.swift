@@ -12,6 +12,7 @@ struct ListTutorialApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(SchoolStore(schools: schoolDatas))
         }
     }
 }

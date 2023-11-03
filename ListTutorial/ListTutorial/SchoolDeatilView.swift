@@ -19,7 +19,7 @@ struct SchoolDeatilView: View {
         
             Form {
                 Section("학교 로고") {
-                    Image(selectedSchool.img)
+                    Image(selectedSchool.img ?? "")
                         .resizable()
                         .cornerRadius(12)
                         .aspectRatio(contentMode: .fit)
@@ -70,5 +70,5 @@ struct SchoolDeatilView: View {
 }
 
 #Preview {
-    SchoolDeatilView(selectedSchool: schoolData[0])
+    SchoolDeatilView(selectedSchool: schoolDatas[0])
 }

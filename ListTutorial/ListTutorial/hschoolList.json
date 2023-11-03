@@ -1,9 +1,7 @@
 [
       {
         "id": "aa32jj887hhg55",
-        "schoolType": "",
         "link": "http://gagog.gwe.hs.kr",
-        "schoolGubun": "일반고",
         "adres": "강원특별자치도 삼척시 가곡면 가곡천로 1427, 가곡고등학교 (가곡면)",
         "schoolName": "가곡고등학교",
         "region": "강원특별자치도",
@@ -14,9 +12,7 @@
       },
       {
         "id": "bb32jj887hhg77",
-        "schoolType": "",
         "link": "http://garak.sen.hs.kr",
-        "schoolGubun": "일반고",
         "adres": "서울특별시 송파구 송이로 42(송파동,가락고등학교)",
         "schoolName": "가락고등학교",
         "region": "서울특별시",
@@ -27,9 +23,7 @@
       },
       {
         "id": "cc32jj887hhg66",
-        "schoolType": "",
         "link": "http://garim.icehs.kr",
-        "schoolGubun": "일반고",
         "adres": "인천광역시 서구 원적로 58(가좌동)",
         "schoolName": "가림고등학교",
         "region": "인천광역시",
@@ -40,9 +34,7 @@
       },
       {
         "id": "dd32jj887hhg88",
-        "schoolType": "",
         "link": "http://www.gaya.hs.kr",
-        "schoolGubun": "일반고",
         "adres": "부산광역시 부산진구 엄광로 152(가야동, 가야고등학교)",
         "schoolName": "가야고등학교",
         "region": "부산광역시",
@@ -53,9 +45,7 @@
       },
       {
         "id": "ee32jj887hhg99",
-        "schoolType": "",
         "link": "http://www.gaon.hs.kr",
-        "schoolGubun": "일반고",
         "adres": "경기도 안성시 샛터길 46(발화동,가온고등학교)",
         "schoolName": "가온고등학교",
         "region": "경기도",
@@ -66,9 +56,7 @@
       },
       {
         "id": "ee32jj887hhg91",
-        "schoolType": "",
         "link": "http://www.gaun.hs.kr",
-        "schoolGubun": "일반고",
         "adres": "경기도 남양주시 가운로2길 115(가운동)",
         "schoolName": "가운고등학교",
         "region": "경기도",
@@ -79,9 +67,7 @@
       },
       {
         "id": "ee32jj887hhg92",
-        "schoolType": "",
         "link": "http://school.gyo6.net/gago/",
-        "schoolGubun": "일반고",
         "adres": "경상북도 문경시 가은읍 가은로 205, 가은고등학교 (가은읍, 가은중학교,가은고등학교)",
         "schoolName": "가은고등학교",
         "region": "경상북도",
@@ -92,9 +78,7 @@
       },
       {
         "id": "ee32jj887hhg95",
-        "schoolType": "",
         "link": "http://gajaeul.sen.hs.kr",
-        "schoolGubun": "일반고",
         "adres": "서울특별시 서대문구 수색로 100-35(북가좌동)",
         "schoolName": "가재울고등학교",
         "region": "서울특별시",
@@ -105,9 +89,7 @@
       },
       {
         "id": "ee32jj887hhg94",
-        "schoolType": "",
         "link": "http://gajeong.icehs.kr",
-        "schoolGubun": "일반고",
         "adres": "인천광역시 서구 서달로 162(석남동)",
         "schoolName": "가정고등학교",
         "region": "인천광역시",
@@ -118,9 +100,7 @@
       },
       {
         "id": "ee32jj887hhg96",
-        "schoolType": "",
         "link": "http://gajwa-h.hs.kr/",
-        "schoolGubun": "일반고",
         "adres": "경기도 고양시 일산서구 가좌1로 43, 가좌고등학교 (가좌동)",
         "schoolName": "가좌고등학교",
         "region": "경기도",
