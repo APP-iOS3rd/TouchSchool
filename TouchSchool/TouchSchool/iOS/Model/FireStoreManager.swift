@@ -9,6 +9,7 @@ import FirebaseFirestoreSwift
 import FirebaseFirestore
 import FirebaseCore
 
+var seqValue = ""
 
 class FireStoreManager: ObservableObject {
     

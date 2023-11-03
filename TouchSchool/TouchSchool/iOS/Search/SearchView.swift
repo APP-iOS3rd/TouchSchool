@@ -49,6 +49,7 @@ struct SearchView: View {
                                     let firebaseManager = FirebaseManager(school: school)
                                     firebaseManager.isSchoolExists(seq: school.seq) { exists in
                                         if exists {
+                                            seqValue = school.seq
                                             self.showMain = true
                                             self.searchText = ""
                                         } else {
