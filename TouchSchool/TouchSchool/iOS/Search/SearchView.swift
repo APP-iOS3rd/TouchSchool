@@ -46,8 +46,17 @@ struct SearchView: View {
                             List(vm.searchResult, id:\.seq) { school in
                                 Button(action: {
                                     // Set the selected school when the button is tapped
-                                    self.showMain = true
-                                    self.searchText = ""
+                                    let firestoreManager = FireStoreManager(school: school)
+                                    firestoreManager.isSchoolExists(seq: school.seq) { exists in
+                                        if exists {
+                                            self.showMain = true
+                                            self.searchText = ""
+                                        } else {
+                                            firestoreManager.addSchool(a: school)
+                                            self.showMain = true
+                                            self.searchText = ""
+                                        }
+                                    }
                                 }) {
                                     VStack(alignment: .leading) {
                                         Text(school.schoolName)

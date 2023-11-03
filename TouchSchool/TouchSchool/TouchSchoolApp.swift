@@ -10,8 +10,7 @@ import Firebase
 
 @main
 struct TouchSchoolApp: App {
-    @StateObject var firestoreManager = FireStoreManager()
-    
+
     init() {
         FirebaseApp.configure()
     }
@@ -19,7 +18,6 @@ struct TouchSchoolApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(firestoreManager)
                 .environmentObject(SearchVM())
         }
     }

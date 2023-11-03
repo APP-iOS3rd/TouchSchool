@@ -35,7 +35,6 @@ struct School: Codable {
     }
 }
 
-
 let headers: HTTPHeaders = [
     "Accept": "application/json"
 ]
