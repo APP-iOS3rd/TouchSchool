@@ -60,7 +60,7 @@ struct SchoolDeatilView: View {
             }
             .scrollContentBackground(.hidden) // new in iOS 16
             .background {
-                Image("blackboard")
+                Image("213213")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
