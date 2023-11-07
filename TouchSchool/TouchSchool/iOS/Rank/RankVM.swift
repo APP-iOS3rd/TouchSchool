@@ -23,6 +23,7 @@ class RankVM: ObservableObject {
     
     init() {
         db = Firestore.firestore()
+
     }
     
     func fetchSchools(mySeq: String) {

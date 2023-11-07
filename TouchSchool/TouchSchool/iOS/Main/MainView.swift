@@ -26,7 +26,7 @@ struct MainView: View {
                 VStack{
                     titleImage()
                     HStack {
-                        NavigationLink(destination: SearchView()) {
+                        NavigationLink(destination: GameView(gamevm: FireStoreManager())) {
                             Text("게임 시작")
                         }  .font(.largeTitle)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -36,7 +36,7 @@ struct MainView: View {
                             .foregroundColor(.white)
                             .padding(10)
                         
-                        NavigationLink(destination: GameView()) {
+                        NavigationLink(destination: RankView()) {
                             Image("rankicon")
                                 .resizable()
                                 .frame(width: 20, height: 20)
@@ -86,4 +86,6 @@ struct titleImage: View {
 
 #Preview {
     MainView(showMain: SearchView().$showMain)
+   
 }
+

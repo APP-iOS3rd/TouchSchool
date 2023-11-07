@@ -18,6 +18,10 @@ class FireStoreManager: ObservableObject {
     @Published var mySchoolCnt: Int = 0
     @Published var mySchoolId: String = ""
     
+    init() {
+        getAllSchool2(mySeq: seqValue)
+    }
+    
     // 파라미터로 받은 값을 특정 필드의 값으로 가지고 있는 문서의 id값 불러오기 -> 이 함수에서는 seq값을 사용
     func getAllSchool2(mySeq: String) {
         let db = Firestore.firestore()
@@ -37,9 +41,7 @@ class FireStoreManager: ObservableObject {
                 }
             }
     }
-    
-   
-    
+
     
     //  파라미터로 넣은 id값을 가진 문서 내용들 불러오는 스냅샷
     func addSnapShot(id: String) {
@@ -60,9 +62,9 @@ class FireStoreManager: ObservableObject {
     
     
     //  파라미터로 전달받은 id 값을 가진 문서의 count에 +1을 해주는 트랜잭션 (버튼에 구현)
-    func newAdd(id: String) {
+    func newAdd() {
         let db = Firestore.firestore()
-        let sfReference = db.collection("schools").document(id)
+        let sfReference = db.collection("schools").document(self.mySchoolId)
         
         db.runTransaction({ (transaction, errorPointer) -> Any? in
             let sfDocument: DocumentSnapshot
@@ -87,6 +89,7 @@ class FireStoreManager: ObservableObject {
                 print("Transaction successfully committed!")
             }
         }
+
     }
     
 }

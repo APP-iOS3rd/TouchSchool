@@ -10,4 +10,5 @@ import SwiftUI
 
 class GameVM: ObservableObject {
     
-}
+    @Published var mySchoolCnt: Int = 0
+    }

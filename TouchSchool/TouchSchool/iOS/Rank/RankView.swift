@@ -35,6 +35,7 @@ struct RankView: View {
                             .fontWeight(.bold)
                             .font(.system(size: 45))
                             .foregroundColor(.black)
+//                            .background(.white)
 
                     }
                     .offset(y: 85)
@@ -43,7 +44,7 @@ struct RankView: View {
                     // 학교 순위리스트
                     List(schoolInfos) { schoolInfo in
                         VStack(alignment: .leading) {
-                            Text(schoolInfo.name)
+                            Text(schoolInfo.name).font(.title)
                         }
                     }
                     .scrollContentBackground(.hidden)
