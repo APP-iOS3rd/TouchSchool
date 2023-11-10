@@ -13,7 +13,7 @@ import SwiftUI
 struct RankView: View {
     
     @ObservedObject private var schoolViewModel = RankVM()
-    @State private var schoolInfos: [SchoolInfo] = []
+    
     
     
     var body: some View {
@@ -22,34 +22,44 @@ struct RankView: View {
             Color(red: 132/255, green: 194/255, blue: 65/255).edgesIgnoringSafeArea(.bottom)
             //꾸밈화면
             VStack{
-                VStack{
                 ZStack{
                     Image("school1")
                         .resizable()
                         .frame(height: 200)
                         .edgesIgnoringSafeArea(.top)
-                    
-                    ZStack{
-                        //이부분은 좀더 잘 보이게 꾸밀 예정.
-                        Text("학교 순위")
-                            .fontWeight(.bold)
-                            .font(.system(size: 45))
-                            .foregroundColor(.black)
-//                            .background(.white)
-
-                    }
-                    .offset(y: 85)
-                }
                 
-                    // 학교 순위리스트
-                    List(schoolInfos) { schoolInfo in
-                        VStack(alignment: .leading) {
-                            Text(schoolInfo.name).font(.title)
+                    //이부분은 좀더 잘 보이게 꾸밈
+                    Text("학교 순위")
+                        .fontWeight(.bold)
+                        .font(.system(size: 45))
+                        .foregroundColor(.black)
+                    }
+                
+                // 학교 순위리스트
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVStack(alignment: .leading) {
+                        ForEach(schoolViewModel.mySchoolInfos) { schoolInfo in
+                            HStack {
+                                if let rank = schoolInfo.rank {
+                                    Text("\(rank)")
+                                } else {
+                                    Text("0")
+                                }
+                                Text(schoolInfo.name)
+                                Text("\(schoolInfo.count)")
+                            }
                         }
                     }
-                    .scrollContentBackground(.hidden)
+                }
+                .padding(.top, 20) // 리스트의 상단에 여백 추가
+                .padding(.horizontal, 20) // 좌우 여백 추가
+                .onAppear() {
+                    self.schoolViewModel.fetchSchools()
                 }
             }
         }
     }
 }
+
+//학교
+
