@@ -26,7 +26,7 @@ struct MainView: View {
                 VStack{
                     titleImage()
                     HStack {
-                        NavigationLink(destination: GameView(gamevm: FireStoreManager())) {
+                        NavigationLink(destination: GameView(gamevm: FireStoreManager(), gamevm2: RankVM())) {
                             Text("게임 시작")
                         }  .font(.largeTitle)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)

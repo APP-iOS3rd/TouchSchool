@@ -10,6 +10,7 @@ import FirebaseFirestore
 import FirebaseCore
 
 var seqValue = ""
+var schoolRank: Int = 0
 
 class FireStoreManager: ObservableObject {
     
@@ -26,13 +27,12 @@ class FireStoreManager: ObservableObject {
     func getAllSchool2(mySeq: String) {
         let db = Firestore.firestore()
         db.collection("schools").whereField("seq", isEqualTo: mySeq)
-            .getDocuments() { (querySnapshot, err) in
+            .addSnapshotListener() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
-                       
                         self.mySchoolName = document.data()["name"] as? String ?? ""
                         self.mySchoolAdres = document.data()["adres"] as? String ?? ""
                         self.mySchoolCnt = document.data()["count"] as? Int ?? 0
@@ -46,7 +46,7 @@ class FireStoreManager: ObservableObject {
     //  파라미터로 넣은 id값을 가진 문서 내용들 불러오는 스냅샷
     func addSnapShot(id: String) {
         let db = Firestore.firestore()
-        let _ = db.collection("schools").document(id).addSnapshotListener { documentSnapshot, error in
+        db.collection("schools").document(id).addSnapshotListener { documentSnapshot, error in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
                 return
@@ -89,8 +89,6 @@ class FireStoreManager: ObservableObject {
                 print("Transaction successfully committed!")
             }
         }
-
     }
-    
 }
 

@@ -16,6 +16,6 @@ class MainVM: ObservableObject {
     @Published var adres: String = ""
     
     @Published var seq: String = ""
-    
+        
 }
 

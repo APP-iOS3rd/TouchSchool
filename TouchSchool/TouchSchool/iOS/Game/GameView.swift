@@ -10,50 +10,72 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject var gamevm: FireStoreManager
+    @ObservedObject var gamevm2 = RankVM()
+    @State private var count: Int = 0
+    @State private var isImage: Bool = false
 
-    @GestureState var isDetectingLongPress = false
-    @State var totalNumberOfTaps = 0
-    
     var body: some View {
         ZStack {
-            let press = LongPressGesture(minimumDuration: 10)
-                .updating($isDetectingLongPress) { currentState, gestureState, transaction in
-                    gestureState = currentState
-                }.onChanged { _ in
-                    self.totalNumberOfTaps += 1
-                }
             Image("blackboard_set")
-                .ignoresSafeArea(.all)
-                .gesture(press)
+                .resizable()
+                .ignoresSafeArea()
+            
             VStack {
-                Text("\(totalNumberOfTaps)")
-                    .font(.largeTitle)
-                    .padding(30)
+                HStack {
+                    ForEach(gamevm2.mySchoolInfos) { schoolInfo in
+                        HStack {
+                            if let rank = schoolInfo.rank {
+                                Text("\(rank)")
+                            } else {
+                                Text("0")
+                            }
+                            
+                            
+                            
+                            Text("\(gamevm.mySchoolName)")
+                                .foregroundStyle(.mint)
+                                .font(.system(size: 30))
+                                .bold()
+                        }
+                    }}
+                let _ = print( gamevm2.mySchoolInfos )
+                Text("\(count)")
+                    .foregroundStyle(.white)
+                    .font(.system(size: 60))
+                    .bold()
+                    .padding()
+                
                 Spacer()
                 
-                Rectangle()
-                    .fill(isDetectingLongPress ? Color.yellow : Color.green)
-                    .frame(width: 100, height: 100, alignment: .center)
+                Image( isImage ?  "noname" : "achievement-1293132_1280")
+                    .resizable()
+                    .frame(width: 180, height: 180)
+                
                 Spacer()
+                
+            HStack {
+                Image("achievement-1293132_1280")
+                    .resizable()
+                    .frame(width: 40, height: 50)
                 
                 Text("\(gamevm.mySchoolCnt)")
+                    .foregroundStyle(.white)
                     .font(.system(size: 50))
+                }
+                .padding()
             }
-            
-            Text("Clicks: \(gamevm.mySchoolCnt)")
-//            Button(action: gamevm.newAdd(), label: {
-//                Text("Button")
-//                
-//            })
         }
         .onTapGesture {
-            self.totalNumberOfTaps += 1
-            print(self.totalNumberOfTaps)
+            gamevm.newAdd()
+            count += 1
+            isImage.toggle()
         }
     }
 }
 
 
 #Preview {
-    GameView(gamevm: FireStoreManager())
+    GameView(gamevm: FireStoreManager(), gamevm2: RankVM())
 }
+
+//학교
