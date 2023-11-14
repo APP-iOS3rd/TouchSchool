@@ -9,8 +9,7 @@ import Foundation
 import SwiftUI
 
 struct GameView: View {
-    @ObservedObject var gamevm: FireStoreManager
-    @ObservedObject var gamevm2: RankVM
+    @ObservedObject var vm: GameViewModel
     @State private var count: Int = 0
     @State private var isImage: Bool = false
 
@@ -25,7 +24,7 @@ struct GameView: View {
                     .font(.system(size: 30))
                     .bold()
                 
-                Text("\(gamevm.mySchoolName)")
+                Text("\(vm.mySchoolName)")
                     .foregroundStyle(.mint)
                     .font(.system(size: 30))
                     .bold()
@@ -48,7 +47,7 @@ struct GameView: View {
                     .resizable()
                     .frame(width: 40, height: 50)
                 
-                Text("\(gamevm.mySchoolCnt)")
+                Text("\(vm.mySchoolCnt)")
                     .foregroundStyle(.white)
                     .font(.system(size: 50))
                 }
@@ -56,7 +55,7 @@ struct GameView: View {
             }
         }
         .onTapGesture {
-            gamevm.newAdd()
+            vm.newAdd()
             count += 1
             isImage.toggle()
         }
@@ -65,7 +64,7 @@ struct GameView: View {
 
 
 #Preview {
-    GameView(gamevm: FireStoreManager(), gamevm2: RankVM())
+    GameView(vm: GameViewModel())
 }
 
 //학교

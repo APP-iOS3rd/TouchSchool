@@ -11,7 +11,7 @@ import FirebaseCore
 
 var seqValue = ""
 var myAddress = ""
-class FireStoreManager: ObservableObject {
+class GameViewModel: ObservableObject {
     
     @Published var mySchoolName: String = ""
     @Published var mySchoolAdres: String = ""
@@ -19,11 +19,11 @@ class FireStoreManager: ObservableObject {
     @Published var mySchoolId: String = ""
     
     init() {
-        getAllSchool2(mySeq: seqValue)
+        getAllSchool(mySeq: seqValue)
     }
     
     // 파라미터로 받은 값을 특정 필드의 값으로 가지고 있는 문서의 id값 불러오기 -> 이 함수에서는 seq값을 사용
-    func getAllSchool2(mySeq: String) {
+    func getAllSchool(mySeq: String) {
         let db = Firestore.firestore()
         db.collection("schools").whereField("seq", isEqualTo: mySeq)
             .addSnapshotListener() { (querySnapshot, err) in
@@ -42,7 +42,6 @@ class FireStoreManager: ObservableObject {
             }
     }
 
-    
     //  파라미터로 넣은 id값을 가진 문서 내용들 불러오는 스냅샷
     func addSnapShot(id: String) {
         let db = Firestore.firestore()
@@ -59,7 +58,6 @@ class FireStoreManager: ObservableObject {
             self.mySchoolCnt = data["count"] as? Int ?? 0
         }
     }
-    
     
     //  파라미터로 전달받은 id 값을 가진 문서의 count에 +1을 해주는 트랜잭션 (버튼에 구현)
     func newAdd() {
@@ -91,4 +89,3 @@ class FireStoreManager: ObservableObject {
         }
     }
 }
-

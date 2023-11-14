@@ -14,7 +14,6 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                
                 // 원래는 .frame(height: .infinity)를 사용하려했는데
                 // Invalid frame dimension (negative or non-finite). -> 프레임 수치가 정확하지 않다.
                 // GeometryReader를 사용해야 함.
@@ -26,7 +25,7 @@ struct MainView: View {
                 VStack{
                     titleImage()
                     HStack {
-                        NavigationLink(destination: GameView(gamevm: FireStoreManager(), gamevm2: RankVM())) {
+                        NavigationLink(destination: GameView(vm: GameViewModel())) {
                             Text("게임 시작")
                         }  .font(.largeTitle)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -64,9 +63,7 @@ struct MainView: View {
                             )
                     }
                     .padding()
-                    
                 }
-                
             }
         }
     }
@@ -80,12 +77,8 @@ struct titleImage: View {
         //.frame(width: 300, height: 200)
     }
 }
-
-
-
-
+                                       
 #Preview {
     MainView(showMain: SearchView().$showMain)
    
 }
-

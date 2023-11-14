@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28350C322AF3D22C0068853A /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* FireStoreManager.swift */; };
+		28350C322AF3D22C0068853A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* GameViewModel.swift */; };
 		28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */; };
 		419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */; };
 		419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5522AD62DA700EC4105 /* ContentView.swift */; };
@@ -17,12 +17,10 @@
 		419CE5662AD636C600EC4105 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5652AD636C600EC4105 /* SearchView.swift */; };
 		419CE5682AD636E600EC4105 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5672AD636E600EC4105 /* MainView.swift */; };
 		419CE56A2AD639D800EC4105 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5692AD639D800EC4105 /* SearchVM.swift */; };
-		419CE56C2AD639E300EC4105 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE56B2AD639E300EC4105 /* MainVM.swift */; };
 		419CE56E2AD63A0A00EC4105 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE56D2AD63A0A00EC4105 /* SearchBar.swift */; };
 		419CE5702AD63A1900EC4105 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE56F2AD63A1900EC4105 /* Colors.swift */; };
 		419CE5722AD63A3200EC4105 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */; };
 		419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5762AD66E6D00EC4105 /* GameView.swift */; };
-		419CE5792AD66E7800EC4105 /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5782AD66E7800EC4105 /* GameVM.swift */; };
 		419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57A2AD66E8900EC4105 /* RankView.swift */; };
 		419CE57D2AD66EA000EC4105 /* RankVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57C2AD66EA000EC4105 /* RankVM.swift */; };
 		419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57E2AD6851500EC4105 /* Helpers.swift */; };
@@ -59,7 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		28350C312AF3D22C0068853A /* FireStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
+		28350C312AF3D22C0068853A /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		419CE54D2AD62DA700EC4105 /* TouchSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSchoolApp.swift; sourceTree = "<group>"; };
@@ -70,12 +68,10 @@
 		419CE5652AD636C600EC4105 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		419CE5672AD636E600EC4105 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		419CE5692AD639D800EC4105 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
-		419CE56B2AD639E300EC4105 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		419CE56D2AD63A0A00EC4105 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		419CE56F2AD63A1900EC4105 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		419CE5762AD66E6D00EC4105 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		419CE5782AD66E7800EC4105 /* GameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
 		419CE57A2AD66E8900EC4105 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
 		419CE57C2AD66EA000EC4105 /* RankVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankVM.swift; sourceTree = "<group>"; };
 		419CE57E2AD6851500EC4105 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -175,9 +171,7 @@
 		419CE55F2AD62ECA00EC4105 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				28350C312AF3D22C0068853A /* FireStoreManager.swift */,
 				419CE5602AD62EFE00EC4105 /* School.swift */,
-				41EE9F342AF4F71D006D560B /* FirebaseManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +193,7 @@
 				41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */,
 				419CE5652AD636C600EC4105 /* SearchView.swift */,
 				419CE5692AD639D800EC4105 /* SearchVM.swift */,
+				41EE9F342AF4F71D006D560B /* FirebaseManager.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -207,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				419CE5672AD636E600EC4105 /* MainView.swift */,
-				419CE56B2AD639E300EC4105 /* MainVM.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -216,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				419CE5762AD66E6D00EC4105 /* GameView.swift */,
-				419CE5782AD66E7800EC4105 /* GameVM.swift */,
+				28350C312AF3D22C0068853A /* GameViewModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -336,11 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E07EC02ADE28DD001F0081 /* SearchGuide.swift in Sources */,
-				419CE56C2AD639E300EC4105 /* MainVM.swift in Sources */,
 				419CE5702AD63A1900EC4105 /* Colors.swift in Sources */,
 				419CE56A2AD639D800EC4105 /* SearchVM.swift in Sources */,
 				419CE5662AD636C600EC4105 /* SearchView.swift in Sources */,
-				419CE5792AD66E7800EC4105 /* GameVM.swift in Sources */,
 				419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */,
 				41EE9F352AF4F71D006D560B /* FirebaseManager.swift in Sources */,
 				419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */,
@@ -352,7 +344,7 @@
 				419CE57D2AD66EA000EC4105 /* RankVM.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
 				419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */,
-				28350C322AF3D22C0068853A /* FireStoreManager.swift in Sources */,
+				28350C322AF3D22C0068853A /* GameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
