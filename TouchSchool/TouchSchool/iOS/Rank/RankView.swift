@@ -1,3 +1,4 @@
+
 //
 //  RankView.swift
 //  TouchSchool
@@ -9,9 +10,49 @@ import Foundation
 import SwiftUI
 
 struct RankView: View {
+    @ObservedObject private var schoolViewModel = RankVM()
+    
     var body: some View {
-        VStack{
-            
+        
+        ZStack{
+            Color(red: 132/255, green: 194/255, blue: 65/255).edgesIgnoringSafeArea(.bottom)
+            //꾸밈화면
+            VStack{
+                ZStack{
+                    Image("school1")
+                        .resizable()
+                        .frame(height: 200)
+                        .edgesIgnoringSafeArea(.top)
+                    
+                    //이부분은 좀더 잘 보이게 꾸밈
+                    Text("학교 순위")
+                        .fontWeight(.bold)
+                        .font(.system(size: 45))
+                        .foregroundColor(.black)
+                }
+                
+                // 학교 순위리스트
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVStack(alignment: .leading) {
+                        ForEach(schoolViewModel.mySchoolInfos) { schoolInfo in
+                            HStack {
+                                if let rank = schoolInfo.rank {
+                                    Text("\(rank)")
+                                } else {
+                                    Text("0")
+                                }
+                                Text(schoolInfo.name)
+                                Text("\(schoolInfo.count)")
+                            }
+                        }
+                    }
+                }
+                .padding(.top, 20) // 리스트의 상단에 여백 추가
+                .padding(.horizontal, 20) // 좌우 여백 추가
+                .onAppear() {
+                    self.schoolViewModel.fetchSchools()
+                }
+            }
         }
     }
 }

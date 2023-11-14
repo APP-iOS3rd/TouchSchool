@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 struct SearchView: View {
-    @ObservedObject var vm = SearchVM()
+    @EnvironmentObject var vm: SearchVM
     
-    @Binding var showSearch: Bool
+    @State var showMain = false
     
     @State private var searchText = ""
     
@@ -20,32 +20,67 @@ struct SearchView: View {
             return searchText
         } set: {
             searchText = $0
+            vm.updateSearchText(with: $0)
         }
+        
         ZStack{
             Color.white.edgesIgnoringSafeArea(.all)
-            VStack{
-                HStack{
-                    Spacer()
-                    Button(action: {
-                        self.showSearch = false
-                    }) {
-                        Text(Image(systemName: "xmark.app.fill"))
-                            .foregroundColor(Color.navyText)
+            if showMain {
+                MainView(showMain: self.$showMain)
+            } else {
+                VStack{
+                    SearchBar(text: searchTextBinding, isLoading: $vm.isLoading)
+                        .padding()
+                    
+                    VStack{
+                        if searchText.isEmpty {
+                            SearchGuide()
+                        } else if vm.viewState == .empty {
+                            Text("검색 결과가 없습니다.")
+                                .foregroundColor(Color.grayText)
+                                .font(.title3)
+                                .bold()
+                                .padding(.top, 150)
+                            
+                        } else if vm.viewState == .ready {
+                            List(vm.searchResult, id:\.seq) { school in
+                                Button(action: {
+                                    // Set the selected school when the button is tapped
+                                    let firebaseManager = FirebaseManager(school: school)
+                                    firebaseManager.isSchoolExists(seq: school.seq) { exists in
+                                        if exists {
+                                            seqValue = school.seq
+                                            self.showMain = true
+                                            self.searchText = ""
+                                        } else {
+                                            firebaseManager.addSchool(a: school)
+                                            seqValue = school.seq
+                                            self.showMain = true
+                                            self.searchText = ""
+                                        }
+                                    }
+                                }) {
+                                    VStack(alignment: .leading) {
+                                        Text(school.schoolName)
+                                            .font(.headline)
+                                        Text(school.adres)
+                                            .font(.subheadline)
+                                            .foregroundColor(.gray)
+                                    }
+                                }
+                                
+                            }
+                        }
+                        
+                        Spacer()
                     }
-                    .padding(.trailing, 10)
-                }
-                HStack{
-                    Text("학교 검색")
-                        .foregroundColor(Color.navyText)
-                        .padding(.leading, 20)
-                    Spacer()
-                }
-                SearchBar(text: searchTextBinding, isLoading: $vm.isLoading)
-                
-                ScrollView{
                     
                 }
             }
         }
     }
+}
+
+#Preview {
+    SearchView()
 }
