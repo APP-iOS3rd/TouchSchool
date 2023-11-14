@@ -54,6 +54,7 @@ struct SearchView: View {
                                             self.searchText = ""
                                         } else {
                                             firebaseManager.addSchool(a: school)
+                                            seqValue = school.seq
                                             self.showMain = true
                                             self.searchText = ""
                                         }

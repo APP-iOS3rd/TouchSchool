@@ -73,7 +73,6 @@ extension SearchVM {
         }
     }
     
-
     private func fetchSchool1() async throws -> schoolData{
         return try await AF.request(eSchoolUrl, method: .get, headers: headers).serializingDecodable(schoolData.self).value
     }
@@ -86,7 +85,6 @@ extension SearchVM {
         return try await AF.request(hSchoolUrl, method: .get, headers: headers).serializingDecodable(schoolData.self).value
     }
     
-
 //    private func fetchDataAsync() async throws -> schoolData {
 //        guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=100000") else {
 //            throw MyError.invalidURL

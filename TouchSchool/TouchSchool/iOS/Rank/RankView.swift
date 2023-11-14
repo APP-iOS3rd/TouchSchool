@@ -9,12 +9,8 @@
 import Foundation
 import SwiftUI
 
-
 struct RankView: View {
-    
     @ObservedObject private var schoolViewModel = RankVM()
-    
-    
     
     var body: some View {
         
@@ -27,13 +23,13 @@ struct RankView: View {
                         .resizable()
                         .frame(height: 200)
                         .edgesIgnoringSafeArea(.top)
-                
+                    
                     //이부분은 좀더 잘 보이게 꾸밈
                     Text("학교 순위")
                         .fontWeight(.bold)
                         .font(.system(size: 45))
                         .foregroundColor(.black)
-                    }
+                }
                 
                 // 학교 순위리스트
                 ScrollView(.vertical, showsIndicators: false) {
@@ -60,6 +56,3 @@ struct RankView: View {
         }
     }
 }
-
-//학교
-
