@@ -10,8 +10,7 @@ import FirebaseFirestore
 import FirebaseCore
 
 var seqValue = ""
-var schoolRank: Int = 0
-
+var myAddress = ""
 class FireStoreManager: ObservableObject {
     
     @Published var mySchoolName: String = ""
@@ -39,6 +38,7 @@ class FireStoreManager: ObservableObject {
                         self.mySchoolId = document.documentID
                     }
                 }
+                myAddress = self.mySchoolAdres
             }
     }
 

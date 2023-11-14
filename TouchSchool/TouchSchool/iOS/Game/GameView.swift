@@ -10,7 +10,7 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject var gamevm: FireStoreManager
-    @ObservedObject var gamevm2 = RankVM()
+    @ObservedObject var gamevm2: RankVM
     @State private var count: Int = 0
     @State private var isImage: Bool = false
 
@@ -19,26 +19,16 @@ struct GameView: View {
             Image("blackboard_set")
                 .resizable()
                 .ignoresSafeArea()
-            
             VStack {
-                HStack {
-                    ForEach(gamevm2.mySchoolInfos) { schoolInfo in
-                        HStack {
-                            if let rank = schoolInfo.rank {
-                                Text("\(rank)")
-                            } else {
-                                Text("0")
-                            }
-                            
-                            
-                            
-                            Text("\(gamevm.mySchoolName)")
-                                .foregroundStyle(.mint)
-                                .font(.system(size: 30))
-                                .bold()
-                        }
-                    }}
-                let _ = print( gamevm2.mySchoolInfos )
+                Text("\(mySchoolRank)")
+                    .foregroundStyle(.mint)
+                    .font(.system(size: 30))
+                    .bold()
+                
+                Text("\(gamevm.mySchoolName)")
+                    .foregroundStyle(.mint)
+                    .font(.system(size: 30))
+                    .bold()
                 Text("\(count)")
                     .foregroundStyle(.white)
                     .font(.system(size: 60))
