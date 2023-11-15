@@ -7,6 +7,9 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
+
+
 
 struct schoolData: Codable {
     var dataSearch: DataSearch
@@ -39,7 +42,15 @@ let headers: HTTPHeaders = [
     "Accept": "application/json"
 ]
 
-var seqValue = ""
+var seqValue: String {
+    get {
+        UserDefaults.standard.string(forKey: "seqValue") ?? ""
+    }
+    set {
+        UserDefaults.standard.set(newValue, forKey: "seqValue")
+    }
+}
+
 var myID = ""
 var mySchoolRank: Int = 0
 var allSchoolInfos = [SchoolInfo]()

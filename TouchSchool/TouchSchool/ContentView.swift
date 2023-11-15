@@ -8,14 +8,13 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    
     @EnvironmentObject var vm: SearchVM
     
     var body: some View {
         ZStack{
             VStack{
                 if vm.isDownloading {
-                    ProgressView("학교 정보 받아오는 중..", value: vm.progress) // Display a progress view with the current progress
+                    ProgressView("학교 정보 받아오는 중..", value: vm.progress)
                         .progressViewStyle(CircularProgressViewStyle())
                         .padding()
                         .onAppear {
@@ -26,10 +25,10 @@ struct ContentView: View {
                 } else {
                     MainView()
                 }
-   
             }
         }
     }
+
 }
 
 #Preview {

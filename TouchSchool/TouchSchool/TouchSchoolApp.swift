@@ -11,6 +11,7 @@ import Firebase
 @main
 struct TouchSchoolApp: App {
 
+    
     init() {
         FirebaseApp.configure()
     }
@@ -20,6 +21,7 @@ struct TouchSchoolApp: App {
             ContentView()
                 .environmentObject(SearchVM())
         }
+        
     }
 }
 

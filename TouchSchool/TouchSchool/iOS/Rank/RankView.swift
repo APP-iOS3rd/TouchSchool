@@ -62,7 +62,6 @@ struct RankView: View {
                 }
                 .padding(.top, 20) // 리스트의 상단에 여백 추가
                 .padding(.horizontal, 20) // 좌우 여백 추가
-                
             }
         }
     }
