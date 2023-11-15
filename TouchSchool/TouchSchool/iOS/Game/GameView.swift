@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct GameView: View {
-    @ObservedObject var vm: GameViewModel
+    @ObservedObject var vm: GameVM
     @State private var count: Int = 0
     @State private var isImage: Bool = false
 
@@ -64,7 +64,7 @@ struct GameView: View {
 
 
 #Preview {
-    GameView(vm: GameViewModel())
+    GameView(vm: GameVM())
 }
 
 //학교

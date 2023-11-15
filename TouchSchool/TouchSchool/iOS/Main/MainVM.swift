@@ -9,8 +9,6 @@ import Foundation
 import FirebaseFirestore
 import FirebaseCore
 
-var mySchoolRank: Int = 0
-
 struct SchoolInfo: Identifiable {
     var id: String
     var name: String
@@ -19,9 +17,8 @@ struct SchoolInfo: Identifiable {
     var rank: Int?
 }
 
-class RankVM: ObservableObject {
+class MainVM: ObservableObject {
     //이걸 넣어줘야야 데이터를 변화를 감지함
-    @Published var mySchoolInfos = [SchoolInfo]()
 
     private var db = Firestore.firestore()
     private var listener: ListenerRegistration?
@@ -48,7 +45,7 @@ class RankVM: ObservableObject {
                     print(schoolInfo)
                     schoolInfos.append(schoolInfo)
                 }
-                self.mySchoolInfos = schoolInfos
+                allSchoolInfos = schoolInfos
                 
                 //순위 부여 함수 호출
                 self.rankSchoolInfos()
@@ -57,19 +54,19 @@ class RankVM: ObservableObject {
     
     func rankSchoolInfos() {
         // count 기준 내림차순으로 정렬
-        mySchoolInfos.sort { $0.count > $1.count }
+        allSchoolInfos.sort { $0.count > $1.count }
         
         // 각 항목에 순위를 할당합니다.
-        for index in mySchoolInfos.indices {
-            print(mySchoolInfos[index].address)
+        for index in allSchoolInfos.indices {
+            print(allSchoolInfos[index].address)
             print(myAddress)
-            if mySchoolInfos[index].address == myAddress {
+            if allSchoolInfos[index].address == myAddress {
                 mySchoolRank = index + 1
                 print(mySchoolRank)
             }
-            mySchoolInfos[index].rank = index + 1
+            allSchoolInfos[index].rank = index + 1
             
-            print("Rank assigned for \(mySchoolInfos[index].name): \(mySchoolInfos[index].rank ?? -1)")
+            print("Rank assigned for \(allSchoolInfos[index].name): \(allSchoolInfos[index].rank ?? -1)")
         }
     }
 }
