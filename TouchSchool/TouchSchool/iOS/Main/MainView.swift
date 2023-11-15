@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     @Binding var showMain: Bool
+    @ObservedObject var vm = RankVM()
     
     var body: some View {
         NavigationView {
@@ -63,6 +64,9 @@ struct MainView: View {
                             )
                     }
                     .padding()
+                }
+                .onAppear() {
+                    self.vm.fetchSchools()
                 }
             }
         }

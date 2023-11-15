@@ -10,6 +10,7 @@ import FirebaseFirestore
 import FirebaseCore
 
 var mySchoolRank: Int = 0
+var mySchoolInfos = [SchoolInfo]()
 
 struct SchoolInfo: Identifiable {
     var id: String
@@ -21,7 +22,6 @@ struct SchoolInfo: Identifiable {
 
 class RankVM: ObservableObject {
     //이걸 넣어줘야야 데이터를 변화를 감지함
-    @Published var mySchoolInfos = [SchoolInfo]()
 
     private var db = Firestore.firestore()
     private var listener: ListenerRegistration?
@@ -48,7 +48,7 @@ class RankVM: ObservableObject {
                     print(schoolInfo)
                     schoolInfos.append(schoolInfo)
                 }
-                self.mySchoolInfos = schoolInfos
+                mySchoolInfos = schoolInfos
                 
                 //순위 부여 함수 호출
                 self.rankSchoolInfos()

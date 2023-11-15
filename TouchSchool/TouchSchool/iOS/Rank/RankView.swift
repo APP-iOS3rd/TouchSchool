@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 
 struct RankView: View {
-    @ObservedObject private var schoolViewModel = RankVM()
     
     var body: some View {
         
@@ -34,7 +33,7 @@ struct RankView: View {
                 // 학교 순위리스트
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading) {
-                        ForEach(schoolViewModel.mySchoolInfos) { schoolInfo in
+                        ForEach(mySchoolInfos) { schoolInfo in
                             HStack {
                                 if let rank = schoolInfo.rank {
                                     Text("\(rank)")
@@ -49,9 +48,7 @@ struct RankView: View {
                 }
                 .padding(.top, 20) // 리스트의 상단에 여백 추가
                 .padding(.horizontal, 20) // 좌우 여백 추가
-                .onAppear() {
-                    self.schoolViewModel.fetchSchools()
-                }
+                
             }
         }
     }
