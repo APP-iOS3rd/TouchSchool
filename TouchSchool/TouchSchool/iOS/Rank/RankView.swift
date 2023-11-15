@@ -33,7 +33,7 @@ struct RankView: View {
                 // 학교 순위리스트
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading) {
-                        ForEach(mySchoolInfos) { schoolInfo in
+                        ForEach(allSchoolInfos) { schoolInfo in
                             HStack {
                                 if let rank = schoolInfo.rank {
                                     Text("\(rank)")

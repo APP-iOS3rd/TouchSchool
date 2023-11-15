@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28350C322AF3D22C0068853A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* GameViewModel.swift */; };
+		28350C322AF3D22C0068853A /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* GameVM.swift */; };
 		28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */; };
 		419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */; };
 		419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5522AD62DA700EC4105 /* ContentView.swift */; };
@@ -22,7 +22,7 @@
 		419CE5722AD63A3200EC4105 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */; };
 		419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5762AD66E6D00EC4105 /* GameView.swift */; };
 		419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57A2AD66E8900EC4105 /* RankView.swift */; };
-		419CE57D2AD66EA000EC4105 /* RankVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57C2AD66EA000EC4105 /* RankVM.swift */; };
+		419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57C2AD66EA000EC4105 /* MainVM.swift */; };
 		419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57E2AD6851500EC4105 /* Helpers.swift */; };
 		41C788612AE14D6800698C9A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788602AE14D6800698C9A /* FirebaseAnalytics */; };
 		41C788632AE14D6800698C9A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788622AE14D6800698C9A /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -57,7 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		28350C312AF3D22C0068853A /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		28350C312AF3D22C0068853A /* GameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
 		28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		419CE54D2AD62DA700EC4105 /* TouchSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSchoolApp.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		419CE5762AD66E6D00EC4105 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		419CE57A2AD66E8900EC4105 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
-		419CE57C2AD66EA000EC4105 /* RankVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankVM.swift; sourceTree = "<group>"; };
+		419CE57C2AD66EA000EC4105 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		419CE57E2AD6851500EC4105 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGuide.swift; sourceTree = "<group>"; };
 		41EE9F342AF4F71D006D560B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
@@ -202,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				419CE5672AD636E600EC4105 /* MainView.swift */,
+				419CE57C2AD66EA000EC4105 /* MainVM.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -210,7 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				419CE5762AD66E6D00EC4105 /* GameView.swift */,
-				28350C312AF3D22C0068853A /* GameViewModel.swift */,
+				28350C312AF3D22C0068853A /* GameVM.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -219,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				419CE57A2AD66E8900EC4105 /* RankView.swift */,
-				419CE57C2AD66EA000EC4105 /* RankVM.swift */,
 			);
 			path = Rank;
 			sourceTree = "<group>";
@@ -341,10 +341,10 @@
 				419CE56E2AD63A0A00EC4105 /* SearchBar.swift in Sources */,
 				419CE5682AD636E600EC4105 /* MainView.swift in Sources */,
 				419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */,
-				419CE57D2AD66EA000EC4105 /* RankVM.swift in Sources */,
+				419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
 				419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */,
-				28350C322AF3D22C0068853A /* GameViewModel.swift in Sources */,
+				28350C322AF3D22C0068853A /* GameVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

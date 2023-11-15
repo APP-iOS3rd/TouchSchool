@@ -9,9 +9,7 @@ import FirebaseFirestoreSwift
 import FirebaseFirestore
 import FirebaseCore
 
-var seqValue = ""
-var myAddress = ""
-class GameViewModel: ObservableObject {
+class GameVM: ObservableObject {
     
     @Published var mySchoolName: String = ""
     @Published var mySchoolAdres: String = ""

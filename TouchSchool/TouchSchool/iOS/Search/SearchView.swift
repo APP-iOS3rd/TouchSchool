@@ -48,16 +48,12 @@ struct SearchView: View {
                                     // Set the selected school when the button is tapped
                                     let firebaseManager = FirebaseManager(school: school)
                                     firebaseManager.isSchoolExists(seq: school.seq) { exists in
-                                        if exists {
-                                            seqValue = school.seq
-                                            self.showMain = true
-                                            self.searchText = ""
-                                        } else {
+                                        if !exists {
                                             firebaseManager.addSchool(a: school)
-                                            seqValue = school.seq
-                                            self.showMain = true
-                                            self.searchText = ""
                                         }
+                                        seqValue = school.seq
+                                        self.showMain = true
+                                        self.searchText = ""
                                     }
                                 }) {
                                     VStack(alignment: .leading) {

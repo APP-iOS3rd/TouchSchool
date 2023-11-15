@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     @Binding var showMain: Bool
-    @ObservedObject var vm = RankVM()
+    @ObservedObject var vm = MainVM()
     
     var body: some View {
         NavigationView {
@@ -26,7 +26,7 @@ struct MainView: View {
                 VStack{
                     titleImage()
                     HStack {
-                        NavigationLink(destination: GameView(vm: GameViewModel())) {
+                        NavigationLink(destination: GameView(vm: GameVM())) {
                             Text("게임 시작")
                         }  .font(.largeTitle)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
