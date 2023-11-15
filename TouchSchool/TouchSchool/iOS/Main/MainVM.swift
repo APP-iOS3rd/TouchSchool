@@ -32,7 +32,7 @@ class MainVM: ObservableObject {
                     print("문서 없음")
                     return
                 }
-                
+            
                 var schoolInfos = [SchoolInfo]()
                 
                 for document in documents {
@@ -58,11 +58,8 @@ class MainVM: ObservableObject {
         
         // 각 항목에 순위를 할당합니다.
         for index in allSchoolInfos.indices {
-            print(allSchoolInfos[index].address)
-            print(myAddress)
-            if allSchoolInfos[index].address == myAddress {
+            if allSchoolInfos[index].id == myID {
                 mySchoolRank = index + 1
-                print(mySchoolRank)
             }
             allSchoolInfos[index].rank = index + 1
             

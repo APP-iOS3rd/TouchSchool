@@ -40,7 +40,7 @@ let headers: HTTPHeaders = [
 ]
 
 var seqValue = ""
-var myAddress = ""
+var myID = ""
 var mySchoolRank: Int = 0
 var allSchoolInfos = [SchoolInfo]()
 

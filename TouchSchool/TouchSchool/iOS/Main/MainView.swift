@@ -19,7 +19,7 @@ struct MainView: View {
         NavigationView {
             ZStack{
                 if showGame {
-                    GameView(vm: GameVM(), showGame: self.$showGame)
+                    GameView(vm: GameVM(), mainVM: MainVM(), showGame: self.$showGame)
                 } else if showSearch {
                     SearchView(showSearch: self.$showSearch)
                 } else if showRank {

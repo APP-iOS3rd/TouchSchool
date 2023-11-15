@@ -36,7 +36,7 @@ class GameVM: ObservableObject {
                         self.mySchoolId = document.documentID
                     }
                 }
-                myAddress = self.mySchoolAdres
+                myID = self.mySchoolId
             }
     }
 

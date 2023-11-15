@@ -10,6 +10,7 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject var vm: GameVM
+    @ObservedObject var mainVM: MainVM
     @Binding var showGame: Bool
     @State private var count: Int = 0
     @State private var isImage: Bool = false
@@ -69,6 +70,9 @@ struct GameView: View {
                 .padding()
             }
         }
+        .onAppear() {
+            self.mainVM.fetchSchools()
+        }
         .onTapGesture {
             vm.newAdd()
             count += 1
@@ -79,7 +83,7 @@ struct GameView: View {
 
 
 #Preview {
-    GameView(vm: GameVM(), showGame: MainView().$showGame)
+    GameView(vm: GameVM(), mainVM: MainVM(), showGame: MainView().$showGame)
 }
 
 //학교
