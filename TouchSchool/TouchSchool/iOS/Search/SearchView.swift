@@ -10,9 +10,7 @@ import SwiftUI
 
 struct SearchView: View {
     @EnvironmentObject var vm: SearchVM
-    
     @Binding var showSearch: Bool
-    
     @State private var searchText = ""
     
     var body: some View {
@@ -53,6 +51,7 @@ struct SearchView: View {
                             .padding(.top, 150)
                         
                     } else if vm.viewState == .ready {
+                        
                         List(vm.searchResult, id:\.seq) { school in
                             Button(action: {
                                 // Set the selected school when the button is tapped
@@ -62,6 +61,7 @@ struct SearchView: View {
                                         firebaseManager.addSchool(a: school)
                                     }
                                     seqValue = school.seq
+                                    
                                     self.showSearch = false
                                     self.searchText = ""
                                 }
