@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct RankView: View {
-    
+    @Binding var showRank: Bool
     var body: some View {
         
         ZStack{
@@ -28,6 +28,20 @@ struct RankView: View {
                         .fontWeight(.bold)
                         .font(.system(size: 45))
                         .foregroundColor(.black)
+                }
+                HStack{
+                    Button(action: {
+                        // Handle back button action here
+                        self.showRank = false
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.black)
+                            .imageScale(.large)
+                        Text("돌아가기")
+                            .foregroundColor(.black)
+                    }
+                    .padding(.leading)
+                    Spacer()
                 }
                 
                 // 학교 순위리스트

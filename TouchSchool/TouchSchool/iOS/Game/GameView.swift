@@ -10,6 +10,7 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject var vm: GameVM
+    @Binding var showGame: Bool
     @State private var count: Int = 0
     @State private var isImage: Bool = false
 
@@ -19,6 +20,20 @@ struct GameView: View {
                 .resizable()
                 .ignoresSafeArea()
             VStack {
+                HStack{
+                    Button(action: {
+                        // Handle back button action here
+                        self.showGame = false
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(Color.grayText)
+                            .imageScale(.large)
+                        Text("돌아가기")
+                            .foregroundColor(Color.grayText)
+                    }
+                    .padding(.leading)
+                    Spacer()
+                }
                 Text("\(mySchoolRank)")
                     .foregroundStyle(.mint)
                     .font(.system(size: 30))
@@ -64,7 +79,7 @@ struct GameView: View {
 
 
 #Preview {
-    GameView(vm: GameVM())
+    GameView(vm: GameVM(), showGame: MainView().$showGame)
 }
 
 //학교

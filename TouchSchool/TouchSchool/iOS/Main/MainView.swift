@@ -9,64 +9,78 @@ import Foundation
 import SwiftUI
 
 struct MainView: View {
-    @Binding var showMain: Bool
+    @State var showSearch: Bool = false
+    @State var showGame: Bool = false
+    @State var showRank: Bool = false
     @ObservedObject var vm = MainVM()
     
     var body: some View {
         NavigationView {
             ZStack{
-                // 원래는 .frame(height: .infinity)를 사용하려했는데
-                // Invalid frame dimension (negative or non-finite). -> 프레임 수치가 정확하지 않다.
-                // GeometryReader를 사용해야 함.
-                GeometryReader { proxy in
-                    Image("blackboard_set")
-                        .resizable()
-                        .frame(width: proxy.size.width, height: proxy.size.height)
-                }
-                VStack{
-                    titleImage()
-                    HStack {
-                        NavigationLink(destination: GameView(vm: GameVM())) {
-                            Text("게임 시작")
-                        }  .font(.largeTitle)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                if showGame {
+                    GameView(vm: GameVM(), showGame: self.$showGame)
+                } else if showSearch {
+                    SearchView(showSearch: self.$showSearch)
+                } else if showRank {
+                    RankView(showRank: self.$showRank)
+                } else {
+                    // 원래는 .frame(height: .infinity)를 사용하려했는데
+                    // Invalid frame dimension (negative or non-finite). -> 프레임 수치가 정확하지 않다.
+                    // GeometryReader를 사용해야 함.
+                    GeometryReader { proxy in
+                        Image("blackboard_set")
+                            .resizable()
+                            .frame(width: proxy.size.width, height: proxy.size.height)
+                    }
+                    VStack{
+                        titleImage()
+                        HStack {
+                            Button(action: {
+                                self.showGame = true
+                            }) {
+                                Text("게임 시작")
+                                    .font(.largeTitle)
+                                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                        .padding()
+                                        .background(Color.red)
+                                        .cornerRadius(20)
+                                        .foregroundColor(.white)
+                                        .padding(10)
+                            }
+                            Button(action: {
+                                self.showRank = true
+                            }) {
+                                Image("rankicon")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                            }
                             .padding()
-                            .background(Color.red)
+                            .background(Color.yellow)
                             .cornerRadius(20)
                             .foregroundColor(.white)
                             .padding(10)
-                        
-                        NavigationLink(destination: RankView()) {
-                            Image("rankicon")
-                                .resizable()
-                                .frame(width: 20, height: 20)
+                            
+                        }
+                        Button(action: {
+                            self.showSearch = true
+                        }) {
+                            Text("학교 선택")
+                                .font(.system(size: 15))
+                                .padding(3)
+                                .fontWeight(.heavy)
+                                .foregroundStyle(.white)
+                                .background(Color.cyan)
+                                .cornerRadius(30)
+                                .padding(5)
+                                .overlay(RoundedRectangle(cornerRadius: 30)
+                                    .stroke(Color.cyan, lineWidth: 3)
+                                )
                         }
                         .padding()
-                        .background(Color.yellow)
-                        .cornerRadius(20)
-                        .foregroundColor(.white)
-                        .padding(10)
-                        
                     }
-                    Button(action: {
-                        self.showMain = false
-                    }) {
-                        Text("학교 선택")
-                            .font(.system(size: 15))
-                            .padding(3)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(.white)
-                            .background(Color.cyan)
-                            .cornerRadius(30)
-                            .padding(5)
-                            .overlay(RoundedRectangle(cornerRadius: 30)
-                                .stroke(Color.cyan, lineWidth: 3)
-                            )
+                    .onAppear() {
+                        self.vm.fetchSchools()
                     }
-                    .padding()
-                }
-                .onAppear() {
-                    self.vm.fetchSchools()
                 }
             }
         }
@@ -83,6 +97,6 @@ struct titleImage: View {
 }
                                        
 #Preview {
-    MainView(showMain: SearchView().$showMain)
+    MainView()
    
 }

@@ -24,7 +24,7 @@ struct ContentView: View {
                             }
                         }
                 } else {
-                    SearchView()
+                    MainView()
                 }
    
             }
