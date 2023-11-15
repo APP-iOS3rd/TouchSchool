@@ -12,6 +12,7 @@ struct MainView: View {
     @State var showSearch: Bool = false
     @State var showGame: Bool = false
     @State var showRank: Bool = false
+    @State private var showAlert = false
     @ObservedObject var vm = MainVM()
     
     var body: some View {
@@ -36,7 +37,11 @@ struct MainView: View {
                         titleImage()
                         HStack {
                             Button(action: {
-                                self.showGame = true
+                                if seqValue.isEmpty {
+                                    showAlert = true
+                                } else {
+                                    self.showGame = true
+                                }
                             }) {
                                 Text("게임 시작")
                                     .font(.largeTitle)
@@ -77,6 +82,13 @@ struct MainView: View {
                                 )
                         }
                         .padding()
+                    }
+                    .alert(isPresented: $showAlert) {
+                        Alert(
+                            title: Text("알림"),
+                            message: Text("학교를 먼저 선택해주세요."),
+                            dismissButton: .default(Text("확인"))
+                        )
                     }
                     .onAppear() {
                         self.vm.fetchSchools()
