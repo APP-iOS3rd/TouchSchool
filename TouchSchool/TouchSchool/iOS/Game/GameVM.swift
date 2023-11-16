@@ -76,7 +76,6 @@ class GameVM: ObservableObject {
                     self.submitCount()
                 }
                 self.isTimerActive = false
-                self.touchCount = 0
             }
         }
     }
