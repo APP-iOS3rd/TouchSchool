@@ -12,7 +12,6 @@ struct GameView: View {
     @ObservedObject var vm: GameVM
     @ObservedObject var mainVM: MainVM
     @Binding var showGame: Bool
-    @State private var count: Int = 0
     @State private var isImage: Bool = false
     @State private var smokes: [Smoke] = []
     
@@ -45,7 +44,7 @@ struct GameView: View {
                     .foregroundStyle(.mint)
                     .font(.system(size: 30))
                     .bold()
-                Text("\(count)")
+                Text("\(myTouchCount)")
                     .foregroundStyle(.white)
                     .font(.system(size: 60))
                     .bold()
@@ -98,10 +97,17 @@ struct GameView: View {
                                 showEffect: true,
                                 angle: angle,
                                 opacity: 1))
+            myTouchCount += 1
             vm.newAdd()
-            count += 1
             isImage.toggle()
         }
+        .alert(isPresented: $vm.showWarningAlert) {
+                    Alert(
+                        title: Text("경고"),
+                        message: Text("비정상적인 터치 수가 감지되었습니다."),
+                        dismissButton: .default(Text("확인"))
+                    )
+                }
     }
 }
 
