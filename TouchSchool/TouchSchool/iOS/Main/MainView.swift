@@ -31,7 +31,7 @@ struct MainView: View {
                     GeometryReader { proxy in
                         Image("blackboard_set")
                             .resizable()
-                            .frame(width: proxy.size.width, height: proxy.size.height)
+                            .ignoresSafeArea()
                     }
                     VStack{
                         titleImage()

@@ -22,7 +22,9 @@ struct SearchView: View {
         }
         
         ZStack{
-            Color.white.edgesIgnoringSafeArea(.all)
+            Image("blackboard_set")
+                .resizable()
+                .ignoresSafeArea()
             VStack{
                 HStack{
                     Button(action: {
@@ -30,10 +32,10 @@ struct SearchView: View {
                         self.showSearch = false
                     }) {
                         Image(systemName: "chevron.left")
-                            .foregroundColor(Color.grayText)
+                            .foregroundColor(Color.white)
                             .imageScale(.large)
                         Text("돌아가기")
-                            .foregroundColor(Color.grayText)
+                            .foregroundColor(Color.white)
                     }
                     .padding(.leading)
                     Spacer()
@@ -69,13 +71,17 @@ struct SearchView: View {
                                 VStack(alignment: .leading) {
                                     Text(school.schoolName)
                                         .font(.headline)
+                                        .foregroundColor(.white)
                                     Text(school.adres)
                                         .font(.subheadline)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(Color.grayText)
                                 }
                             }
-                            
+                            .listRowBackground(Color.darkGrayText.opacity(0.5))
                         }
+                        .scrollContentBackground(.hidden)
+                        .background(Color.clear)
+
                     }
                     Spacer()
                 }
