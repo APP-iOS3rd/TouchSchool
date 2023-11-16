@@ -14,7 +14,8 @@ struct GameView: View {
     @Binding var showGame: Bool
     @State private var count: Int = 0
     @State private var isImage: Bool = false
-
+    @State private var stars: [Sparkle] = []
+    
     var body: some View {
         ZStack {
             Image("blackboard_set")
@@ -58,22 +59,46 @@ struct GameView: View {
                 
                 Spacer()
                 
-            HStack {
-                Image("achievement-1293132_1280")
-                    .resizable()
-                    .frame(width: 40, height: 50)
-                
-                Text("\(vm.mySchoolCnt)")
-                    .foregroundStyle(.white)
-                    .font(.system(size: 50))
+                HStack {
+                    Image("achievement-1293132_1280")
+                        .resizable()
+                        .frame(width: 40, height: 50)
+                    
+                    Text("\(vm.mySchoolCnt)")
+                        .foregroundStyle(.white)
+                        .font(.system(size: 50))
                 }
                 .padding()
+                
+            }
+            // Effect View
+            ForEach(stars.indices, id: \.self) { index in
+                let star = stars[index]
+                if star.showEffect {
+                    SparkleEffectView()
+                        .rotationEffect(.degrees(star.angle))
+                        .opacity(star.opacity)
+                        .offset(x: star.location.x - UIScreen.main.bounds.width / 2,
+                                y: star.location.y - UIScreen.main.bounds.height / 2)
+                        .onAppear {
+                            withAnimation(.linear(duration: 1)) {
+                                stars[index].location = CGPoint(x: star.location.x, y: -100)
+                                stars[index].opacity = 0
+                                stars[index].angle += 30 // Tilt more as it moves up
+                            }
+                        }
+                }
             }
         }
         .onAppear() {
             self.mainVM.fetchSchools()
         }
-        .onTapGesture {
+        .onTapGesture { location in
+            let angle = Double.random(in: -30...30)
+            stars.append(Sparkle(location: location,
+                                 showEffect: true,
+                                 angle: angle,
+                                 opacity: 1))
             vm.newAdd()
             count += 1
             isImage.toggle()
@@ -81,9 +106,16 @@ struct GameView: View {
     }
 }
 
+struct SparkleEffectView: View {
+    var body: some View {
+        Image(systemName: "sparkles") // Example: using a sparkles system image
+            .resizable()
+            .scaledToFit()
+            .frame(width: 50, height: 50)
+            .foregroundColor(.yellow)
+    }
+}
 
 #Preview {
     GameView(vm: GameVM(), mainVM: MainVM(), showGame: MainView().$showGame)
 }
-
-//학교
