@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Sparkle {
+struct Smoke: Identifiable {
+    let id = UUID()
     var location: CGPoint
     var showEffect: Bool
     var angle: Double

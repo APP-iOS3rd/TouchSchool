@@ -14,7 +14,7 @@ struct MainView: View {
     @State var showRank: Bool = false
     @State private var showAlert = false
     @ObservedObject var vm = MainVM()
-    
+
     var body: some View {
         NavigationView {
             ZStack{
@@ -35,6 +35,7 @@ struct MainView: View {
                     }
                     VStack{
                         titleImage()
+                        
                         HStack {
                             Button(action: {
                                 if seqValue.isEmpty {

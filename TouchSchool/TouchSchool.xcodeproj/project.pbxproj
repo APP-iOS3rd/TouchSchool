@@ -24,7 +24,7 @@
 		419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57A2AD66E8900EC4105 /* RankView.swift */; };
 		419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57C2AD66EA000EC4105 /* MainVM.swift */; };
 		419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57E2AD6851500EC4105 /* Helpers.swift */; };
-		419D36942B060F6900E5635D /* Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D36932B060F6900E5635D /* Sparkle.swift */; };
+		419D36942B060F6900E5635D /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D36932B060F6900E5635D /* Smoke.swift */; };
 		41C788612AE14D6800698C9A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788602AE14D6800698C9A /* FirebaseAnalytics */; };
 		41C788632AE14D6800698C9A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788622AE14D6800698C9A /* FirebaseAnalyticsOnDeviceConversion */; };
 		41C788652AE14D6800698C9A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788642AE14D6800698C9A /* FirebaseAnalyticsSwift */; };
@@ -76,7 +76,7 @@
 		419CE57A2AD66E8900EC4105 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
 		419CE57C2AD66EA000EC4105 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		419CE57E2AD6851500EC4105 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		419D36932B060F6900E5635D /* Sparkle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sparkle.swift; sourceTree = "<group>"; };
+		419D36932B060F6900E5635D /* Smoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
 		41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGuide.swift; sourceTree = "<group>"; };
 		41EE9F342AF4F71D006D560B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				419CE5602AD62EFE00EC4105 /* School.swift */,
-				419D36932B060F6900E5635D /* Sparkle.swift */,
+				419D36932B060F6900E5635D /* Smoke.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 				419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
 				419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */,
-				419D36942B060F6900E5635D /* Sparkle.swift in Sources */,
+				419D36942B060F6900E5635D /* Smoke.swift in Sources */,
 				28350C322AF3D22C0068853A /* GameVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
