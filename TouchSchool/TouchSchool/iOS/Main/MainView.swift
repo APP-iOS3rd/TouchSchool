@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AVKit
 
 struct MainView: View {
     @State var showSearch: Bool = false
@@ -14,6 +15,7 @@ struct MainView: View {
     @State var showRank: Bool = false
     @State private var showAlert = false
     @ObservedObject var vm = MainVM()
+    private let soundSetting = SoundSetting.instance
 
     var body: some View {
         NavigationView {
@@ -34,9 +36,20 @@ struct MainView: View {
                             .ignoresSafeArea()
                     }
                     VStack{
-                        titleImage()
+//                        titleImage()
+                        //shadow 하얀색으로 넣어서 칠판 느낌 나게 한번 해봤습니다
+                        Text("터치!터치!")
+                            .font(.custom("Giants-Bold", size: 55))
+                            .foregroundColor(.rankcolor)
+                            .shadow(color: .black, radius: 2, x: 2, y: 2)
+                            .shadow(color: .white, radius: 70)
+                        Text("학교대항전")
+                            .font(.custom("Recipekorea", size: 65))
+                            .foregroundStyle(.white)
+                            .shadow(color: .black, radius: 2, x: 2, y: 2)
+                            .shadow(color: .white, radius: 70)
                         
-                        HStack {
+                        VStack {
                             Button(action: {
                                 if seqValue.isEmpty {
                                     showAlert = true
@@ -46,43 +59,51 @@ struct MainView: View {
                             }) {
                                 Text("게임 시작")
                                     .font(.largeTitle)
-                                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                        .padding()
-                                        .background(Color.red)
-                                        .cornerRadius(20)
-                                        .foregroundColor(.white)
-                                        .padding(10)
+                                    .frame(width: 200, height: 30)
+                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                    .padding()
+                                    .background(Color.red)
+                                    .cornerRadius(24)
+                                    .foregroundColor(.white)
+                                    .padding(10)
                             }
                             Button(action: {
+                                soundSetting.playSound(sound: .buttonBGM)
                                 self.showRank = true
                             }) {
-                                Image("rankicon")
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
+                                Text("랭킹 보기")
                             }
+                            .frame(width: 200, height: 30)
                             .padding()
-                            .background(Color.yellow)
-                            .cornerRadius(20)
+                            .background(Color.rankcolor)
+                            .cornerRadius(24)
                             .foregroundColor(.white)
                             .padding(10)
                             
+                            Button(action: {
+                                self.showSearch = true
+                            }) {
+                                Text("학교 선택")
+                                    .font(.custom("ShinDongYupHandwriting-B", size: 40))
+                                    .fontWeight(.heavy)
+                                    .foregroundStyle(.white)
+                                    .shadow(color: .white, radius: 25)
+                            }
+                            .padding()
+                            
+                            Button {
+                                soundSetting.playSound(sound: .mainBGM)
+                            } label: {
+                                Text("mainBGM")
+                            }
+                            
+                            
+                            Button {
+                                soundSetting.playSound(sound: .mainBGM)
+                            } label: {
+                                Text("buttonBGM")
+                            }
                         }
-                        Button(action: {
-                            self.showSearch = true
-                        }) {
-                            Text("학교 선택")
-                                .font(.system(size: 15))
-                                .padding(3)
-                                .fontWeight(.heavy)
-                                .foregroundStyle(.white)
-                                .background(Color.cyan)
-                                .cornerRadius(30)
-                                .padding(5)
-                                .overlay(RoundedRectangle(cornerRadius: 30)
-                                    .stroke(Color.cyan, lineWidth: 3)
-                                )
-                        }
-                        .padding()
                     }
                     .alert(isPresented: $showAlert) {
                         Alert(
@@ -98,6 +119,7 @@ struct MainView: View {
             }
         }
     }
+    
 }
 
 struct titleImage: View {
