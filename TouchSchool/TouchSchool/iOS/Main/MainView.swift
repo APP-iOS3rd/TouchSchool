@@ -5,7 +5,6 @@
 //  Created by 최동호 on 10/11/23.
 //
 
-import Foundation
 import SwiftUI
 import AVKit
 
@@ -60,7 +59,7 @@ struct MainView: View {
                                 }
                             }) {
                                 Text("게임 시작")
-                                    .font(.custom("Recipekorea", size: 30))
+                                    .font(.custom("Giants-Bold", size: 30))
                                     .frame(width: 200, height: 30)
                                     .padding()
                                     .background(Color("button_color"))
@@ -74,10 +73,10 @@ struct MainView: View {
                                 self.showRank = true
                             }) {
                                 Text("랭킹 보기")
-                                    .font(.custom("Recipekorea", size: 30))
+                                    .font(.custom("Giants-Bold", size: 30))
                                     .frame(width: 200, height: 30)
                                     .padding()
-                                    .background(Color("button_color2"))
+                                    .background(Color("yellows"))
                                     .cornerRadius(24)
                                     .foregroundColor(.white)
                             }
@@ -88,7 +87,7 @@ struct MainView: View {
                                 self.showSearch = true
                             }) {
                                 Text("학교 선택")
-                                    .font(.custom("Recipekorea", size: 30))
+                                    .font(.custom("Giants-Bold", size: 30))
                                     .frame(width: 200, height: 30)
                                     .padding()
                                     .background(Color("button_color3"))
@@ -102,7 +101,7 @@ struct MainView: View {
                                 self.showSearch = true
                             }) {
                                 Text("학교 선택")
-                                    .font(.custom("Recipekorea", size: 30))
+                                    .font(.custom("Giants-Bold", size: 30))
                                     .frame(width: 200, height: 30)
                                     .padding()
                                     .background(Color("button_color4"))
@@ -117,7 +116,7 @@ struct MainView: View {
                                 self.showSearch = true
                             }) {
                                 Text("학교 선택")
-                                    .font(.custom("Recipekorea", size: 30))
+                                    .font(.custom("Giants-Bold", size: 30))
                                     .frame(width: 200, height: 30)
                                     .padding()
                                     .background(Color("button_color5"))
@@ -144,9 +143,9 @@ struct MainView: View {
             }
         }
         
-//        .onAppear() {
-//            soundSetting.playLoop(sound: .mainBGM)
-//        }
+        .onAppear() {
+            soundSetting.playLoop(sound: .mainBGM)
+        }
         
     }
     
