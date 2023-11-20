@@ -20,6 +20,7 @@ class SoundSetting: ObservableObject {
     enum SoundOption: String {
         case mainBGM = "mainBGM"
         case buttonBGM = "buttonBGM"
+        case errorBGM = "errorBGM"
     }
     
     func playSound(sound: SoundOption) {
@@ -32,6 +33,13 @@ class SoundSetting: ObservableObject {
         } catch {
             print("재생하는데 오류가 발생했습니다. \(error.localizedDescription)")
         }
+    }
+    
+    func playLoop(sound: SoundOption) {
+        let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player?.numberOfLoops =  10
+        player?.play()
     }
     
 }

@@ -55,10 +55,9 @@
 		41C788982AE14DD500698C9A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788972AE14DD500698C9A /* Alamofire */; };
 		41E07EC02ADE28DD001F0081 /* SearchGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */; };
 		41EE9F352AF4F71D006D560B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE9F342AF4F71D006D560B /* FirebaseManager.swift */; };
+		642A03532B0BC1C900DBD9AD /* errorBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */; };
 		645568B52B0948A200C3A246 /* Giants-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 645568B42B0948A200C3A246 /* Giants-Bold.otf */; };
 		645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645568B82B0949E200C3A246 /* Recipekorea.ttf */; };
-		645568C02B09536600C3A246 /* ShinDongYupHandwriting-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645568BE2B09536600C3A246 /* ShinDongYupHandwriting-R.ttf */; };
-		645568C12B09536600C3A246 /* ShinDongYupHandwriting-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645568BF2B09536600C3A246 /* ShinDongYupHandwriting-B.ttf */; };
 		645568C82B0959C100C3A246 /* buttonBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 645568C72B0959C100C3A246 /* buttonBGM.mp3 */; };
 		645568CA2B0959C900C3A246 /* mainBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 645568C92B0959C900C3A246 /* mainBGM.mp3 */; };
 		645568CE2B095BBE00C3A246 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645568CD2B095BBE00C3A246 /* Audio.swift */; };
@@ -86,11 +85,10 @@
 		419D36932B060F6900E5635D /* Smoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
 		41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGuide.swift; sourceTree = "<group>"; };
 		41EE9F342AF4F71D006D560B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = errorBGM.mp3; sourceTree = "<group>"; };
 		645568AF2B0943E900C3A246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		645568B42B0948A200C3A246 /* Giants-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Giants-Bold.otf"; sourceTree = "<group>"; };
 		645568B82B0949E200C3A246 /* Recipekorea.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Recipekorea.ttf; sourceTree = "<group>"; };
-		645568BE2B09536600C3A246 /* ShinDongYupHandwriting-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShinDongYupHandwriting-R.ttf"; sourceTree = "<group>"; };
-		645568BF2B09536600C3A246 /* ShinDongYupHandwriting-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShinDongYupHandwriting-B.ttf"; sourceTree = "<group>"; };
 		645568C72B0959C100C3A246 /* buttonBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = buttonBGM.mp3; path = ../../../../../../../../Downloads/buttonBGM.mp3; sourceTree = "<group>"; };
 		645568C92B0959C900C3A246 /* mainBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainBGM.mp3; sourceTree = "<group>"; };
 		645568CD2B095BBE00C3A246 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
@@ -251,8 +249,6 @@
 			children = (
 				645568B82B0949E200C3A246 /* Recipekorea.ttf */,
 				645568B42B0948A200C3A246 /* Giants-Bold.otf */,
-				645568BF2B09536600C3A246 /* ShinDongYupHandwriting-B.ttf */,
-				645568BE2B09536600C3A246 /* ShinDongYupHandwriting-R.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -262,6 +258,7 @@
 			children = (
 				645568C72B0959C100C3A246 /* buttonBGM.mp3 */,
 				645568C92B0959C900C3A246 /* mainBGM.mp3 */,
+				642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -359,10 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				645568CA2B0959C900C3A246 /* mainBGM.mp3 in Resources */,
+				642A03532B0BC1C900DBD9AD /* errorBGM.mp3 in Resources */,
 				419CE5582AD62DA800EC4105 /* Preview Assets.xcassets in Resources */,
 				419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */,
-				645568C02B09536600C3A246 /* ShinDongYupHandwriting-R.ttf in Resources */,
-				645568C12B09536600C3A246 /* ShinDongYupHandwriting-B.ttf in Resources */,
 				645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */,
 				645568C82B0959C100C3A246 /* buttonBGM.mp3 in Resources */,
 				28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */,

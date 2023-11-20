@@ -16,7 +16,7 @@ struct MainView: View {
     @State private var showAlert = false
     @ObservedObject var vm = MainVM()
     private let soundSetting = SoundSetting.instance
-
+    
     var body: some View {
         NavigationView {
             ZStack{
@@ -36,7 +36,7 @@ struct MainView: View {
                             .ignoresSafeArea()
                     }
                     VStack{
-//                        titleImage()
+                        //                        titleImage()
                         //shadow 하얀색으로 넣어서 칠판 느낌 나게 한번 해봤습니다
                         Text("터치!터치!")
                             .font(.custom("Giants-Bold", size: 55))
@@ -52,61 +52,86 @@ struct MainView: View {
                         VStack {
                             Button(action: {
                                 if seqValue.isEmpty {
+                                    soundSetting.playSound(sound: .buttonBGM)
                                     showAlert = true
                                 } else {
+                                    soundSetting.playSound(sound: .buttonBGM)
                                     self.showGame = true
                                 }
                             }) {
                                 Text("게임 시작")
-                                    .font(.largeTitle)
+                                    .font(.custom("Recipekorea", size: 30))
                                     .frame(width: 200, height: 30)
-                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                     .padding()
-                                    .background(Color.red)
+                                    .background(Color("button_color"))
                                     .cornerRadius(24)
                                     .foregroundColor(.white)
-                                    .padding(10)
                             }
+                            .padding()
+                            
                             Button(action: {
                                 soundSetting.playSound(sound: .buttonBGM)
                                 self.showRank = true
                             }) {
                                 Text("랭킹 보기")
+                                    .font(.custom("Recipekorea", size: 30))
+                                    .frame(width: 200, height: 30)
+                                    .padding()
+                                    .background(Color("button_color2"))
+                                    .cornerRadius(24)
+                                    .foregroundColor(.white)
                             }
-                            .frame(width: 200, height: 30)
                             .padding()
-                            .background(Color.rankcolor)
-                            .cornerRadius(24)
-                            .foregroundColor(.white)
-                            .padding(10)
                             
                             Button(action: {
+                                soundSetting.playSound(sound: .buttonBGM)
                                 self.showSearch = true
                             }) {
                                 Text("학교 선택")
-                                    .font(.custom("ShinDongYupHandwriting-B", size: 40))
-                                    .fontWeight(.heavy)
-                                    .foregroundStyle(.white)
-                                    .shadow(color: .white, radius: 25)
+                                    .font(.custom("Recipekorea", size: 30))
+                                    .frame(width: 200, height: 30)
+                                    .padding()
+                                    .background(Color("button_color3"))
+                                    .cornerRadius(24)
+                                    .foregroundColor(.white)
                             }
                             .padding()
                             
-                            Button {
-                                soundSetting.playSound(sound: .mainBGM)
-                            } label: {
-                                Text("mainBGM")
+                            Button(action: {
+                                soundSetting.playSound(sound: .buttonBGM)
+                                self.showSearch = true
+                            }) {
+                                Text("학교 선택")
+                                    .font(.custom("Recipekorea", size: 30))
+                                    .frame(width: 200, height: 30)
+                                    .padding()
+                                    .background(Color("button_color4"))
+                                    .cornerRadius(24)
+                                    .foregroundColor(.white)
                             }
+                            .padding()
                             
                             
-                            Button {
-                                soundSetting.playSound(sound: .mainBGM)
-                            } label: {
-                                Text("buttonBGM")
+                            Button(action: {
+                                soundSetting.playSound(sound: .buttonBGM)
+                                self.showSearch = true
+                            }) {
+                                Text("학교 선택")
+                                    .font(.custom("Recipekorea", size: 30))
+                                    .frame(width: 200, height: 30)
+                                    .padding()
+                                    .background(Color("button_color5"))
+                                    .cornerRadius(24)
+                                    .foregroundColor(.white)
                             }
+                            .padding()
+                            
                         }
                     }
                     .alert(isPresented: $showAlert) {
-                        Alert(
+                        soundSetting.playSound(sound: .errorBGM)
+                        
+                        return Alert(
                             title: Text("알림"),
                             message: Text("학교를 먼저 선택해주세요."),
                             dismissButton: .default(Text("확인"))
@@ -118,6 +143,11 @@ struct MainView: View {
                 }
             }
         }
+        
+//        .onAppear() {
+//            soundSetting.playLoop(sound: .mainBGM)
+//        }
+        
     }
     
 }
