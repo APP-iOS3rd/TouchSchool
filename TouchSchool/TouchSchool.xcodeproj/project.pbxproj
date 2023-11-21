@@ -58,9 +58,9 @@
 		642A03532B0BC1C900DBD9AD /* errorBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */; };
 		645568B52B0948A200C3A246 /* Giants-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 645568B42B0948A200C3A246 /* Giants-Bold.otf */; };
 		645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645568B82B0949E200C3A246 /* Recipekorea.ttf */; };
-		645568C82B0959C100C3A246 /* buttonBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 645568C72B0959C100C3A246 /* buttonBGM.mp3 */; };
 		645568CA2B0959C900C3A246 /* mainBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 645568C92B0959C900C3A246 /* mainBGM.mp3 */; };
 		645568CE2B095BBE00C3A246 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645568CD2B095BBE00C3A246 /* Audio.swift */; };
+		64D110582B0CB03800613A6E /* buttomBGMmp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 64D110572B0CB03800613A6E /* buttomBGMmp3.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,9 +89,9 @@
 		645568AF2B0943E900C3A246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		645568B42B0948A200C3A246 /* Giants-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Giants-Bold.otf"; sourceTree = "<group>"; };
 		645568B82B0949E200C3A246 /* Recipekorea.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Recipekorea.ttf; sourceTree = "<group>"; };
-		645568C72B0959C100C3A246 /* buttonBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = buttonBGM.mp3; path = ../../../../../../../../Downloads/buttonBGM.mp3; sourceTree = "<group>"; };
 		645568C92B0959C900C3A246 /* mainBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainBGM.mp3; sourceTree = "<group>"; };
 		645568CD2B095BBE00C3A246 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		64D110572B0CB03800613A6E /* buttomBGMmp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttomBGMmp3.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,7 +256,7 @@
 		645568C22B0958EE00C3A246 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				645568C72B0959C100C3A246 /* buttonBGM.mp3 */,
+				64D110572B0CB03800613A6E /* buttomBGMmp3.mp3 */,
 				645568C92B0959C900C3A246 /* mainBGM.mp3 */,
 				642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */,
 			);
@@ -360,9 +360,9 @@
 				419CE5582AD62DA800EC4105 /* Preview Assets.xcassets in Resources */,
 				419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */,
 				645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */,
-				645568C82B0959C100C3A246 /* buttonBGM.mp3 in Resources */,
 				28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */,
 				645568B52B0948A200C3A246 /* Giants-Bold.otf in Resources */,
+				64D110582B0CB03800613A6E /* buttomBGMmp3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
