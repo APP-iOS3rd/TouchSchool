@@ -15,6 +15,7 @@ struct GameView: View {
     @State private var isImage: Bool = false
     @State private var smokes: [Smoke] = []
     @State private var animationAmount = 0.0
+    private let soundSetting = SoundSetting.instance
     
     var body: some View {
         ZStack {
@@ -31,6 +32,7 @@ struct GameView: View {
                             .foregroundColor(Color.grayText)
                             .imageScale(.large)
                         Text("돌아가기")
+                            .font(.custom("Giants-Bold", size: 20))
                             .foregroundColor(Color.grayText)
                     }
                     .padding(.leading)
@@ -38,16 +40,16 @@ struct GameView: View {
                 }
                 Text("\(mySchoolRank)")
                     .foregroundStyle(.mint)
-                    .font(.system(size: 30))
+                    .font(.custom("Giants-Bold", size: 30))
                     .bold()
                 
                 Text("\(vm.mySchoolName)")
                     .foregroundStyle(.mint)
-                    .font(.system(size: 30))
+                    .font(.custom("Giants-Bold", size: 30))
                     .bold()
                 Text("\(myTouchCount)")
                     .foregroundStyle(.white)
-                    .font(.system(size: 60))
+                    .font(.custom("Giants-Bold", size: 60))
                     .bold()
                     .padding()
                 
@@ -69,7 +71,7 @@ struct GameView: View {
                     
                     Text("\(vm.mySchoolCnt)")
                         .foregroundStyle(.white)
-                        .font(.system(size: 50))
+                        .font(.custom("Giants-Bold", size: 50))
                 }
                 .padding()
             }
@@ -96,6 +98,7 @@ struct GameView: View {
             self.mainVM.fetchSchools()
         }
         .onTapGesture { location in
+            soundSetting.playSound(sound: .buttonBGM)
             let angle = Double.random(in: -30...30)
             smokes.append(Smoke(location: location,
                                 showEffect: true,
@@ -110,9 +113,12 @@ struct GameView: View {
         }
         .alert(isPresented: $vm.showWarningAlert) {
                     Alert(
-                        title: Text("경고"),
-                        message: Text("비정상적인 터치 수가 감지되었습니다."),
-                        dismissButton: .default(Text("확인"))
+                        title: Text("경고")
+                            .font(.custom("Giants-Bold", size: 10)),
+                        message: Text("비정상적인 터치 수가 감지되었습니다.")
+                            .font(.custom("Giants-Bold", size: 7)),
+                        dismissButton: .default(Text("확인")
+                            .font(.custom("Giants-Bold", size: 8)))
                     )
                 }
     }
