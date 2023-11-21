@@ -96,35 +96,6 @@ struct MainView: View {
                             }
                             .padding()
                             
-                            Button(action: {
-                                soundSetting.playSound(sound: .buttonBGM)
-                                self.showSearch = true
-                            }) {
-                                Text("학교 선택")
-                                    .font(.custom("Giants-Bold", size: 30))
-                                    .frame(width: 200, height: 30)
-                                    .padding()
-                                    .background(Color("button_color4"))
-                                    .cornerRadius(24)
-                                    .foregroundColor(.white)
-                            }
-                            .padding()
-                            
-                            
-                            Button(action: {
-                                soundSetting.playSound(sound: .buttonBGM)
-                                self.showSearch = true
-                            }) {
-                                Text("학교 선택")
-                                    .font(.custom("Giants-Bold", size: 30))
-                                    .frame(width: 200, height: 30)
-                                    .padding()
-                                    .background(Color("button_color5"))
-                                    .cornerRadius(24)
-                                    .foregroundColor(.white)
-                            }
-                            .padding()
-                            
                         }
                     }
                     .alert(isPresented: $showAlert) {
