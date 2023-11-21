@@ -11,4 +11,5 @@ import SwiftUI
 extension Color {
     static let darkGrayText = Color("search_text2")
     static let grayText = Color("search_text")
+    static let rankcolor = Color("yellows")
 }
