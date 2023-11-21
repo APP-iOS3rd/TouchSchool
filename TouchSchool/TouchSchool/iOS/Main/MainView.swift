@@ -115,12 +115,12 @@ struct MainView: View {
                 }
                 
             }
-//            .onAppear() {
-//                soundSetting.playLoop(sound: .mainBGM)
-//            }
-//            .onDisappear() {
-//                soundSetting.player?.stop()
-//            }
+            .onAppear() {
+                soundSetting.playLoop(sound: .mainBGM)
+            }
+            .onDisappear() {
+                soundSetting.player?.stop()
+            }
 
         }
         
