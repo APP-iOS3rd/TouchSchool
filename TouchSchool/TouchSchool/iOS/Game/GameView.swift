@@ -14,6 +14,7 @@ struct GameView: View {
     @Binding var showGame: Bool
     @State private var isImage: Bool = false
     @State private var smokes: [Smoke] = []
+    @State private var animationAmount = 0.0
     
     var body: some View {
         ZStack {
@@ -51,11 +52,14 @@ struct GameView: View {
                     .padding()
                 
                 Spacer()
-                
-                Image( isImage ?  "noname" : "achievement-1293132_1280")
+               
+                Image("11111")
                     .resizable()
-                    .frame(width: 180, height: 180)
-                
+                    .frame(width: 120, height: 80)
+                    .rotation3DEffect(
+                        .degrees(animationAmount),
+                        axis: (x: 0.0, y: 1.0, z: 0.0))
+
                 Spacer()
                 
                 HStack {
@@ -99,7 +103,10 @@ struct GameView: View {
                                 opacity: 1))
             myTouchCount += 1
             vm.newAdd()
-            isImage.toggle()
+            
+            withAnimation {
+                self.animationAmount += 360
+            }
         }
         .alert(isPresented: $vm.showWarningAlert) {
                     Alert(
@@ -120,6 +127,6 @@ struct SmokeEffectView: View {
     }
 }
 
-#Preview {
-    GameView(vm: GameVM(), mainVM: MainVM(), showGame: MainView().$showGame)
-}
+//#Preview {
+//    GameView(vm: GameVM(), mainVM: MainVM(), showGame: MainView().$showGame)
+//}
