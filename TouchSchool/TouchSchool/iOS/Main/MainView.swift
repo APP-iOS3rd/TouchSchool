@@ -5,72 +5,121 @@
 //  Created by 최동호 on 10/11/23.
 //
 
-import Foundation
 import SwiftUI
+import AVKit
 
 struct MainView: View {
-    @Binding var showMain: Bool
+    @State var showSearch: Bool = false
+    @State var showGame: Bool = false
+    @State var showRank: Bool = false
+    @State private var showAlert = false
     @ObservedObject var vm = MainVM()
+    private let soundSetting = SoundSetting.instance
     
     var body: some View {
         NavigationView {
             ZStack{
-                // 원래는 .frame(height: .infinity)를 사용하려했는데
-                // Invalid frame dimension (negative or non-finite). -> 프레임 수치가 정확하지 않다.
-                // GeometryReader를 사용해야 함.
-                GeometryReader { proxy in
-                    Image("blackboard_set")
-                        .resizable()
-                        .frame(width: proxy.size.width, height: proxy.size.height)
-                }
-                VStack{
-                    titleImage()
-                    HStack {
-                        NavigationLink(destination: GameView(vm: GameVM())) {
-                            Text("게임 시작")
-                        }  .font(.largeTitle)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                            .padding()
-                            .background(Color.red)
-                            .cornerRadius(20)
-                            .foregroundColor(.white)
-                            .padding(10)
-                        
-                        NavigationLink(destination: RankView()) {
-                            Image("rankicon")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                        }
-                        .padding()
-                        .background(Color.yellow)
-                        .cornerRadius(20)
-                        .foregroundColor(.white)
-                        .padding(10)
-                        
+                if showGame {
+                    GameView(vm: GameVM(), mainVM: MainVM(), showGame: self.$showGame)
+                } else if showSearch {
+                    SearchView(showSearch: self.$showSearch)
+                } else if showRank {
+                    RankView(showRank: self.$showRank)
+                } else {
+                    // 원래는 .frame(height: .infinity)를 사용하려했는데
+                    // Invalid frame dimension (negative or non-finite). -> 프레임 수치가 정확하지 않다.
+                    // GeometryReader를 사용해야 함.
+                    GeometryReader { proxy in
+                        Image("blackboard_set")
+                            .resizable()
+                            .ignoresSafeArea()
                     }
-                    Button(action: {
-                        self.showMain = false
-                    }) {
-                        Text("학교 선택")
-                            .font(.system(size: 15))
-                            .padding(3)
-                            .fontWeight(.heavy)
+                    VStack{
+                        //                        titleImage()
+                        //shadow 하얀색으로 넣어서 칠판 느낌 나게 한번 해봤습니다
+                        Text("터치!터치!")
+                            .font(.custom("Giants-Bold", size: 55))
+                            .foregroundColor(.rankcolor)
+                            .shadow(color: .black, radius: 2, x: 2, y: 2)
+                            .shadow(color: .white, radius: 70)
+                        Text("학교대항전")
+                            .font(.custom("Recipekorea", size: 65))
                             .foregroundStyle(.white)
-                            .background(Color.cyan)
-                            .cornerRadius(30)
-                            .padding(5)
-                            .overlay(RoundedRectangle(cornerRadius: 30)
-                                .stroke(Color.cyan, lineWidth: 3)
-                            )
+                            .shadow(color: .black, radius: 2, x: 2, y: 2)
+                            .shadow(color: .white, radius: 70)
+                        
+                        VStack {
+                            Button(action: {
+                                if seqValue.isEmpty {
+                                    soundSetting.playSound(sound: .buttonBGM)
+                                    showAlert = true
+                                } else {
+                                    soundSetting.playSound(sound: .buttonBGM)
+                                    self.showGame = true
+                                }
+                            }) {
+                                Text("게임 시작")
+                                    .font(.custom("Giants-Bold", size: 30))
+                                    .frame(width: 200, height: 30)
+                                    .padding()
+                                    .background(Color("button_color"))
+                                    .cornerRadius(24)
+                                    .foregroundColor(.white)
+                            }
+                            .padding()
+                            
+                            Button(action: {
+                                soundSetting.playSound(sound: .buttonBGM)
+                                self.showRank = true
+                            }) {
+                                Text("랭킹 보기")
+                                    .font(.custom("Giants-Bold", size: 30))
+                                    .frame(width: 200, height: 30)
+                                    .padding()
+                                    .background(Color("yellows"))
+                                    .cornerRadius(24)
+                                    .foregroundColor(.white)
+                            }
+                            .padding()
+                            
+                            Button(action: {
+                                soundSetting.playSound(sound: .buttonBGM)
+                                self.showSearch = true
+                            }) {
+                                Text("학교 선택")
+                                    .font(.custom("Giants-Bold", size: 30))
+                                    .frame(width: 200, height: 30)
+                                    .padding()
+                                    .background(Color("button_color3"))
+                                    .cornerRadius(24)
+                                    .foregroundColor(.white)
+                            }
+                            .padding()
+                            
+                        }
                     }
-                    .padding()
-                }
-                .onAppear() {
-                    self.vm.fetchSchools()
+                    .alert(isPresented: $showAlert) {
+                        soundSetting.playSound(sound: .errorBGM)
+                        
+                        return Alert(
+                            title: Text("알림"),
+                            message: Text("학교를 먼저 선택해주세요."),
+                            dismissButton: .default(Text("확인"))
+                        )
+                    }
+                    .onAppear() {
+                        self.vm.fetchSchools()
+                    }
                 }
             }
         }
+        
+        .onAppear() {
+            soundSetting.playLoop(sound: .mainBGM)
+        }
+        
     }
+    
 }
 
 struct titleImage: View {
@@ -83,6 +132,6 @@ struct titleImage: View {
 }
                                        
 #Preview {
-    MainView(showMain: SearchView().$showMain)
+    MainView()
    
 }
