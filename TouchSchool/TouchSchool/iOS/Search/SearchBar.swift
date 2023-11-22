@@ -28,6 +28,7 @@ struct SearchBar: View {
                 
                 TextField("", text: $text,
                           prompt: Text("검색")
+                    .font(.custom("Giants-Bold", size: 16))
                     .foregroundColor(Color.grayText))
                     .padding(7)
                     .padding(.leading, -7)
@@ -76,6 +77,7 @@ struct SearchBar: View {
                         hideKeyboard()
                     } label: {
                         Text("취소")
+                            .font(.custom("Giants-Bold", size: 15))
                             .foregroundColor(Color.white)
                     }
                     .padding(.trailing, 10)

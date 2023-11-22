@@ -100,22 +100,28 @@ struct MainView: View {
                     }
                     .alert(isPresented: $showAlert) {
                         soundSetting.playSound(sound: .errorBGM)
-                        
                         return Alert(
-                            title: Text("알림"),
-                            message: Text("학교를 먼저 선택해주세요."),
-                            dismissButton: .default(Text("확인"))
+                            title: Text("알림")
+                                .font(.custom("Giants-Bold", size: 10)),
+                            message: Text("학교를 먼저 선택해주세요.")
+                                .font(.custom("Giants-Bold", size: 6)),
+                            dismissButton: .default(Text("확인")
+                                .font(.custom("Giants-Bold", size: 8)))
                         )
                     }
                     .onAppear() {
                         self.vm.fetchSchools()
                     }
                 }
+                
             }
-        }
-        
-        .onAppear() {
-            soundSetting.playLoop(sound: .mainBGM)
+            .onAppear() {
+                soundSetting.playLoop(sound: .mainBGM)
+            }
+            .onDisappear() {
+                soundSetting.player?.stop()
+            }
+
         }
         
     }

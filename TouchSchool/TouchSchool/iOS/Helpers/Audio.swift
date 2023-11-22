@@ -30,6 +30,7 @@ class SoundSetting: ObservableObject {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
+            player?.volume = 1
         } catch {
             print("재생하는데 오류가 발생했습니다. \(error.localizedDescription)")
         }
@@ -40,6 +41,7 @@ class SoundSetting: ObservableObject {
         player = try! AVAudioPlayer(contentsOf: url!)
         player?.numberOfLoops =  10
         player?.play()
+        player?.volume = 0.2
     }
     
 }

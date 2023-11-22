@@ -48,7 +48,7 @@ struct SearchView: View {
                     } else if vm.viewState == .empty {
                         Text("검색 결과가 없습니다.")
                             .foregroundColor(Color.grayText)
-                            .font(.title3)
+                            .font(.custom("Giants-Bold", size: 10))
                             .bold()
                             .padding(.top, 150)
                         
