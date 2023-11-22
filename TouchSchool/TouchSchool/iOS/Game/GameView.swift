@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AVKit
 
 struct GameView: View {
     @ObservedObject var vm: GameVM
@@ -91,6 +92,7 @@ struct GameView: View {
                     Button(action: {
                         // Handle back button action here
                         self.showGame = false
+                        myTouchCount = 0
                     }) {
                         Image(systemName: "chevron.left")
                             .foregroundColor(Color.grayText)

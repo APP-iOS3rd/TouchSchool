@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RankView: View {
-    
+    @ObservedObject var vm: GameVM
     @Binding var showRank: Bool
     
     var body: some View {
@@ -63,7 +63,7 @@ struct RankView: View {
         //                        .bold()
                             //Spacer()
                             
-                            Text("\(allSchoolInfos.count)") // 전체 학교 카운드를 넣은건데 왜 터치값을 가지고 오는 걸까...???
+                            Text("\(vm.mySchoolCnt)") // 전체 학교 카운드를 넣은건데 왜 터치값을 가지고 오는 걸까...???
                                 .foregroundStyle(.white)
                                 .font(.system(size: 30))
                                 .bold()

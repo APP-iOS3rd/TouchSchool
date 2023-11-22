@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var vm: SearchVM
-    
+    @ObservedObject var gameVm = GameVM()
     var body: some View {
         ZStack{
             if vm.isDownloading {

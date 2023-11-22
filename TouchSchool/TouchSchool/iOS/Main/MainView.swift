@@ -24,7 +24,7 @@ struct MainView: View {
                 } else if showSearch {
                     SearchView(showSearch: self.$showSearch)
                 } else if showRank {
-                    RankView(showRank: self.$showRank)
+                    RankView(vm: GameVM(), showRank: self.$showRank)
                 } else {
                     // 원래는 .frame(height: .infinity)를 사용하려했는데
                     // Invalid frame dimension (negative or non-finite). -> 프레임 수치가 정확하지 않다.

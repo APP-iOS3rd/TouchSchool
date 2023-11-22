@@ -69,7 +69,7 @@ class GameVM: ObservableObject {
             isTimerActive = true
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                if self.touchCount >= 75 {
+                if self.touchCount >= 230 {
                     myTouchCount = 0
                     self.showWarningAlert = true
                 } else {
