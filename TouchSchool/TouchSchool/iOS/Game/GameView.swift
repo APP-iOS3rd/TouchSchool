@@ -38,15 +38,16 @@ struct GameView: View {
                     .padding(.leading)
                     Spacer()
                 }
-                Text("\(mySchoolRank)")
-                    .foregroundStyle(.mint)
-                    .font(.custom("Giants-Bold", size: 30))
-                    .bold()
-                
-                Text("\(vm.mySchoolName)")
-                    .foregroundStyle(.mint)
-                    .font(.custom("Giants-Bold", size: 30))
-                    .bold()
+                HStack {
+                    Text("\(mySchoolRank)위")
+                        .foregroundStyle(.mint)
+                        .font(.custom("Giants-Bold", size: 30))
+                        .bold()
+                    Text("\(vm.mySchoolName)")
+                        .foregroundStyle(.mint)
+                        .font(.custom("Giants-Bold", size: 30))
+                        .bold()
+                }
                 Text("\(myTouchCount)")
                     .foregroundStyle(.white)
                     .font(.custom("Giants-Bold", size: 60))

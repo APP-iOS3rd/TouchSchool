@@ -52,7 +52,7 @@ struct RankView: View {
                             .font(.system(size: 30))
                         
                         HStack{
-                            Text("\(mySchoolRank) 위 ")
+                            Text("\(mySchoolRank)위 ")
                                 .foregroundStyle(.white)
                                 .font(.system(size: 30))
                                 .bold()
