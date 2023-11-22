@@ -23,21 +23,7 @@ struct GameView: View {
                 .resizable()
                 .ignoresSafeArea()
             VStack {
-                HStack{
-                    Button(action: {
-                        // Handle back button action here
-                        self.showGame = false
-                    }) {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(Color.grayText)
-                            .imageScale(.large)
-                        Text("돌아가기")
-                            .font(.custom("Giants-Bold", size: 20))
-                            .foregroundColor(Color.grayText)
-                    }
-                    .padding(.leading)
-                    Spacer()
-                }
+                Spacer()
                 HStack {
                     Text("\(mySchoolRank)위")
                         .foregroundStyle(.mint)
@@ -55,14 +41,14 @@ struct GameView: View {
                     .padding()
                 
                 Spacer()
-               
+                
                 Image("11111")
                     .resizable()
                     .frame(width: 120, height: 80)
                     .rotation3DEffect(
                         .degrees(animationAmount),
                         axis: (x: 0.0, y: 1.0, z: 0.0))
-
+                
                 Spacer()
                 
                 HStack {
@@ -75,6 +61,7 @@ struct GameView: View {
                         .font(.custom("Giants-Bold", size: 50))
                 }
                 .padding()
+                Spacer()
             }
             
             // Effect View
@@ -94,34 +81,56 @@ struct GameView: View {
                         }
                 }
             }
+            
+            MultitouchRepresentable { location in
+                handleTap(location: location)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            VStack{
+                HStack{
+                    Button(action: {
+                        // Handle back button action here
+                        self.showGame = false
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(Color.grayText)
+                            .imageScale(.large)
+                        Text("돌아가기")
+                            .font(.custom("Giants-Bold", size: 20))
+                            .foregroundColor(Color.grayText)
+                    }
+                    .padding(.leading)
+                    Spacer()
+                }
+                .padding(.top)
+                Spacer()
+            }
         }
+        
         .onAppear() {
             self.mainVM.fetchSchools()
         }
-        .onTapGesture { location in
-            soundSetting.playSound(sound: .buttonBGM)
-            let angle = Double.random(in: -30...30)
-            smokes.append(Smoke(location: location,
-                                showEffect: true,
-                                angle: angle,
-                                opacity: 1))
-            myTouchCount += 1
-            vm.newAdd()
-            
-            withAnimation {
-                self.animationAmount += 360
-            }
-        }
         .alert(isPresented: $vm.showWarningAlert) {
-                    Alert(
-                        title: Text("경고")
-                            .font(.custom("Giants-Bold", size: 10)),
-                        message: Text("비정상적인 터치 수가 감지되었습니다.")
-                            .font(.custom("Giants-Bold", size: 7)),
-                        dismissButton: .default(Text("확인")
-                            .font(.custom("Giants-Bold", size: 8)))
-                    )
-                }
+            Alert(
+                title: Text("경고")
+                    .font(.custom("Giants-Bold", size: 10)),
+                message: Text("비정상적인 터치 수가 감지되었습니다.")
+                    .font(.custom("Giants-Bold", size: 7)),
+                dismissButton: .default(Text("확인")
+                    .font(.custom("Giants-Bold", size: 8)))
+            )
+        }
+    }
+    private func handleTap(location: CGPoint) {
+        soundSetting.playSound(sound: .buttonBGM)
+        let angle = Double.random(in: -30...30)
+        smokes.append(Smoke(location: location, showEffect: true, angle: angle, opacity: 1))
+        myTouchCount += 1
+        vm.newAdd()
+        
+        withAnimation {
+            self.animationAmount += 360
+        }
     }
 }
 
