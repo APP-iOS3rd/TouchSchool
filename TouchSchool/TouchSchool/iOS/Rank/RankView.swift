@@ -29,7 +29,7 @@ struct RankView: View {
                         self.showRank = false
                     }) {
                         Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .imageScale(.large)
                         Text("돌아가기")
                             .foregroundColor(.white)
@@ -46,24 +46,19 @@ struct RankView: View {
                         .padding()
                     
                     VStack{
-                        Text("우리 학교 순위")
-                            .foregroundStyle(.white)
-                            .fontWeight(.bold)
+                        Text("\(vm.mySchoolName)")
+                            .foregroundStyle(.mint)
                             .font(.system(size: 30))
-                        
+                            .bold()
+                            .padding(.top)
+
                         HStack{
                             Text("\(mySchoolRank)위 ")
                                 .foregroundStyle(.white)
                                 .font(.system(size: 30))
                                 .bold()
-                            
-        //                    Text("\(vm.mySchoolName)")
-        //                        .foregroundStyle(.mint)
-        //                        .font(.system(size: 30))
-        //                        .bold()
-                            //Spacer()
-                            
-                            Text("\(vm.mySchoolCnt)") // 전체 학교 카운드를 넣은건데 왜 터치값을 가지고 오는 걸까...???
+ 
+                            Text("\(vm.mySchoolCnt)")
                                 .foregroundStyle(.white)
                                 .font(.system(size: 30))
                                 .bold()
@@ -101,4 +96,8 @@ struct RankView: View {
             }
         }
     }
+}
+
+#Preview {
+    RankView(vm: GameVM(), showRank: MainView().$showRank)
 }
