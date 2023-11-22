@@ -19,7 +19,7 @@ class SoundSetting: ObservableObject {
     
     enum SoundOption: String {
         case mainBGM = "mainBGM"
-        case buttonBGM = "buttonBGM"
+        case buttonBGM = "buttomBGM"
         case errorBGM = "errorBGM"
     }
     
@@ -41,7 +41,7 @@ class SoundSetting: ObservableObject {
         player = try! AVAudioPlayer(contentsOf: url!)
         player?.numberOfLoops =  10
         player?.play()
-        player?.volume = 0.2
+        player?.volume = 0.1
     }
     
 }

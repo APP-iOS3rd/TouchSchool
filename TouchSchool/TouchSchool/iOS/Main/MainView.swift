@@ -42,6 +42,13 @@ struct MainView: View {
                             .foregroundColor(.rankcolor)
                             .shadow(color: .black, radius: 2, x: 2, y: 2)
                             .shadow(color: .white, radius: 70)
+                            .onAppear() {
+                                soundSetting.playLoop(sound: .mainBGM)
+                            }
+                            .onDisappear() {
+                                soundSetting.player?.stop()
+                            }
+                        
                         Text("학교대항전")
                             .font(.custom("Recipekorea", size: 65))
                             .foregroundStyle(.white)
@@ -114,12 +121,6 @@ struct MainView: View {
                     }
                 }
                 
-            }
-            .onAppear() {
-                soundSetting.playLoop(sound: .mainBGM)
-            }
-            .onDisappear() {
-                soundSetting.player?.stop()
             }
 
         }
