@@ -9,25 +9,20 @@
 import SwiftUI
 
 struct RankView: View {
+    
     @Binding var showRank: Bool
+    
     var body: some View {
         
         ZStack{
             Color(red: 132/255, green: 194/255, blue: 65/255).edgesIgnoringSafeArea(.bottom)
-            //꾸밈화면
+            Image("blackboard_set")
+                .resizable()
+                .ignoresSafeArea()
+            
+        //꾸밈화면
             VStack{
-                ZStack{
-                    Image("school1")
-                        .resizable()
-                        .frame(height: 200)
-                        .edgesIgnoringSafeArea(.top)
-                    
-                    //이부분은 좀더 잘 보이게 꾸밈
-                    Text("학교 순위")
-                        .fontWeight(.bold)
-                        .font(.system(size: 45))
-                        .foregroundColor(.black)
-                }
+                //돌아가기
                 HStack{
                     Button(action: {
                         // Handle back button action here
@@ -37,30 +32,72 @@ struct RankView: View {
                             .foregroundColor(.black)
                             .imageScale(.large)
                         Text("돌아가기")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                     }
                     .padding(.leading)
                     Spacer()
                 }
                 
+                //우리학교 순위
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.darkGrayText.opacity(0.5))
+                        .frame(width: 350, height: 130)
+                        .padding()
+                    
+                    VStack{
+                        Text("우리 학교 순위")
+                            .foregroundStyle(.white)
+                            .fontWeight(.bold)
+                            .font(.system(size: 30))
+                        
+                        HStack{
+                            Text("\(mySchoolRank) 위 ")
+                                .foregroundStyle(.white)
+                                .font(.system(size: 30))
+                                .bold()
+                            
+        //                    Text("\(vm.mySchoolName)")
+        //                        .foregroundStyle(.mint)
+        //                        .font(.system(size: 30))
+        //                        .bold()
+                            //Spacer()
+                            
+                            Text("\(allSchoolInfos.count)") // 전체 학교 카운드를 넣은건데 왜 터치값을 가지고 오는 걸까...???
+                                .foregroundStyle(.white)
+                                .font(.system(size: 30))
+                                .bold()
+                            
+                        }
+                        .frame(width: 310)
+                        .padding()
+                    }
+                }
+            
                 // 학교 순위리스트
-                ScrollView(.vertical, showsIndicators: false) {
+                List {
                     LazyVStack(alignment: .leading) {
                         ForEach(allSchoolInfos) { schoolInfo in
                             HStack {
                                 if let rank = schoolInfo.rank {
-                                    Text("\(rank)")
+                                    Text("\(rank)위 ")
                                 } else {
                                     Text("0")
                                 }
                                 Text(schoolInfo.name)
+                                    .frame(width: 150, height: 25, alignment: .leading)
+                                
                                 Text("\(schoolInfo.count)")
                             }
+                            .foregroundColor(.white)
+                            .bold()
                         }
                     }
+                    .listRowBackground(Color.darkGrayText.opacity(0.5))
                 }
-                .padding(.top, 20) // 리스트의 상단에 여백 추가
-                .padding(.horizontal, 20) // 좌우 여백 추가
+                .scrollContentBackground(.hidden)
+                .background(Color.clear)
+                .frame(width: 390, height: 500)
             }
         }
     }
