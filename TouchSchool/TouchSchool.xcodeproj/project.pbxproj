@@ -25,6 +25,8 @@
 		419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57C2AD66EA000EC4105 /* MainVM.swift */; };
 		419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57E2AD6851500EC4105 /* Helpers.swift */; };
 		419D36942B060F6900E5635D /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D36932B060F6900E5635D /* Smoke.swift */; };
+		41B33AF12B0DF7020047A56B /* MultitouchRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B33AF02B0DF7020047A56B /* MultitouchRepresentable.swift */; };
+		41B33AF32B0DF70C0047A56B /* MultitouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B33AF22B0DF70C0047A56B /* MultitouchView.swift */; };
 		41C788612AE14D6800698C9A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788602AE14D6800698C9A /* FirebaseAnalytics */; };
 		41C788632AE14D6800698C9A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788622AE14D6800698C9A /* FirebaseAnalyticsOnDeviceConversion */; };
 		41C788652AE14D6800698C9A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788642AE14D6800698C9A /* FirebaseAnalyticsSwift */; };
@@ -83,6 +85,8 @@
 		419CE57C2AD66EA000EC4105 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		419CE57E2AD6851500EC4105 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		419D36932B060F6900E5635D /* Smoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
+		41B33AF02B0DF7020047A56B /* MultitouchRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultitouchRepresentable.swift; sourceTree = "<group>"; };
+		41B33AF22B0DF70C0047A56B /* MultitouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultitouchView.swift; sourceTree = "<group>"; };
 		41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGuide.swift; sourceTree = "<group>"; };
 		41EE9F342AF4F71D006D560B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = errorBGM.mp3; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */,
 				419CE57E2AD6851500EC4105 /* Helpers.swift */,
 				645568CD2B095BBE00C3A246 /* Audio.swift */,
+				41B33AF02B0DF7020047A56B /* MultitouchRepresentable.swift */,
+				41B33AF22B0DF70C0047A56B /* MultitouchView.swift */,
 				645568C22B0958EE00C3A246 /* Sound */,
 				645568AC2B09431900C3A246 /* Font */,
 			);
@@ -382,12 +388,14 @@
 				41EE9F352AF4F71D006D560B /* FirebaseManager.swift in Sources */,
 				419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */,
 				419CE5612AD62EFE00EC4105 /* School.swift in Sources */,
+				41B33AF12B0DF7020047A56B /* MultitouchRepresentable.swift in Sources */,
 				419CE5722AD63A3200EC4105 /* ActivityIndicator.swift in Sources */,
 				419CE56E2AD63A0A00EC4105 /* SearchBar.swift in Sources */,
 				419CE5682AD636E600EC4105 /* MainView.swift in Sources */,
 				419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */,
 				419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
+				41B33AF32B0DF70C0047A56B /* MultitouchView.swift in Sources */,
 				419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */,
 				419D36942B060F6900E5635D /* Smoke.swift in Sources */,
 				28350C322AF3D22C0068853A /* GameVM.swift in Sources */,
