@@ -42,7 +42,6 @@ class MainVM: ObservableObject {
                     let mySchoolId = document.documentID
                     
                     let schoolInfo = SchoolInfo(id: mySchoolId, name: mySchoolName, address: mySchoolAdres, count: mySchoolCnt)
-                    print(schoolInfo)
                     schoolInfos.append(schoolInfo)
                 }
                 allSchoolInfos = schoolInfos
@@ -62,8 +61,7 @@ class MainVM: ObservableObject {
                 mySchoolRank = index + 1
             }
             allSchoolInfos[index].rank = index + 1
-            
-            print("Rank assigned for \(allSchoolInfos[index].name): \(allSchoolInfos[index].rank ?? -1)")
+        
         }
     }
 }

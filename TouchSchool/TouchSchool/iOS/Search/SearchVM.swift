@@ -62,8 +62,6 @@ extension SearchVM {
                 print("Error fetching data: \(error)")
          
             }
-            print(schools.startIndex)
-            print(schools)
             
         }
     }
