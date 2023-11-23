@@ -8,28 +8,34 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    
     @EnvironmentObject var vm: SearchVM
-    
+    @ObservedObject var gameVm = GameVM()
     var body: some View {
         ZStack{
-            VStack{
-                if vm.isDownloading {
-                    ProgressView("학교 정보 받아오는 중..", value: vm.progress) // Display a progress view with the current progress
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .padding()
-                        .onAppear {
-                            Task {
-                                await vm.fetchData()
-                            }
+            if vm.isDownloading {
+                Image("blackboard_set")
+                    .resizable()
+                    .ignoresSafeArea()
+                
+                ProgressView("학교 정보 받아오는 중..", value: vm.progress)
+                    .foregroundColor(Color.white)
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                    .padding()
+                    .onAppear {
+                        Task {
+                            await vm.fetchData()
                         }
-                } else {
-                    SearchView()
-                }
-   
+                    }
+                
+                
+            } else {
+                MainView()
             }
+            
+            
         }
     }
+    
 }
 
 #Preview {

@@ -11,15 +11,10 @@ import Alamofire
 
 class SearchVM: ObservableObject {
     @Published var isDownloading: Bool = true
-    
     @Published var isLoading: Bool = false
-    
     @State var progress: Double = 0
-    
     @Published var schools: [School] = []
-    
     @Published var searchResult: [School] = []
-    
     @Published var viewState: ViewState = ViewState.empty
         
     public func updateSearchText(with text: String) {
@@ -51,7 +46,7 @@ class SearchVM: ObservableObject {
     }
 }
 
-//MARK: Fetch Data
+//MARK: JSON Fetch Data
 extension SearchVM {
     func fetchData() async {
         Task {
@@ -67,8 +62,6 @@ extension SearchVM {
                 print("Error fetching data: \(error)")
          
             }
-            print(schools.startIndex)
-            print(schools)
             
         }
     }

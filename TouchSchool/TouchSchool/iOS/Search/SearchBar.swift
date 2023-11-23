@@ -17,7 +17,7 @@ struct SearchBar: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            Color(.systemGray6)
+            Color(Color.darkGrayText)
                 .frame(width: 270, height: 36)
                 .cornerRadius(8)
         
@@ -28,11 +28,12 @@ struct SearchBar: View {
                 
                 TextField("", text: $text,
                           prompt: Text("검색")
+                    .font(.custom("Giants-Bold", size: 16))
                     .foregroundColor(Color.grayText))
                     .padding(7)
                     .padding(.leading, -7)
-                    .background(Color(.systemGray6))
-                    .foregroundColor(Color.darkGrayText)
+                    .background(Color(Color.darkGrayText))
+                    .foregroundColor(Color.white)
                     .accentColor(Color.grayText)
                     .cornerRadius(8)
                     .onTapGesture {
@@ -50,7 +51,7 @@ struct SearchBar: View {
                                         ActivityIndicator(style: .medium,
                                                           animate: .constant(true))
                                         .configure({
-                                            $0.color = .darkGray
+                                            $0.color = .white
                                         })
                                     }
                                     .padding(.trailing, 15)
@@ -76,7 +77,8 @@ struct SearchBar: View {
                         hideKeyboard()
                     } label: {
                         Text("취소")
-                            .foregroundColor(Color.darkGrayText)
+                            .font(.custom("Giants-Bold", size: 15))
+                            .foregroundColor(Color.white)
                     }
                     .padding(.trailing, 10)
                     .transition(.move(edge: .trailing))

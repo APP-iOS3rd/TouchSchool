@@ -24,6 +24,9 @@
 		419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57A2AD66E8900EC4105 /* RankView.swift */; };
 		419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57C2AD66EA000EC4105 /* MainVM.swift */; };
 		419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE57E2AD6851500EC4105 /* Helpers.swift */; };
+		419D36942B060F6900E5635D /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D36932B060F6900E5635D /* Smoke.swift */; };
+		41B33AF12B0DF7020047A56B /* MultitouchRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B33AF02B0DF7020047A56B /* MultitouchRepresentable.swift */; };
+		41B33AF32B0DF70C0047A56B /* MultitouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B33AF22B0DF70C0047A56B /* MultitouchView.swift */; };
 		41C788612AE14D6800698C9A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788602AE14D6800698C9A /* FirebaseAnalytics */; };
 		41C788632AE14D6800698C9A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788622AE14D6800698C9A /* FirebaseAnalyticsOnDeviceConversion */; };
 		41C788652AE14D6800698C9A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788642AE14D6800698C9A /* FirebaseAnalyticsSwift */; };
@@ -54,6 +57,12 @@
 		41C788982AE14DD500698C9A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 41C788972AE14DD500698C9A /* Alamofire */; };
 		41E07EC02ADE28DD001F0081 /* SearchGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */; };
 		41EE9F352AF4F71D006D560B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE9F342AF4F71D006D560B /* FirebaseManager.swift */; };
+		641BC63F2B0E0F9A003B8580 /* buttomBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 641BC63E2B0E0F99003B8580 /* buttomBGM.mp3 */; };
+		642A03532B0BC1C900DBD9AD /* errorBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */; };
+		645568B52B0948A200C3A246 /* Giants-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 645568B42B0948A200C3A246 /* Giants-Bold.otf */; };
+		645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645568B82B0949E200C3A246 /* Recipekorea.ttf */; };
+		645568CA2B0959C900C3A246 /* mainBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 645568C92B0959C900C3A246 /* mainBGM.mp3 */; };
+		645568CE2B095BBE00C3A246 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645568CD2B095BBE00C3A246 /* Audio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,8 +84,18 @@
 		419CE57A2AD66E8900EC4105 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
 		419CE57C2AD66EA000EC4105 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		419CE57E2AD6851500EC4105 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		419D36932B060F6900E5635D /* Smoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
+		41B33AF02B0DF7020047A56B /* MultitouchRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultitouchRepresentable.swift; sourceTree = "<group>"; };
+		41B33AF22B0DF70C0047A56B /* MultitouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultitouchView.swift; sourceTree = "<group>"; };
 		41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGuide.swift; sourceTree = "<group>"; };
 		41EE9F342AF4F71D006D560B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		641BC63E2B0E0F99003B8580 /* buttomBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttomBGM.mp3; sourceTree = "<group>"; };
+		642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = errorBGM.mp3; sourceTree = "<group>"; };
+		645568AF2B0943E900C3A246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		645568B42B0948A200C3A246 /* Giants-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Giants-Bold.otf"; sourceTree = "<group>"; };
+		645568B82B0949E200C3A246 /* Recipekorea.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Recipekorea.ttf; sourceTree = "<group>"; };
+		645568C92B0959C900C3A246 /* mainBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainBGM.mp3; sourceTree = "<group>"; };
+		645568CD2B095BBE00C3A246 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +156,7 @@
 		419CE54F2AD62DA700EC4105 /* TouchSchool */ = {
 			isa = PBXGroup;
 			children = (
+				645568AF2B0943E900C3A246 /* Info.plist */,
 				28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */,
 				419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */,
 				419CE5522AD62DA700EC4105 /* ContentView.swift */,
@@ -172,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				419CE5602AD62EFE00EC4105 /* School.swift */,
+				419D36932B060F6900E5635D /* Smoke.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +203,11 @@
 				419CE56F2AD63A1900EC4105 /* Colors.swift */,
 				419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */,
 				419CE57E2AD6851500EC4105 /* Helpers.swift */,
+				645568CD2B095BBE00C3A246 /* Audio.swift */,
+				41B33AF02B0DF7020047A56B /* MultitouchRepresentable.swift */,
+				41B33AF22B0DF70C0047A56B /* MultitouchView.swift */,
+				645568C22B0958EE00C3A246 /* Sound */,
+				645568AC2B09431900C3A246 /* Font */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,6 +248,25 @@
 				419CE57A2AD66E8900EC4105 /* RankView.swift */,
 			);
 			path = Rank;
+			sourceTree = "<group>";
+		};
+		645568AC2B09431900C3A246 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				645568B82B0949E200C3A246 /* Recipekorea.ttf */,
+				645568B42B0948A200C3A246 /* Giants-Bold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		645568C22B0958EE00C3A246 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				641BC63E2B0E0F99003B8580 /* buttomBGM.mp3 */,
+				645568C92B0959C900C3A246 /* mainBGM.mp3 */,
+				642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,9 +361,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645568CA2B0959C900C3A246 /* mainBGM.mp3 in Resources */,
+				642A03532B0BC1C900DBD9AD /* errorBGM.mp3 in Resources */,
+				641BC63F2B0E0F9A003B8580 /* buttomBGM.mp3 in Resources */,
 				419CE5582AD62DA800EC4105 /* Preview Assets.xcassets in Resources */,
 				419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */,
+				645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */,
 				28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */,
+				645568B52B0948A200C3A246 /* Giants-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645568CE2B095BBE00C3A246 /* Audio.swift in Sources */,
 				41E07EC02ADE28DD001F0081 /* SearchGuide.swift in Sources */,
 				419CE5702AD63A1900EC4105 /* Colors.swift in Sources */,
 				419CE56A2AD639D800EC4105 /* SearchVM.swift in Sources */,
@@ -337,13 +388,16 @@
 				41EE9F352AF4F71D006D560B /* FirebaseManager.swift in Sources */,
 				419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */,
 				419CE5612AD62EFE00EC4105 /* School.swift in Sources */,
+				41B33AF12B0DF7020047A56B /* MultitouchRepresentable.swift in Sources */,
 				419CE5722AD63A3200EC4105 /* ActivityIndicator.swift in Sources */,
 				419CE56E2AD63A0A00EC4105 /* SearchBar.swift in Sources */,
 				419CE5682AD636E600EC4105 /* MainView.swift in Sources */,
 				419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */,
 				419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
+				41B33AF32B0DF70C0047A56B /* MultitouchView.swift in Sources */,
 				419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */,
+				419D36942B060F6900E5635D /* Smoke.swift in Sources */,
 				28350C322AF3D22C0068853A /* GameVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,9 +532,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TouchSchool/Preview Content\"";
-				DEVELOPMENT_TEAM = UAG934M4Q7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TouchSchool/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -507,9 +562,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TouchSchool/Preview Content\"";
-				DEVELOPMENT_TEAM = UAG934M4Q7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TouchSchool/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

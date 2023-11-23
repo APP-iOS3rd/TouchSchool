@@ -15,6 +15,10 @@ class GameVM: ObservableObject {
     @Published var mySchoolAdres: String = ""
     @Published var mySchoolCnt: Int = 0
     @Published var mySchoolId: String = ""
+    @Published var touchCount: Int = 0
+    @Published var showWarningAlert = false
+    
+    private var isTimerActive = false
     
     init() {
         getAllSchool(mySeq: seqValue)
@@ -36,10 +40,10 @@ class GameVM: ObservableObject {
                         self.mySchoolId = document.documentID
                     }
                 }
-                myAddress = self.mySchoolAdres
+                myID = self.mySchoolId
             }
     }
-
+    
     //  파라미터로 넣은 id값을 가진 문서 내용들 불러오는 스냅샷
     func addSnapShot(id: String) {
         let db = Firestore.firestore()
@@ -59,30 +63,47 @@ class GameVM: ObservableObject {
     
     //  파라미터로 전달받은 id 값을 가진 문서의 count에 +1을 해주는 트랜잭션 (버튼에 구현)
     func newAdd() {
+        touchCount += 1
+        
+        if !isTimerActive {
+            isTimerActive = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                if self.touchCount >= 230 {
+                    self.showWarningAlert = true
+                } else {
+                    self.submitCount()
+                }
+                self.isTimerActive = false
+            }
+        }
+    }
+    
+    private func submitCount() {
         let db = Firestore.firestore()
         let sfReference = db.collection("schools").document(self.mySchoolId)
         
         db.runTransaction({ (transaction, errorPointer) -> Any? in
             let sfDocument: DocumentSnapshot
-            do { // 쓰기전에 한번 읽어옴. 쓰는동안 락을 검. 데이터 점유를 한다.
+            do {
                 try sfDocument = transaction.getDocument(sfReference)
-                
             } catch let fetchError as NSError {
                 errorPointer?.pointee = fetchError
                 return nil
             }
             
-            guard let oldcount = sfDocument.data()?["count"] as? Int else {
+            guard let oldCount = sfDocument.data()?["count"] as? Int else {
                 return nil
             }
             
-            transaction.updateData(["count": oldcount + 1], forDocument: sfReference)
+            transaction.updateData(["count": oldCount + self.touchCount], forDocument: sfReference)
             return nil
         }) { (object, error) in
             if let error = error {
                 print("Transaction failed: \(error)")
             } else {
                 print("Transaction successfully committed!")
+                self.touchCount = 0 // Reset touch count after successful submission
             }
         }
     }

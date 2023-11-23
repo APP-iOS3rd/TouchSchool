@@ -12,13 +12,13 @@ struct SearchGuide: View {
     var body: some View {
         VStack{
             Text(Image(systemName: "magnifyingglass"))
-                .font(.system(size: 40))
+                .font(.custom("Giants-Bold", size: 40))
                 .foregroundColor(Color.grayText)
                 .padding(.top, 150)
                 .padding(.bottom, 3)
             Text("학교를 검색해주세요")
                 .foregroundColor(Color.grayText)
-                .font(.title3)
+                .font(.custom("Giants-Bold", size: 15))
                 .bold()
         }
     }
