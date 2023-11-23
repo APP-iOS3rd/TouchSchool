@@ -107,6 +107,9 @@ struct MainView: View {
                             }
                             .padding()
                             
+                            Spacer()
+                            BannerView()
+        
                         }
                     }
                     .alert(isPresented: $showAlert) {
@@ -153,9 +156,4 @@ struct titleImage: View {
             .aspectRatio(contentMode: .fit)
         //.frame(width: 300, height: 200)
     }
-}
-
-#Preview {
-    MainView()
-    
 }

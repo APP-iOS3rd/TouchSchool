@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		28350C322AF3D22C0068853A /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* GameVM.swift */; };
 		28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */; };
+		419793DE2B0F65D5004053E7 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 419793DD2B0F65D5004053E7 /* GoogleMobileAds */; };
+		419793E02B0F668E004053E7 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793DF2B0F668E004053E7 /* BannerView.swift */; };
+		419793E22B0F66D0004053E7 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793E12B0F66D0004053E7 /* BannerViewController.swift */; };
 		419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */; };
 		419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5522AD62DA700EC4105 /* ContentView.swift */; };
 		419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 419CE5542AD62DA800EC4105 /* Assets.xcassets */; };
@@ -68,6 +71,8 @@
 /* Begin PBXFileReference section */
 		28350C312AF3D22C0068853A /* GameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
 		28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		419793DF2B0F668E004053E7 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		419793E12B0F66D0004053E7 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		419CE54D2AD62DA700EC4105 /* TouchSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSchoolApp.swift; sourceTree = "<group>"; };
 		419CE5522AD62DA700EC4105 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419793DE2B0F65D5004053E7 /* GoogleMobileAds in Frameworks */,
 				41C788732AE14D6800698C9A /* FirebaseDatabase in Frameworks */,
 				41C788982AE14DD500698C9A /* Alamofire in Frameworks */,
 				41C788812AE14D6800698C9A /* FirebaseFunctionsCombine-Community in Frameworks */,
@@ -137,6 +143,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		419793E32B0F7113004053E7 /* AD */ = {
+			isa = PBXGroup;
+			children = (
+				419793E12B0F66D0004053E7 /* BannerViewController.swift */,
+				419793DF2B0F668E004053E7 /* BannerView.swift */,
+			);
+			path = AD;
+			sourceTree = "<group>";
+		};
 		419CE5442AD62DA700EC4105 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +193,7 @@
 		419CE55E2AD62EBF00EC4105 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				419793E32B0F7113004053E7 /* AD */,
 				419CE5742AD66E5100EC4105 /* Rank */,
 				419CE5642AD62F8700EC4105 /* Main */,
 				419CE5632AD62F5700EC4105 /* Search */,
@@ -314,6 +330,7 @@
 				41C788922AE14D6800698C9A /* FirebaseStorage */,
 				41C788942AE14D6800698C9A /* FirebaseStorageCombine-Community */,
 				41C788972AE14DD500698C9A /* Alamofire */,
+				419793DD2B0F65D5004053E7 /* GoogleMobileAds */,
 			);
 			productName = TouchSchool;
 			productReference = 419CE54D2AD62DA700EC4105 /* TouchSchool.app */;
@@ -346,6 +363,7 @@
 			packageReferences = (
 				41C7885F2AE14D6800698C9A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				41C788962AE14DD500698C9A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				419793DC2B0F65D5004053E7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 419CE54E2AD62DA700EC4105 /* Products */;
 			projectDirPath = "";
@@ -385,6 +403,7 @@
 				419CE56A2AD639D800EC4105 /* SearchVM.swift in Sources */,
 				419CE5662AD636C600EC4105 /* SearchView.swift in Sources */,
 				419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */,
+				419793E22B0F66D0004053E7 /* BannerViewController.swift in Sources */,
 				41EE9F352AF4F71D006D560B /* FirebaseManager.swift in Sources */,
 				419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */,
 				419CE5612AD62EFE00EC4105 /* School.swift in Sources */,
@@ -393,6 +412,7 @@
 				419CE56E2AD63A0A00EC4105 /* SearchBar.swift in Sources */,
 				419CE5682AD636E600EC4105 /* MainView.swift in Sources */,
 				419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */,
+				419793E02B0F668E004053E7 /* BannerView.swift in Sources */,
 				419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
 				41B33AF32B0DF70C0047A56B /* MultitouchView.swift in Sources */,
@@ -608,6 +628,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		419793DC2B0F65D5004053E7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.13.0;
+			};
+		};
 		41C7885F2AE14D6800698C9A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -627,6 +655,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		419793DD2B0F65D5004053E7 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 419793DC2B0F65D5004053E7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		41C788602AE14D6800698C9A /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 41C7885F2AE14D6800698C9A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
