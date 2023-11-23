@@ -36,7 +36,7 @@ class SoundSetting: ObservableObject {
 
     func playSound(sound: SoundOption) {
         DispatchQueue.global().async {
-            if let player = self.players[sound], !player.isPlaying {
+            if let player = self.players[sound] {
                 player.play()
                 player.volume = 0.1
             }

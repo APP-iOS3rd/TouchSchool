@@ -64,7 +64,7 @@ struct SearchView: View {
                                         firebaseManager.addSchool(a: school)
                                     }
                                     seqValue = school.seq
-                                    
+                                    myTouchCount = 0
                                     self.showSearch = false
                                     self.searchText = ""
                                 }

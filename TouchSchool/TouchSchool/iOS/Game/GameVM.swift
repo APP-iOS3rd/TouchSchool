@@ -70,7 +70,6 @@ class GameVM: ObservableObject {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 if self.touchCount >= 230 {
-                    myTouchCount = 0
                     self.showWarningAlert = true
                 } else {
                     self.submitCount()

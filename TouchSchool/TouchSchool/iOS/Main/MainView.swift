@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-import AVKit
 
 struct MainView: View {
     @State var showSearch: Bool = false
     @State var showGame: Bool = false
     @State var showRank: Bool = false
     @State private var showAlert = false
+    @State private var showSchoolChangeAlert = false
     @ObservedObject var vm = MainVM()
     private let soundSetting = SoundSetting.instance
     
@@ -91,7 +91,11 @@ struct MainView: View {
                             
                             Button(action: {
                                 soundSetting.playSound(sound: .buttonBGM)
-                                self.showSearch = true
+                                if myTouchCount != 0 {
+                                    showSchoolChangeAlert = true
+                                } else {
+                                    self.showSearch = true
+                                }
                             }) {
                                 Text("학교 선택")
                                     .font(.custom("Giants-Bold", size: 30))
@@ -116,13 +120,26 @@ struct MainView: View {
                                 .font(.custom("Giants-Bold", size: 8)))
                         )
                     }
+                    .alert(isPresented: $showSchoolChangeAlert) {
+                        soundSetting.playSound(sound: .errorBGM)
+                        return Alert(
+                            title: Text("알림")
+                                .font(.custom("Giants-Bold", size: 10)),
+                            message: Text("학교를 변경하신다면, 현재 학교에서 터치한 점수는 0으로 돌아갑니다")
+                                .font(.custom("Giants-Bold", size: 6)),
+                            dismissButton: .destructive(Text("확인")
+                                .font(.custom("Giants-Bold", size: 8))) {
+                                    self.showSearch = true
+                                }
+                        )
+                    }
                     .onAppear() {
                         self.vm.fetchSchools()
                     }
                 }
                 
             }
-
+            
         }
         
     }
@@ -137,8 +154,8 @@ struct titleImage: View {
         //.frame(width: 300, height: 200)
     }
 }
-                                       
+
 #Preview {
     MainView()
-   
+    
 }

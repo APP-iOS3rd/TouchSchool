@@ -92,7 +92,6 @@ struct GameView: View {
                     Button(action: {
                         // Handle back button action here
                         self.showGame = false
-                        myTouchCount = 0
                     }) {
                         Image(systemName: "chevron.left")
                             .foregroundColor(Color.grayText)
