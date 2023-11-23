@@ -24,7 +24,7 @@
 [![xcode](https://img.shields.io/badge/Xcode-15.0.1-blue)]()
 [![Firebase](https://img.shields.io/badge/Firebase-10.16.0-green)]()
 [![Alamofire](https://img.shields.io/badge/Alamofire-5.8.0-red)]()
-[![GoogleMobileAds](https://img.shields.io/badge/Alamofire-10.13.0-yellow)]()
+[![GoogleMobileAds](https://img.shields.io/badge/GoogleMobileAds-10.13.0-yellow)]()
 
 ## 🌲 Tree
 
