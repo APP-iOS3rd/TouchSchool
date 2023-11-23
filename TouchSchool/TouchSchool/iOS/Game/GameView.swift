@@ -98,7 +98,7 @@ struct GameView: View {
                             .foregroundColor(Color.grayText)
                             .imageScale(.large)
                         Text("돌아가기")
-                            .font(.custom("Giants-Bold", size: 20))
+                            .font(.custom("Giants-Bold", size: 15))
                             .foregroundColor(Color.grayText)
                     }
                     .padding(.leading)
@@ -124,10 +124,10 @@ struct GameView: View {
         }
     }
     private func handleTap(location: CGPoint) {
-        soundSetting.playSound(sound: .buttonBGM)
         let angle = Double.random(in: -30...30)
         smokes.append(Smoke(location: location, showEffect: true, angle: angle, opacity: 1))
         myTouchCount += 1
+        soundSetting.playSound(sound: .buttonBGM)
         vm.newAdd()
         
         withAnimation {

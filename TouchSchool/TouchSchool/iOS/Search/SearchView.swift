@@ -35,6 +35,7 @@ struct SearchView: View {
                             .foregroundColor(Color.white)
                             .imageScale(.large)
                         Text("돌아가기")
+                            .font(.custom("Giants-Bold", size: 15))
                             .foregroundColor(Color.white)
                     }
                     .padding(.leading)
@@ -70,10 +71,10 @@ struct SearchView: View {
                             }) {
                                 VStack(alignment: .leading) {
                                     Text(school.schoolName)
-                                        .font(.headline)
+                                        .font(.custom("Giants-Bold", size: 15))
                                         .foregroundColor(.white)
                                     Text(school.adres)
-                                        .font(.subheadline)
+                                        .font(.custom("Giants-Bold", size: 15))
                                         .foregroundColor(Color.grayText)
                                 }
                             }

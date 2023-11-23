@@ -32,6 +32,7 @@ struct RankView: View {
                             .foregroundColor(.white)
                             .imageScale(.large)
                         Text("돌아가기")
+                            .font(.custom("Giants-Bold", size: 15))
                             .foregroundColor(.white)
                     }
                     .padding(.leading)
@@ -48,20 +49,17 @@ struct RankView: View {
                     VStack{
                         Text("\(vm.mySchoolName)")
                             .foregroundStyle(.mint)
-                            .font(.system(size: 30))
-                            .bold()
+                            .font(.custom("Giants-Bold", size: 30))
                             .padding(.top)
 
                         HStack{
                             Text("\(mySchoolRank)위 ")
                                 .foregroundStyle(.white)
-                                .font(.system(size: 30))
-                                .bold()
+                                .font(.custom("Giants-Bold", size: 30))
  
                             Text("\(vm.mySchoolCnt)")
                                 .foregroundStyle(.white)
-                                .font(.system(size: 30))
-                                .bold()
+                                .font(.custom("Giants-Bold", size: 30))
                             
                         }
                         .frame(width: 310)
@@ -76,13 +74,17 @@ struct RankView: View {
                             HStack {
                                 if let rank = schoolInfo.rank {
                                     Text("\(rank)위 ")
+                                        .font(.custom("Giants-Bold", size: 15))
                                 } else {
                                     Text("0")
+                                        .font(.custom("Giants-Bold", size: 15))
                                 }
                                 Text(schoolInfo.name)
+                                    .font(.custom("Giants-Bold", size: 15))
                                     .frame(width: 150, height: 25, alignment: .leading)
                                 
                                 Text("\(schoolInfo.count)")
+                                    .font(.custom("Giants-Bold", size: 15))
                             }
                             .foregroundColor(.white)
                             .bold()
