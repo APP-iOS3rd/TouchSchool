@@ -46,7 +46,7 @@ struct MainView: View {
                                 soundSetting.playLoop(sound: .mainBGM)
                             }
                             .onDisappear() {
-                                soundSetting.player?.stop()
+                                soundSetting.stopSounds(sound: .mainBGM)
                             }
                         
                         Text("학교대항전")

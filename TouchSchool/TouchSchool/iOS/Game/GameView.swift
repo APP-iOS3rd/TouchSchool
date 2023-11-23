@@ -113,7 +113,8 @@ struct GameView: View {
             self.mainVM.fetchSchools()
         }
         .alert(isPresented: $vm.showWarningAlert) {
-            Alert(
+            soundSetting.playSound(sound: .errorBGM)
+            return Alert(
                 title: Text("경고")
                     .font(.custom("Giants-Bold", size: 10)),
                 message: Text("비정상적인 터치 수가 감지되었습니다.")

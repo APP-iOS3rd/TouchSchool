@@ -6,42 +6,61 @@
 //
 
 import SwiftUI
-import AVKit
+import AVFoundation
 
 class SoundSetting: ObservableObject {
-    
-    //1. soundSetting의 단일 인스턴스를 만듬
-    /// singleton ? :
-    /*싱글 톤은 한 번만 생성 된 다음 사용해야하는 모든 곳에서 공유해야하는 객체입니다 */
     static let instance = SoundSetting()
-    
-    var player: AVAudioPlayer?
-    
-    enum SoundOption: String {
+    private var players: [SoundOption: AVAudioPlayer] = [:]
+
+    enum SoundOption: String, CaseIterable {
         case mainBGM = "mainBGM"
         case buttonBGM = "buttomBGM"
         case errorBGM = "errorBGM"
     }
-    
-    func playSound(sound: SoundOption) {
-        
-        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else { return }
-        
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-            player?.volume = 1
-        } catch {
-            print("재생하는데 오류가 발생했습니다. \(error.localizedDescription)")
+
+    init() {
+        for sound in SoundOption.allCases {
+            if let url = Bundle.main.url(forResource: sound.rawValue, withExtension: "mp3") {
+                do {
+                    let player = try AVAudioPlayer(contentsOf: url)
+                    player.prepareToPlay()
+                    players[sound] = player
+                } catch {
+                    print("오디오 플레이어 초기화 실패: \(error)")
+                }
+            } else {
+                print("사운드 파일 로드 실패: \(sound.rawValue).mp3")
+            }
         }
     }
-    
-    func playLoop(sound: SoundOption) {
-        let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3")
-        player = try! AVAudioPlayer(contentsOf: url!)
-        player?.numberOfLoops =  10
-        player?.play()
-        player?.volume = 0.1
+
+    func playSound(sound: SoundOption) {
+        DispatchQueue.global().async {
+            if let player = self.players[sound], !player.isPlaying {
+                player.play()
+                player.volume = 0.1
+            }
+        }
     }
-    
+
+    func playLoop(sound: SoundOption) {
+        DispatchQueue.global().async {
+            if let player = self.players[sound] {
+                player.numberOfLoops = 10
+                player.volume = 0.1
+                if !player.isPlaying {
+                    player.play()
+                }
+            }
+        }
+    }
+
+    func stopSounds(sound: SoundOption) {
+            if let player = players[sound], player.isPlaying {
+                player.stop()
+                player.currentTime = 0
+            }
+    }
+
 }
+
