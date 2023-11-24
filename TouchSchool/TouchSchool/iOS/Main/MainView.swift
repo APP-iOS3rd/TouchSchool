@@ -64,6 +64,7 @@ struct MainView: View {
                                     soundSetting.playSound(sound: .buttonBGM)
                                     self.showGame = true
                                 }
+                                self.vm.fetchSchools()
                             }) {
                                 Text("게임 시작")
                                     .font(.custom("Giants-Bold", size: 30))
@@ -78,6 +79,8 @@ struct MainView: View {
                             Button(action: {
                                 soundSetting.playSound(sound: .buttonBGM)
                                 self.showRank = true
+                                @ObservedObject var gameVm = GameVM()
+                                self.vm.fetchSchools()
                             }) {
                                 Text("랭킹 보기")
                                     .font(.custom("Giants-Bold", size: 30))
@@ -136,9 +139,7 @@ struct MainView: View {
                                 }
                         )
                     }
-                    .onAppear() {
-                        self.vm.fetchSchools()
-                    }
+                    
                 }
                 
             }
