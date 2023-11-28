@@ -49,6 +49,7 @@
  ┃ ┃ ┣ 📜Audio.swift
  ┃ ┃ ┣ 📜Colors.swift
  ┃ ┃ ┣ 📜Helpers.swift
+ ┃ ┃ ┣ 📜infoView.swift
  ┃ ┃ ┣ 📜MultitouchRepresentable.swift
  ┃ ┃ ┗ 📜MultitouchView.swift
  ┃ ┣ 📂Main

@@ -13,6 +13,7 @@ struct MainView: View {
     @State var showRank: Bool = false
     @State private var showAlert = false
     @State private var showSchoolChangeAlert = false
+    @State private var showInfo = false
     @ObservedObject var vm = MainVM()
     private let soundSetting = SoundSetting.instance
     
@@ -35,6 +36,23 @@ struct MainView: View {
                             .ignoresSafeArea()
                     }
                     VStack{
+                        
+                        //정보를 나타내 주는 버튼 표시
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                showInfo = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.white)
+                            }
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
+                            .sheet(isPresented: $showInfo) {
+                                InfoView()
+                            }
+                        }
+                        
                         //                        titleImage()
                         //shadow 하얀색으로 넣어서 칠판 느낌 나게 한번 해봤습니다
                         Text("터치!터치!")
@@ -112,7 +130,7 @@ struct MainView: View {
                             
                             Spacer()
                             BannerView()
-        
+                            
                         }
                     }
                     .alert(isPresented: $showAlert) {
