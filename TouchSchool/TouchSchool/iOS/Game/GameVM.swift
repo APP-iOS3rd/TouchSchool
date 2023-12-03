@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseCore
 
 class GameVM: ObservableObject {
-    
+    @Published var visitCount = 0
     @Published var mySchoolName: String = ""
     @Published var mySchoolAdres: String = ""
     @Published var mySchoolCnt: Int = 0

@@ -15,12 +15,13 @@ struct RankView: View {
     var body: some View {
         
         ZStack{
+            InterstitialAdView()
             Color(red: 132/255, green: 194/255, blue: 65/255).edgesIgnoringSafeArea(.bottom)
             Image("blackboard_set")
                 .resizable()
                 .ignoresSafeArea()
             
-        //꾸밈화면
+            //꾸밈화면
             VStack{
                 //돌아가기
                 HStack{
@@ -51,12 +52,12 @@ struct RankView: View {
                             .foregroundStyle(.mint)
                             .font(.custom("Giants-Bold", size: 30))
                             .padding(.top)
-
+                        
                         HStack{
                             Text("\(mySchoolRank)위 ")
                                 .foregroundStyle(.white)
                                 .font(.custom("Giants-Bold", size: 30))
- 
+                            
                             Text("\(vm.mySchoolCnt)")
                                 .foregroundStyle(.white)
                                 .font(.custom("Giants-Bold", size: 30))
@@ -66,7 +67,7 @@ struct RankView: View {
                         .padding()
                     }
                 }
-            
+                
                 // 학교 순위리스트
                 List {
                     LazyVStack(alignment: .leading) {
