@@ -15,11 +15,16 @@ struct RankView: View {
     var body: some View {
         
         ZStack{
-            InterstitialAdView()
+            if vm.visitCount % 8 == 0 {
+                InterstitialAdView()
+            }
             Color(red: 132/255, green: 194/255, blue: 65/255).edgesIgnoringSafeArea(.bottom)
             Image("blackboard_set")
                 .resizable()
                 .ignoresSafeArea()
+                .onAppear() {
+                    vm.visitCount += 1
+                }
             
             //꾸밈화면
             VStack{
