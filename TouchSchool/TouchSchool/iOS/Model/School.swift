@@ -63,6 +63,8 @@ var myTouchCount: Int {
     }
 }
 
-let eSchoolUrl = "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=1000000"
-let mSchoolUrl = "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=midd_list&perPage=1000000"
-let hSchoolUrl = "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=high_list&perPage=1000000"
+let apiKey = Bundle.main.infoDictionary?["School_Api_Key"] ?? ""
+
+let eSchoolUrl = "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=\(apiKey)&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=1000000"
+let mSchoolUrl = "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=\(apiKey)&svcType=api&svcCode=SCHOOL&contentType=json&gubun=midd_list&perPage=1000000"
+let hSchoolUrl = "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=\(apiKey)&svcType=api&svcCode=SCHOOL&contentType=json&gubun=high_list&perPage=1000000"

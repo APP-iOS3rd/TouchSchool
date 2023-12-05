@@ -96,6 +96,7 @@
 		41B33AF22B0DF70C0047A56B /* MultitouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultitouchView.swift; sourceTree = "<group>"; };
 		41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGuide.swift; sourceTree = "<group>"; };
 		41EE9F342AF4F71D006D560B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		41FCC8102B1EB96C0024A928 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		641BC63E2B0E0F99003B8580 /* buttomBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttomBGM.mp3; sourceTree = "<group>"; };
 		642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = errorBGM.mp3; sourceTree = "<group>"; };
 		6430CF482B1CDE9F009D9601 /* InterstitialAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdView.swift; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 				419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */,
 				419CE5522AD62DA700EC4105 /* ContentView.swift */,
 				419CE5542AD62DA800EC4105 /* Assets.xcassets */,
+				41FCC8102B1EB96C0024A928 /* Config.xcconfig */,
 				419CE55E2AD62EBF00EC4105 /* iOS */,
 				419CE5562AD62DA800EC4105 /* Preview Content */,
 			);
@@ -435,6 +437,7 @@
 /* Begin XCBuildConfiguration section */
 		419CE5592AD62DA800EC4105 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41FCC8102B1EB96C0024A928 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -498,6 +501,7 @@
 		};
 		419CE55A2AD62DA800EC4105 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41FCC8102B1EB96C0024A928 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -554,13 +558,14 @@
 		};
 		419CE55C2AD62DA800EC4105 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41FCC8102B1EB96C0024A928 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TouchSchool/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UAG934M4Q7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TouchSchool/Info.plist;
@@ -584,13 +589,14 @@
 		};
 		419CE55D2AD62DA800EC4105 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41FCC8102B1EB96C0024A928 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TouchSchool/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UAG934M4Q7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TouchSchool/Info.plist;

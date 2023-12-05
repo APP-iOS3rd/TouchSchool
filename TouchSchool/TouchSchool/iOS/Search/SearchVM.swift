@@ -79,7 +79,7 @@ extension SearchVM {
     }
     
 //    private func fetchDataAsync() async throws -> schoolData {
-//        guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=47637ffc0e519c2550b56144e7190bff&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=100000") else {
+//        guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=(API_KEY)&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=100000") else {
 //            throw MyError.invalidURL
 //        }
 //        let (data, _) = try await URLSession.shared.data(from: url)
