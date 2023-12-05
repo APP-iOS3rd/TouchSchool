@@ -129,8 +129,6 @@ struct MainView: View {
                             .padding()
                             
                             Spacer()
-                            BannerView()
-                            
                         }
                     }
                     .alert(isPresented: $showAlert) {
