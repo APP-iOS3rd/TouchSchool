@@ -5,7 +5,6 @@
 //  Created by 최동호 on 10/11/23.
 //
 
-import Foundation
 import SwiftUI
 import Alamofire
 
@@ -38,7 +37,7 @@ class SearchVM: ObservableObject {
         }
     }
     
-    private func setViewState(to state: ViewState){
+    private func setViewState(to state: ViewState) {
         DispatchQueue.main.async {
             self.viewState = state
             self.isLoading = state == . loading
@@ -66,32 +65,17 @@ extension SearchVM {
         }
     }
     
-    private func fetchSchool1() async throws -> schoolData{
+    private func fetchSchool1() async throws -> schoolData {
         return try await AF.request(eSchoolUrl, method: .get, headers: headers).serializingDecodable(schoolData.self).value
     }
     
-    private func fetchSchool2() async throws -> schoolData{
+    private func fetchSchool2() async throws -> schoolData {
         return try await AF.request(mSchoolUrl, method: .get, headers: headers).serializingDecodable(schoolData.self).value
     }
 
-    private func fetchSchool3() async throws -> schoolData{
+    private func fetchSchool3() async throws -> schoolData {
         return try await AF.request(hSchoolUrl, method: .get, headers: headers).serializingDecodable(schoolData.self).value
     }
-    
-//    private func fetchDataAsync() async throws -> schoolData {
-//        guard let url = URL(string: "https://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=(API_KEY)&svcType=api&svcCode=SCHOOL&contentType=json&gubun=elem_list&perPage=100000") else {
-//            throw MyError.invalidURL
-//        }
-//        let (data, _) = try await URLSession.shared.data(from: url)
-//        for i in 1...10 {
-//            DispatchQueue.main.async {
-//                self.progress = Double(i) / 10.0
-//            }
-//            try await Task.sleep(nanoseconds: 1) // Simulate a delay
-//        }
-//        let decodedData = try JSONDecoder().decode(schoolData.self, from: data)
-//        return decodedData
-//    }
 }
 
 enum ViewState: String {

@@ -61,7 +61,6 @@ class MainVM: ObservableObject {
                 mySchoolRank = index + 1
             }
             allSchoolInfos[index].rank = index + 1
-        
         }
     }
 }

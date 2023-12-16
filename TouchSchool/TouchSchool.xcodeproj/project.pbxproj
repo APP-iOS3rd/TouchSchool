@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28350C322AF3D22C0068853A /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* GameVM.swift */; };
-		28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */; };
+		417BF34B2B2DA35D008BA5B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */; };
 		419793DE2B0F65D5004053E7 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 419793DD2B0F65D5004053E7 /* GoogleMobileAds */; };
 		419793E02B0F668E004053E7 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793DF2B0F668E004053E7 /* BannerView.swift */; };
 		419793E22B0F66D0004053E7 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793E12B0F66D0004053E7 /* BannerViewController.swift */; };
@@ -72,7 +72,7 @@
 
 /* Begin PBXFileReference section */
 		28350C312AF3D22C0068853A /* GameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
-		28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		419793DF2B0F668E004053E7 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		419793E12B0F66D0004053E7 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		419CE54D2AD62DA700EC4105 /* TouchSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				645568AF2B0943E900C3A246 /* Info.plist */,
-				28B336A92AF3DD070033AB66 /* GoogleService-Info.plist */,
+				417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */,
 				419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */,
 				419CE5522AD62DA700EC4105 /* ContentView.swift */,
 				419CE5542AD62DA800EC4105 /* Assets.xcassets */,
@@ -388,12 +388,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				645568CA2B0959C900C3A246 /* mainBGM.mp3 in Resources */,
+				417BF34B2B2DA35D008BA5B9 /* GoogleService-Info.plist in Resources */,
 				642A03532B0BC1C900DBD9AD /* errorBGM.mp3 in Resources */,
 				641BC63F2B0E0F9A003B8580 /* buttomBGM.mp3 in Resources */,
 				419CE5582AD62DA800EC4105 /* Preview Assets.xcassets in Resources */,
 				419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */,
 				645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */,
-				28B336AA2AF3DD070033AB66 /* GoogleService-Info.plist in Resources */,
 				645568B52B0948A200C3A246 /* Giants-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

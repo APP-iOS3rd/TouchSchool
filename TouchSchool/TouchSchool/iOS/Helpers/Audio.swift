@@ -11,13 +11,13 @@ import AVFoundation
 class SoundSetting: ObservableObject {
     static let instance = SoundSetting()
     private var players: [SoundOption: AVAudioPlayer] = [:]
-
+    
     enum SoundOption: String, CaseIterable {
         case mainBGM = "mainBGM"
         case buttonBGM = "buttomBGM"
         case errorBGM = "errorBGM"
     }
-
+    
     init() {
         for sound in SoundOption.allCases {
             if let url = Bundle.main.url(forResource: sound.rawValue, withExtension: "mp3") {
@@ -33,7 +33,7 @@ class SoundSetting: ObservableObject {
             }
         }
     }
-
+    
     func playSound(sound: SoundOption) {
         DispatchQueue.global().async {
             if let player = self.players[sound] {
@@ -42,7 +42,7 @@ class SoundSetting: ObservableObject {
             }
         }
     }
-
+    
     func playLoop(sound: SoundOption) {
         DispatchQueue.global().async {
             if let player = self.players[sound] {
@@ -54,13 +54,11 @@ class SoundSetting: ObservableObject {
             }
         }
     }
-
+    
     func stopSounds(sound: SoundOption) {
-            if let player = players[sound], player.isPlaying {
-                player.stop()
-                player.currentTime = 0
-            }
+        if let player = players[sound], player.isPlaying {
+            player.stop()
+            player.currentTime = 0
+        }
     }
-
 }
-

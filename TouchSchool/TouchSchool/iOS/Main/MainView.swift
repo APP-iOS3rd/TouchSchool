@@ -36,7 +36,6 @@ struct MainView: View {
                             .ignoresSafeArea()
                     }
                     VStack{
-                        
                         //정보를 나타내 주는 버튼 표시
                         HStack {
                             Spacer()
@@ -52,8 +51,7 @@ struct MainView: View {
                                 InfoView()
                             }
                         }
-                        
-                        //                        titleImage()
+
                         //shadow 하얀색으로 넣어서 칠판 느낌 나게 한번 해봤습니다
                         Text("터치!터치!")
                             .font(.custom("Giants-Bold", size: 55))
@@ -134,7 +132,7 @@ struct MainView: View {
                     .alert(isPresented: $showAlert) {
                         soundSetting.playSound(sound: .errorBGM)
                         return Alert(
-                            title: Text("알림")
+                            title: Text("")
                                 .font(.custom("Giants-Bold", size: 10)),
                             message: Text("학교를 먼저 선택해주세요.")
                                 .font(.custom("Giants-Bold", size: 6)),
@@ -145,7 +143,7 @@ struct MainView: View {
                     .alert(isPresented: $showSchoolChangeAlert) {
                         soundSetting.playSound(sound: .errorBGM)
                         return Alert(
-                            title: Text("알림")
+                            title: Text("")
                                 .font(.custom("Giants-Bold", size: 10)),
                             message: Text("학교를 변경하신다면, 현재 학교에서 터치한 점수는 0으로 돌아갑니다")
                                 .font(.custom("Giants-Bold", size: 6)),
@@ -155,15 +153,10 @@ struct MainView: View {
                                 }
                         )
                     }
-                    
                 }
-                
             }
-            
         }
-        
     }
-    
 }
 
 struct titleImage: View {
