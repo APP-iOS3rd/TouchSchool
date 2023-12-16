@@ -5,7 +5,6 @@
 //  Created by 최동호 on 11/22/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct MultitouchRepresentable: UIViewRepresentable {

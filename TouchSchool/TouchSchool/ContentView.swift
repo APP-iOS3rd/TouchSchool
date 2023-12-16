@@ -26,8 +26,6 @@ struct ContentView: View {
                             await vm.fetchData()
                         }
                     }
-                
-                
             } else {
                 MainView()
             }

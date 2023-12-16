@@ -67,7 +67,6 @@ class GameVM: ObservableObject {
         
         if !isTimerActive {
             isTimerActive = true
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
                 if self.touchCount >= 320 {
                     self.showWarningAlert = true
@@ -103,7 +102,7 @@ class GameVM: ObservableObject {
                 print("Transaction failed: \(error)")
             } else {
                 print("Transaction successfully committed!")
-                self.touchCount = 0 // Reset touch count after successful submission
+                self.touchCount = 0
             }
         }
     }

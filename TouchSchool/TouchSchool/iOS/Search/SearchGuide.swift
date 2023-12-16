@@ -5,7 +5,6 @@
 //  Created by 최동호 on 10/13/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct SearchGuide: View {

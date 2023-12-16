@@ -12,7 +12,7 @@ class MultitouchView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        isMultipleTouchEnabled = true // Enable multitouch
+        isMultipleTouchEnabled = true
     }
 
     required init?(coder: NSCoder) {

@@ -5,7 +5,6 @@
 //  Created by 최동호 on 10/11/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct SearchBar: View {
@@ -21,7 +20,7 @@ struct SearchBar: View {
                 .frame(width: 270, height: 36)
                 .cornerRadius(8)
         
-            HStack{
+            HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color.grayText)
                     .padding(.leading, 10)
@@ -88,7 +87,6 @@ struct SearchBar: View {
         }
     }
 }
-
 
 #Preview {
     ZStack{

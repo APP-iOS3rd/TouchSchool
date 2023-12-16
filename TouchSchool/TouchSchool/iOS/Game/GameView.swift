@@ -5,7 +5,6 @@
 //  Created by 최동호 on 10/11/23.
 //
 
-import Foundation
 import SwiftUI
 import AVKit
 
@@ -65,7 +64,6 @@ struct GameView: View {
                 Spacer()
             }
             
-            // Effect View
             ForEach(smokes.indices, id: \.self) { index in
                 let smoke = smokes[index]
                 if smoke.showEffect {
@@ -82,7 +80,6 @@ struct GameView: View {
                         }
                 }
             }
-            
             MultitouchRepresentable { location in
                 handleTap(location: location)
             }
@@ -107,7 +104,6 @@ struct GameView: View {
                 Spacer()
             }
         }
-        
         .onAppear() {
             self.mainVM.fetchSchools()
         }
@@ -144,7 +140,3 @@ struct SmokeEffectView: View {
             .frame(width: 50, height: 50)
     }
 }
-
-//#Preview {
-//    GameView(vm: GameVM(), mainVM: MainVM(), showGame: MainView().$showGame)
-//}

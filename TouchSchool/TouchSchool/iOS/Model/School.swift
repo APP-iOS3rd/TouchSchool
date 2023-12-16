@@ -7,7 +7,6 @@
 
 import Foundation
 import Alamofire
-import SwiftUI
 
 struct schoolData: Codable {
     var dataSearch: DataSearch
