@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		28350C322AF3D22C0068853A /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* GameVM.swift */; };
+		413E974C2B2F567A0055BF85 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E974B2B2F567A0055BF85 /* Information.swift */; };
+		413E974E2B2F56AA0055BF85 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E974D2B2F56AA0055BF85 /* GridCell.swift */; };
+		413E97502B2F56E20055BF85 /* IntroGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E974F2B2F56E20055BF85 /* IntroGridView.swift */; };
 		417BF34B2B2DA35D008BA5B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */; };
 		419793DE2B0F65D5004053E7 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 419793DD2B0F65D5004053E7 /* GoogleMobileAds */; };
 		419793E02B0F668E004053E7 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793DF2B0F668E004053E7 /* BannerView.swift */; };
@@ -72,6 +75,9 @@
 
 /* Begin PBXFileReference section */
 		28350C312AF3D22C0068853A /* GameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
+		413E974B2B2F567A0055BF85 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "../../../../../../Library/Mobile Documents/.Trash/TouchSchool/TouchSchool/TouchSchool/iOS/Model/Information.swift"; sourceTree = "<group>"; };
+		413E974D2B2F56AA0055BF85 /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		413E974F2B2F56E20055BF85 /* IntroGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroGridView.swift; sourceTree = "<group>"; };
 		417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		419793DF2B0F668E004053E7 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		419793E12B0F66D0004053E7 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +154,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		413E974A2B2F565B0055BF85 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				64FF7A1D2B13FE7A00795360 /* InfoView.swift */,
+				413E974D2B2F56AA0055BF85 /* GridCell.swift */,
+				413E974F2B2F56E20055BF85 /* IntroGridView.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
 		419793E32B0F7113004053E7 /* AD */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +221,7 @@
 				419CE5642AD62F8700EC4105 /* Main */,
 				419CE5632AD62F5700EC4105 /* Search */,
 				419CE5732AD66E4300EC4105 /* Game */,
+				413E974A2B2F565B0055BF85 /* Info */,
 				419CE55F2AD62ECA00EC4105 /* Model */,
 				419CE5622AD62F2B00EC4105 /* Helpers */,
 			);
@@ -216,6 +233,7 @@
 			children = (
 				419CE5602AD62EFE00EC4105 /* School.swift */,
 				419D36932B060F6900E5635D /* Smoke.swift */,
+				413E974B2B2F567A0055BF85 /* Information.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,7 +243,6 @@
 			children = (
 				419CE56F2AD63A1900EC4105 /* Colors.swift */,
 				419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */,
-				64FF7A1D2B13FE7A00795360 /* InfoView.swift */,
 				419CE57E2AD6851500EC4105 /* Helpers.swift */,
 				645568CD2B095BBE00C3A246 /* Audio.swift */,
 				41B33AF02B0DF7020047A56B /* MultitouchRepresentable.swift */,
@@ -412,12 +429,15 @@
 				419CE5662AD636C600EC4105 /* SearchView.swift in Sources */,
 				419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */,
 				6430CF492B1CDE9F009D9601 /* InterstitialAdView.swift in Sources */,
+				413E974E2B2F56AA0055BF85 /* GridCell.swift in Sources */,
 				419793E22B0F66D0004053E7 /* BannerViewController.swift in Sources */,
 				41EE9F352AF4F71D006D560B /* FirebaseManager.swift in Sources */,
 				419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */,
+				413E97502B2F56E20055BF85 /* IntroGridView.swift in Sources */,
 				419CE5612AD62EFE00EC4105 /* School.swift in Sources */,
 				41B33AF12B0DF7020047A56B /* MultitouchRepresentable.swift in Sources */,
 				419CE5722AD63A3200EC4105 /* ActivityIndicator.swift in Sources */,
+				413E974C2B2F567A0055BF85 /* Information.swift in Sources */,
 				419CE56E2AD63A0A00EC4105 /* SearchBar.swift in Sources */,
 				419CE5682AD636E600EC4105 /* MainView.swift in Sources */,
 				419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */,
