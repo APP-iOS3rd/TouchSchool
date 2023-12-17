@@ -7,11 +7,20 @@
 
 import SwiftUI
 
+enum ActiveAlert: Identifiable {
+    case schoolSelect
+    case schoolChange
+    
+    var id: Self {
+        self
+    }
+}
+
 struct MainView: View {
     @State var showSearch: Bool = false
     @State var showGame: Bool = false
     @State var showRank: Bool = false
-    @State private var showAlert = false
+    @State private var activeAlert: ActiveAlert?
     @State private var showSchoolChangeAlert = false
     @State private var showInfo = false
     @ObservedObject var vm = MainVM()
@@ -51,7 +60,7 @@ struct MainView: View {
                                 InfoView()
                             }
                         }
-
+                        
                         //shadow 하얀색으로 넣어서 칠판 느낌 나게 한번 해봤습니다
                         Text("터치!터치!")
                             .font(.custom("Giants-Bold", size: 55))
@@ -75,7 +84,7 @@ struct MainView: View {
                             Button(action: {
                                 if seqValue.isEmpty {
                                     soundSetting.playSound(sound: .buttonBGM)
-                                    showAlert = true
+                                    activeAlert = .schoolSelect
                                 } else {
                                     soundSetting.playSound(sound: .buttonBGM)
                                     self.showGame = true
@@ -111,7 +120,7 @@ struct MainView: View {
                             Button(action: {
                                 soundSetting.playSound(sound: .buttonBGM)
                                 if myTouchCount != 0 {
-                                    showSchoolChangeAlert = true
+                                    activeAlert = .schoolChange
                                 } else {
                                     self.showSearch = true
                                 }
@@ -129,30 +138,53 @@ struct MainView: View {
                             Spacer()
                         }
                     }
-                    .alert(isPresented: $showAlert) {
-                        soundSetting.playSound(sound: .errorBGM)
-                        return Alert(
-                            title: Text("")
-                                .font(.custom("Giants-Bold", size: 10)),
-                            message: Text("학교를 먼저 선택해주세요.")
-                                .font(.custom("Giants-Bold", size: 6)),
-                            dismissButton: .default(Text("확인")
-                                .font(.custom("Giants-Bold", size: 8)))
-                        )
+                    .alert(item: $activeAlert) { active in
+                        switch active {
+                        case .schoolSelect:
+                            return  Alert(
+                                title: Text("")
+                                    .font(.custom("Giants-Bold", size: 10)),
+                                message: Text("학교를 변경하신다면, 현재 학교에서 터치한 점수는 0으로 돌아갑니다")
+                                    .font(.custom("Giants-Bold", size: 6)),
+                                dismissButton: .default(Text("확인")
+                                    .font(.custom("Giants-Bold", size: 8)))
+                                
+                            )
+                        case .schoolChange:
+                            return Alert(
+                                title: Text("")
+                                    .font(.custom("Giants-Bold", size: 10)),
+                                message: Text("학교를 먼저 선택해주세요.")
+                                    .font(.custom("Giants-Bold", size: 6)),
+                                dismissButton: .default(Text("확인")
+                                    .font(.custom("Giants-Bold", size: 8)))
+                            )
+                        }
                     }
-                    .alert(isPresented: $showSchoolChangeAlert) {
-                        soundSetting.playSound(sound: .errorBGM)
-                        return Alert(
-                            title: Text("")
-                                .font(.custom("Giants-Bold", size: 10)),
-                            message: Text("학교를 변경하신다면, 현재 학교에서 터치한 점수는 0으로 돌아갑니다")
-                                .font(.custom("Giants-Bold", size: 6)),
-                            dismissButton: .destructive(Text("확인")
-                                .font(.custom("Giants-Bold", size: 8))) {
-                                    self.showSearch = true
-                                }
-                        )
-                    }
+                    //                    .alert(isPresented: $showSchoolChangeAlert) {
+                    //                        soundSetting.playSound(sound: .errorBGM)
+                    //                        return Alert(
+                    //                            title: Text("")
+                    //                                .font(.custom("Giants-Bold", size: 10)),
+                    //                            message: Text("학교를 변경하신다면, 현재 학교에서 터치한 점수는 0으로 돌아갑니다")
+                    //                                .font(.custom("Giants-Bold", size: 6)),
+                    //                            dismissButton: .destructive(Text("확인")
+                    //                                .font(.custom("Giants-Bold", size: 8))) {
+                    //                                    self.showSearch = true
+                    //                                }
+                    //                        )
+                    //                    }
+                    //                    .alert(isPresented: $showAlert) {
+                    //                        soundSetting.playSound(sound: .errorBGM)
+                    //                        return Alert(
+                    //                            title: Text("")
+                    //                                .font(.custom("Giants-Bold", size: 10)),
+                    //                            message: Text("학교를 먼저 선택해주세요.")
+                    //                                .font(.custom("Giants-Bold", size: 6)),
+                    //                            dismissButton: .default(Text("확인")
+                    //                                .font(.custom("Giants-Bold", size: 8)))
+                    //                        )
+                    //                    }
                 }
             }
         }
