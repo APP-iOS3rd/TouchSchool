@@ -15,8 +15,6 @@
 		413E97492B2F41500055BF85 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E97482B2F41500055BF85 /* Info.swift */; };
 		417BF34B2B2DA35D008BA5B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */; };
 		419793DE2B0F65D5004053E7 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 419793DD2B0F65D5004053E7 /* GoogleMobileAds */; };
-		419793E02B0F668E004053E7 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793DF2B0F668E004053E7 /* BannerView.swift */; };
-		419793E22B0F66D0004053E7 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793E12B0F66D0004053E7 /* BannerViewController.swift */; };
 		419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */; };
 		419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5522AD62DA700EC4105 /* ContentView.swift */; };
 		419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 419CE5542AD62DA800EC4105 /* Assets.xcassets */; };
@@ -82,8 +80,6 @@
 		413E97442B2F41330055BF85 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		413E97482B2F41500055BF85 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		419793DF2B0F668E004053E7 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
-		419793E12B0F66D0004053E7 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		419CE54D2AD62DA700EC4105 /* TouchSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSchoolApp.swift; sourceTree = "<group>"; };
 		419CE5522AD62DA700EC4105 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,8 +164,6 @@
 		419793E32B0F7113004053E7 /* AD */ = {
 			isa = PBXGroup;
 			children = (
-				419793E12B0F66D0004053E7 /* BannerViewController.swift */,
-				419793DF2B0F668E004053E7 /* BannerView.swift */,
 				6430CF482B1CDE9F009D9601 /* InterstitialAdView.swift */,
 			);
 			path = AD;
@@ -431,7 +425,6 @@
 				419CE5662AD636C600EC4105 /* SearchView.swift in Sources */,
 				419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */,
 				6430CF492B1CDE9F009D9601 /* InterstitialAdView.swift in Sources */,
-				419793E22B0F66D0004053E7 /* BannerViewController.swift in Sources */,
 				41EE9F352AF4F71D006D560B /* FirebaseManager.swift in Sources */,
 				419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */,
 				419CE5612AD62EFE00EC4105 /* School.swift in Sources */,
@@ -442,7 +435,6 @@
 				413E97472B2F41330055BF85 /* GridCell.swift in Sources */,
 				419CE5682AD636E600EC4105 /* MainView.swift in Sources */,
 				419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */,
-				419793E02B0F668E004053E7 /* BannerView.swift in Sources */,
 				419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */,
 				413E97462B2F41330055BF85 /* IntroGridView.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
