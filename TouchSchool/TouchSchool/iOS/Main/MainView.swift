@@ -161,30 +161,6 @@ struct MainView: View {
                             )
                         }
                     }
-                    //                    .alert(isPresented: $showSchoolChangeAlert) {
-                    //                        soundSetting.playSound(sound: .errorBGM)
-                    //                        return Alert(
-                    //                            title: Text("")
-                    //                                .font(.custom("Giants-Bold", size: 10)),
-                    //                            message: Text("학교를 변경하신다면, 현재 학교에서 터치한 점수는 0으로 돌아갑니다")
-                    //                                .font(.custom("Giants-Bold", size: 6)),
-                    //                            dismissButton: .destructive(Text("확인")
-                    //                                .font(.custom("Giants-Bold", size: 8))) {
-                    //                                    self.showSearch = true
-                    //                                }
-                    //                        )
-                    //                    }
-                    //                    .alert(isPresented: $showAlert) {
-                    //                        soundSetting.playSound(sound: .errorBGM)
-                    //                        return Alert(
-                    //                            title: Text("")
-                    //                                .font(.custom("Giants-Bold", size: 10)),
-                    //                            message: Text("학교를 먼저 선택해주세요.")
-                    //                                .font(.custom("Giants-Bold", size: 6)),
-                    //                            dismissButton: .default(Text("확인")
-                    //                                .font(.custom("Giants-Bold", size: 8)))
-                    //                        )
-                    //                    }
                 }
             }
         }
