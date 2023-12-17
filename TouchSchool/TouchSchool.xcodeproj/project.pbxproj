@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		28350C322AF3D22C0068853A /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* GameVM.swift */; };
+		413E973E2B2F41090055BF85 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 413E973D2B2F41090055BF85 /* Config.xcconfig */; };
+		413E97452B2F41330055BF85 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E97422B2F41330055BF85 /* InfoView.swift */; };
+		413E97462B2F41330055BF85 /* IntroGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E97432B2F41330055BF85 /* IntroGridView.swift */; };
+		413E97472B2F41330055BF85 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E97442B2F41330055BF85 /* GridCell.swift */; };
+		413E97492B2F41500055BF85 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E97482B2F41500055BF85 /* Info.swift */; };
 		417BF34B2B2DA35D008BA5B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */; };
 		419793DE2B0F65D5004053E7 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 419793DD2B0F65D5004053E7 /* GoogleMobileAds */; };
 		419793E02B0F668E004053E7 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793DF2B0F668E004053E7 /* BannerView.swift */; };
@@ -67,11 +72,15 @@
 		645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645568B82B0949E200C3A246 /* Recipekorea.ttf */; };
 		645568CA2B0959C900C3A246 /* mainBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 645568C92B0959C900C3A246 /* mainBGM.mp3 */; };
 		645568CE2B095BBE00C3A246 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645568CD2B095BBE00C3A246 /* Audio.swift */; };
-		64FF7A1E2B13FE7A00795360 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FF7A1D2B13FE7A00795360 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28350C312AF3D22C0068853A /* GameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
+		413E973D2B2F41090055BF85 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		413E97422B2F41330055BF85 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		413E97432B2F41330055BF85 /* IntroGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGridView.swift; sourceTree = "<group>"; };
+		413E97442B2F41330055BF85 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		413E97482B2F41500055BF85 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		419793DF2B0F668E004053E7 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		419793E12B0F66D0004053E7 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +105,6 @@
 		41B33AF22B0DF70C0047A56B /* MultitouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultitouchView.swift; sourceTree = "<group>"; };
 		41E07EBF2ADE28DD001F0081 /* SearchGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGuide.swift; sourceTree = "<group>"; };
 		41EE9F342AF4F71D006D560B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		41FCC8102B1EB96C0024A928 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		641BC63E2B0E0F99003B8580 /* buttomBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttomBGM.mp3; sourceTree = "<group>"; };
 		642A03522B0BC1C900DBD9AD /* errorBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = errorBGM.mp3; sourceTree = "<group>"; };
 		6430CF482B1CDE9F009D9601 /* InterstitialAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdView.swift; sourceTree = "<group>"; };
@@ -105,7 +113,6 @@
 		645568B82B0949E200C3A246 /* Recipekorea.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Recipekorea.ttf; sourceTree = "<group>"; };
 		645568C92B0959C900C3A246 /* mainBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainBGM.mp3; sourceTree = "<group>"; };
 		645568CD2B095BBE00C3A246 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
-		64FF7A1D2B13FE7A00795360 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +155,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		413E97412B2F41330055BF85 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				413E97422B2F41330055BF85 /* InfoView.swift */,
+				413E97432B2F41330055BF85 /* IntroGridView.swift */,
+				413E97442B2F41330055BF85 /* GridCell.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 		419793E32B0F7113004053E7 /* AD */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +199,7 @@
 				419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */,
 				419CE5522AD62DA700EC4105 /* ContentView.swift */,
 				419CE5542AD62DA800EC4105 /* Assets.xcassets */,
-				41FCC8102B1EB96C0024A928 /* Config.xcconfig */,
+				413E973D2B2F41090055BF85 /* Config.xcconfig */,
 				419CE55E2AD62EBF00EC4105 /* iOS */,
 				419CE5562AD62DA800EC4105 /* Preview Content */,
 			);
@@ -205,6 +222,7 @@
 				419CE5642AD62F8700EC4105 /* Main */,
 				419CE5632AD62F5700EC4105 /* Search */,
 				419CE5732AD66E4300EC4105 /* Game */,
+				413E97412B2F41330055BF85 /* Intro */,
 				419CE55F2AD62ECA00EC4105 /* Model */,
 				419CE5622AD62F2B00EC4105 /* Helpers */,
 			);
@@ -216,6 +234,7 @@
 			children = (
 				419CE5602AD62EFE00EC4105 /* School.swift */,
 				419D36932B060F6900E5635D /* Smoke.swift */,
+				413E97482B2F41500055BF85 /* Info.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,7 +244,6 @@
 			children = (
 				419CE56F2AD63A1900EC4105 /* Colors.swift */,
 				419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */,
-				64FF7A1D2B13FE7A00795360 /* InfoView.swift */,
 				419CE57E2AD6851500EC4105 /* Helpers.swift */,
 				645568CD2B095BBE00C3A246 /* Audio.swift */,
 				41B33AF02B0DF7020047A56B /* MultitouchRepresentable.swift */,
@@ -391,6 +409,7 @@
 				417BF34B2B2DA35D008BA5B9 /* GoogleService-Info.plist in Resources */,
 				642A03532B0BC1C900DBD9AD /* errorBGM.mp3 in Resources */,
 				641BC63F2B0E0F9A003B8580 /* buttomBGM.mp3 in Resources */,
+				413E973E2B2F41090055BF85 /* Config.xcconfig in Resources */,
 				419CE5582AD62DA800EC4105 /* Preview Assets.xcassets in Resources */,
 				419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */,
 				645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */,
@@ -418,16 +437,19 @@
 				419CE5612AD62EFE00EC4105 /* School.swift in Sources */,
 				41B33AF12B0DF7020047A56B /* MultitouchRepresentable.swift in Sources */,
 				419CE5722AD63A3200EC4105 /* ActivityIndicator.swift in Sources */,
+				413E97492B2F41500055BF85 /* Info.swift in Sources */,
 				419CE56E2AD63A0A00EC4105 /* SearchBar.swift in Sources */,
+				413E97472B2F41330055BF85 /* GridCell.swift in Sources */,
 				419CE5682AD636E600EC4105 /* MainView.swift in Sources */,
 				419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */,
-				64FF7A1E2B13FE7A00795360 /* InfoView.swift in Sources */,
 				419793E02B0F668E004053E7 /* BannerView.swift in Sources */,
 				419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */,
+				413E97462B2F41330055BF85 /* IntroGridView.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
 				41B33AF32B0DF70C0047A56B /* MultitouchView.swift in Sources */,
 				419CE57B2AD66E8900EC4105 /* RankView.swift in Sources */,
 				419D36942B060F6900E5635D /* Smoke.swift in Sources */,
+				413E97452B2F41330055BF85 /* InfoView.swift in Sources */,
 				28350C322AF3D22C0068853A /* GameVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +459,7 @@
 /* Begin XCBuildConfiguration section */
 		419CE5592AD62DA800EC4105 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41FCC8102B1EB96C0024A928 /* Config.xcconfig */;
+			baseConfigurationReference = 413E973D2B2F41090055BF85 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -501,7 +523,7 @@
 		};
 		419CE55A2AD62DA800EC4105 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41FCC8102B1EB96C0024A928 /* Config.xcconfig */;
+			baseConfigurationReference = 413E973D2B2F41090055BF85 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -558,7 +580,7 @@
 		};
 		419CE55C2AD62DA800EC4105 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41FCC8102B1EB96C0024A928 /* Config.xcconfig */;
+			baseConfigurationReference = 413E973D2B2F41090055BF85 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -589,7 +611,7 @@
 		};
 		419CE55D2AD62DA800EC4105 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41FCC8102B1EB96C0024A928 /* Config.xcconfig */;
+			baseConfigurationReference = 413E973D2B2F41090055BF85 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
