@@ -36,7 +36,9 @@ let helpers = [
     Introduce(name: "노주영",
               url: "https://github.com/JooYoungNoh", imageURL: "https://avatars.githubusercontent.com/u/96951827?v=4"),
     Introduce(name: "김민재",
-              url: "https://github.com/bdrsky2010", imageURL: "https://avatars.githubusercontent.com/u/80156515?v=4")
+              url: "https://github.com/bdrsky2010", imageURL: "https://avatars.githubusercontent.com/u/80156515?v=4"),
+    Introduce(name: "황민채",
+                  url: "https://github.com/Hminchae", imageURL: "https://avatars.githubusercontent.com/u/103357078?v=4")
 ]
 
 let rights = [

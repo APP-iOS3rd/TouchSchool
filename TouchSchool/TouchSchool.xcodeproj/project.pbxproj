@@ -10,8 +10,6 @@
 		28350C322AF3D22C0068853A /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* GameVM.swift */; };
 		417BF34B2B2DA35D008BA5B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */; };
 		419793DE2B0F65D5004053E7 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 419793DD2B0F65D5004053E7 /* GoogleMobileAds */; };
-		419793E02B0F668E004053E7 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793DF2B0F668E004053E7 /* BannerView.swift */; };
-		419793E22B0F66D0004053E7 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419793E12B0F66D0004053E7 /* BannerViewController.swift */; };
 		419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */; };
 		419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5522AD62DA700EC4105 /* ContentView.swift */; };
 		419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 419CE5542AD62DA800EC4105 /* Assets.xcassets */; };
@@ -67,14 +65,14 @@
 		645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645568B82B0949E200C3A246 /* Recipekorea.ttf */; };
 		645568CA2B0959C900C3A246 /* mainBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 645568C92B0959C900C3A246 /* mainBGM.mp3 */; };
 		645568CE2B095BBE00C3A246 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645568CD2B095BBE00C3A246 /* Audio.swift */; };
+		64857CEF2B3044A1001006C5 /* ActiveAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64857CEE2B3044A1001006C5 /* ActiveAlert.swift */; };
+		64F0D3A92B2F56220091BAE7 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC8102B1EB96C0024A928 /* Config.xcconfig */; };
 		64FF7A1E2B13FE7A00795360 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FF7A1D2B13FE7A00795360 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28350C312AF3D22C0068853A /* GameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
 		417BF34A2B2DA35D008BA5B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		419793DF2B0F668E004053E7 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
-		419793E12B0F66D0004053E7 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		419CE54D2AD62DA700EC4105 /* TouchSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSchoolApp.swift; sourceTree = "<group>"; };
 		419CE5522AD62DA700EC4105 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +103,7 @@
 		645568B82B0949E200C3A246 /* Recipekorea.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Recipekorea.ttf; sourceTree = "<group>"; };
 		645568C92B0959C900C3A246 /* mainBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainBGM.mp3; sourceTree = "<group>"; };
 		645568CD2B095BBE00C3A246 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		64857CEE2B3044A1001006C5 /* ActiveAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActiveAlert.swift; path = ../../../../../../../Downloads/iOS/Helpers/ActiveAlert.swift; sourceTree = "<group>"; };
 		64FF7A1D2B13FE7A00795360 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,8 +150,6 @@
 		419793E32B0F7113004053E7 /* AD */ = {
 			isa = PBXGroup;
 			children = (
-				419793E12B0F66D0004053E7 /* BannerViewController.swift */,
-				419793DF2B0F668E004053E7 /* BannerView.swift */,
 				6430CF482B1CDE9F009D9601 /* InterstitialAdView.swift */,
 			);
 			path = AD;
@@ -224,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				419CE56F2AD63A1900EC4105 /* Colors.swift */,
+				64857CEE2B3044A1001006C5 /* ActiveAlert.swift */,
 				419CE5712AD63A3200EC4105 /* ActivityIndicator.swift */,
 				64FF7A1D2B13FE7A00795360 /* InfoView.swift */,
 				419CE57E2AD6851500EC4105 /* Helpers.swift */,
@@ -391,6 +389,7 @@
 				417BF34B2B2DA35D008BA5B9 /* GoogleService-Info.plist in Resources */,
 				642A03532B0BC1C900DBD9AD /* errorBGM.mp3 in Resources */,
 				641BC63F2B0E0F9A003B8580 /* buttomBGM.mp3 in Resources */,
+				64F0D3A92B2F56220091BAE7 /* Config.xcconfig in Resources */,
 				419CE5582AD62DA800EC4105 /* Preview Assets.xcassets in Resources */,
 				419CE5552AD62DA800EC4105 /* Assets.xcassets in Resources */,
 				645568B92B0949E200C3A246 /* Recipekorea.ttf in Resources */,
@@ -406,13 +405,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				645568CE2B095BBE00C3A246 /* Audio.swift in Sources */,
+				64857CEF2B3044A1001006C5 /* ActiveAlert.swift in Sources */,
 				41E07EC02ADE28DD001F0081 /* SearchGuide.swift in Sources */,
 				419CE5702AD63A1900EC4105 /* Colors.swift in Sources */,
 				419CE56A2AD639D800EC4105 /* SearchVM.swift in Sources */,
 				419CE5662AD636C600EC4105 /* SearchView.swift in Sources */,
 				419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */,
 				6430CF492B1CDE9F009D9601 /* InterstitialAdView.swift in Sources */,
-				419793E22B0F66D0004053E7 /* BannerViewController.swift in Sources */,
 				41EE9F352AF4F71D006D560B /* FirebaseManager.swift in Sources */,
 				419CE5772AD66E6D00EC4105 /* GameView.swift in Sources */,
 				419CE5612AD62EFE00EC4105 /* School.swift in Sources */,
@@ -422,7 +421,6 @@
 				419CE5682AD636E600EC4105 /* MainView.swift in Sources */,
 				419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */,
 				64FF7A1E2B13FE7A00795360 /* InfoView.swift in Sources */,
-				419793E02B0F668E004053E7 /* BannerView.swift in Sources */,
 				419CE57D2AD66EA000EC4105 /* MainVM.swift in Sources */,
 				419CE57F2AD6851500EC4105 /* Helpers.swift in Sources */,
 				41B33AF32B0DF70C0047A56B /* MultitouchView.swift in Sources */,
