@@ -13,12 +13,10 @@ struct RankView: View {
     @Binding var showRank: Bool
     
     var body: some View {
-        
-        ZStack{
+        ZStack {
             if vm.visitCount % 8 == 0 {
                 InterstitialAdView()
             }
-            Color(red: 132/255, green: 194/255, blue: 65/255).edgesIgnoringSafeArea(.bottom)
             Image("blackboard_set")
                 .resizable()
                 .ignoresSafeArea()
@@ -27,9 +25,9 @@ struct RankView: View {
                 }
             
             //꾸밈화면
-            VStack{
+            VStack {
                 //돌아가기
-                HStack{
+                HStack {
                     Button(action: {
                         // Handle back button action here
                         self.showRank = false
@@ -46,19 +44,19 @@ struct RankView: View {
                 }
                 
                 //우리학교 순위
-                ZStack{
+                ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color.darkGrayText.opacity(0.5))
-                        .frame(width: 350, height: 130)
+                        .frame(height: 130)
                         .padding()
                     
-                    VStack{
+                    VStack {
                         Text("\(vm.mySchoolName)")
                             .foregroundStyle(.mint)
                             .font(.custom("Giants-Bold", size: 30))
                             .padding(.top)
                         
-                        HStack{
+                        HStack {
                             Text("\(mySchoolRank)위 ")
                                 .foregroundStyle(.white)
                                 .font(.custom("Giants-Bold", size: 30))
@@ -68,7 +66,6 @@ struct RankView: View {
                                 .font(.custom("Giants-Bold", size: 30))
                             
                         }
-                        .frame(width: 310)
                         .padding()
                     }
                 }
@@ -100,8 +97,8 @@ struct RankView: View {
                 }
                 .scrollContentBackground(.hidden)
                 .background(Color.clear)
-                .frame(width: 390, height: 500)
             }
+            Spacer()
         }
     }
 }
