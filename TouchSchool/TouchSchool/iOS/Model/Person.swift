@@ -12,6 +12,7 @@ struct Introduce {
     let url: String
     var imageName: String?
 }
+
 let creators = [
     Introduce(name: "김성엽",
               url: "https://github.com/RapidSloth", imageName: "김성엽"),
