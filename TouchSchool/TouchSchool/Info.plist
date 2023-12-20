@@ -12,7 +12,7 @@
 	<key>School_Api_Key</key>
 	<string>$(SCHOOL_API_KEY)</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<string>ca-app-pub-8683208427852298~7397777748</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Recipekorea.ttf</string>

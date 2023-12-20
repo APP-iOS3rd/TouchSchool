@@ -12,15 +12,11 @@ struct GridCell: View {
     var body: some View {
         Link(destination: URL(string: intro.url)!) {
             VStack {
-                AsyncImage(url: URL(string: intro.imageURL!)) { image in
-                    image
+                Image(intro.imageName ?? "")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 150)
                         .clipShape(.rect(cornerRadius: 10))
-                } placeholder: {
-                    ProgressView()
-                }
                 Text(intro.name)
                     .font(.custom("Giants-Bold", size: 15))
                     .foregroundStyle(.white)

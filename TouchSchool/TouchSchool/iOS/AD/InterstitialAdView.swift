@@ -13,9 +13,7 @@ struct InterstitialAdView: View {
 
     var body: some View {
         VStack {
-            // Your other content
-
-            // Call loadInterstitialAd when the view appears
+           
         }
         .onAppear {
             loadInterstitialAd()
@@ -23,7 +21,7 @@ struct InterstitialAdView: View {
     }
 
     private func loadInterstitialAd() {
-            let adUnitID = "ca-app-pub-3940256099942544/4411468910"
+            let adUnitID = "ca-app-pub-8683208427852298/3682735308"
             let request = GADRequest()
 
             GADInterstitialAd.load(withAdUnitID: adUnitID, request: request) { ad, error in

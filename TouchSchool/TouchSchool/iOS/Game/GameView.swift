@@ -64,22 +64,22 @@ struct GameView: View {
                 Spacer()
             }
             
-            ForEach(smokes.indices, id: \.self) { index in
-                let smoke = smokes[index]
-                if smoke.showEffect {
-                    SmokeEffectView()
-                        .rotationEffect(.degrees(smoke.angle))
-                        .opacity(smoke.opacity)
-                        .offset(x: smoke.location.x - UIScreen.main.bounds.width / 2,
-                                y: smoke.location.y - UIScreen.main.bounds.height / 2)
-                        .onAppear {
-                            withAnimation(.linear(duration: 1)) {
-                                smokes[index].opacity = 0
-                                smokes[index].angle += 30
-                            }
-                        }
-                }
-            }
+//            ForEach(smokes.indices, id: \.self) { index in
+//                let smoke = smokes[index]
+//                if smoke.showEffect {
+//                    SmokeEffectView()
+//                        .rotationEffect(.degrees(smoke.angle))
+//                        .opacity(smoke.opacity)
+//                        .offset(x: smoke.location.x - UIScreen.main.bounds.width / 2,
+//                                y: smoke.location.y - UIScreen.main.bounds.height / 2)
+//                        .onAppear {
+//                            withAnimation(.linear(duration: 1)) {
+//                                smokes[index].opacity = 0
+//                                smokes[index].angle += 30
+//                            }
+//                        }
+//                }
+//            }
             MultitouchRepresentable { location in
                 handleTap(location: location)
             }
@@ -87,7 +87,6 @@ struct GameView: View {
             VStack{
                 HStack{
                     Button(action: {
-                        // Handle back button action here
                         self.showGame = false
                     }) {
                         Image(systemName: "chevron.left")
@@ -121,11 +120,12 @@ struct GameView: View {
     }
     private func handleTap(location: CGPoint) {
         let angle = Double.random(in: -30...30)
-        smokes.append(Smoke(location: location, showEffect: true, angle: angle, opacity: 1))
+//        let newSmoke = Smoke(location: location, showEffect: true, angle: angle, opacity: 1)
+//        smokes.append(newSmoke)
         myTouchCount += 1
         soundSetting.playSound(sound: .buttonBGM)
         vm.newAdd()
-        
+
         withAnimation {
             self.animationAmount += 360
         }

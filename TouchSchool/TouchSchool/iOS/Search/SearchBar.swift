@@ -16,7 +16,7 @@ struct SearchBar: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            Color(Color.darkGrayText)
+            Color.darkGrayText
                 .frame(width: 270, height: 36)
                 .cornerRadius(8)
         
@@ -31,7 +31,7 @@ struct SearchBar: View {
                     .foregroundColor(Color.grayText))
                     .padding(7)
                     .padding(.leading, -7)
-                    .background(Color(Color.darkGrayText))
+                    .background(Color.darkGrayText)
                     .foregroundColor(Color.white)
                     .accentColor(Color.grayText)
                     .cornerRadius(8)
