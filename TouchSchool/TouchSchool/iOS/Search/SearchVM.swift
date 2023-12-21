@@ -54,7 +54,7 @@ extension SearchVM {
                 let data2 = try await fetchSchool2().dataSearch.content
                 let data3 = try await fetchSchool3().dataSearch.content
                 DispatchQueue.main.async {
-                    self.schools = data1 + data2 + data3 // Update on the main thread
+                    self.schools = data1 + data2 + data3 
                     self.isDownloading = false
                 }
             } catch {

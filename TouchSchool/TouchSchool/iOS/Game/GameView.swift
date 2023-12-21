@@ -14,6 +14,7 @@ struct GameView: View {
     @Binding var showGame: Bool
     @State private var isImage: Bool = false
     @State private var smokes: [Smoke] = []
+    @State private var currentIndex = 0
     @State private var animationAmount = 0.0
     private let soundSetting = SoundSetting.instance
     
@@ -64,22 +65,21 @@ struct GameView: View {
                 Spacer()
             }
             
-//            ForEach(smokes.indices, id: \.self) { index in
-//                let smoke = smokes[index]
-//                if smoke.showEffect {
-//                    SmokeEffectView()
-//                        .rotationEffect(.degrees(smoke.angle))
-//                        .opacity(smoke.opacity)
-//                        .offset(x: smoke.location.x - UIScreen.main.bounds.width / 2,
-//                                y: smoke.location.y - UIScreen.main.bounds.height / 2)
-//                        .onAppear {
-//                            withAnimation(.linear(duration: 1)) {
-//                                smokes[index].opacity = 0
-//                                smokes[index].angle += 30
-//                            }
-//                        }
-//                }
-//            }
+            ForEach(smokes) { smoke in
+                if smoke.showEffect {
+                    SmokeEffectView(smoke: smoke)
+                        .rotationEffect(.degrees(smoke.angle))
+                        .opacity(smoke.opacity)
+                        .offset(x: smoke.location.x - UIScreen.main.bounds.width / 2,
+                                y: smoke.location.y - UIScreen.main.bounds.height / 2)
+                        .onAppear {
+                            withAnimation(.linear(duration: 1)) {
+                                smokes[smokes.firstIndex(where: { $0.id == smoke.id })!].opacity = 0
+                                smokes[smokes.firstIndex(where: { $0.id == smoke.id })!].angle += 30
+                            }
+                        }
+                }
+            }
             MultitouchRepresentable { location in
                 handleTap(location: location)
             }
@@ -87,6 +87,7 @@ struct GameView: View {
             VStack{
                 HStack{
                     Button(action: {
+                        // Handle back button action here
                         self.showGame = false
                     }) {
                         Image(systemName: "chevron.left")
@@ -120,19 +121,25 @@ struct GameView: View {
     }
     private func handleTap(location: CGPoint) {
         let angle = Double.random(in: -30...30)
-//        let newSmoke = Smoke(location: location, showEffect: true, angle: angle, opacity: 1)
-//        smokes.append(newSmoke)
+        let newSmoke = Smoke(location: location, showEffect: true, angle: angle, opacity: 1, isAnimating: true)
+        if smokes.count >= 30 {
+            smokes.removeFirst()
+        }
+        smokes.append(newSmoke)
         myTouchCount += 1
         soundSetting.playSound(sound: .buttonBGM)
         vm.newAdd()
-
+        
         withAnimation {
             self.animationAmount += 360
         }
+        
     }
 }
 
 struct SmokeEffectView: View {
+    var smoke: Smoke
+    
     var body: some View {
         Image("smoke")
             .resizable()

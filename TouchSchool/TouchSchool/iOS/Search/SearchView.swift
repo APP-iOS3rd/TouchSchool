@@ -27,7 +27,6 @@ struct SearchView: View {
             VStack{
                 HStack{
                     Button(action: {
-                        // Handle back button action here
                         self.showSearch = false
                     }) {
                         Image(systemName: "chevron.left")
@@ -56,7 +55,6 @@ struct SearchView: View {
                         
                         List(vm.searchResult, id:\.seq) { school in
                             Button(action: {
-                                // Set the selected school when the button is tapped
                                 let firebaseManager = FirebaseManager(school: school)
                                 firebaseManager.isSchoolExists(seq: school.seq) { exists in
                                     if !exists {

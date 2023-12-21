@@ -266,8 +266,8 @@
 		419CE5642AD62F8700EC4105 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				419CE57C2AD66EA000EC4105 /* MainVM.swift */,
 				64857CF02B304B40001006C5 /* MainView.swift */,
+				419CE57C2AD66EA000EC4105 /* MainVM.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -587,6 +587,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TouchSchool/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TouchSchool-터치!터치!학교대항전";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -596,7 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Eight.TouchSchool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -618,6 +620,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TouchSchool/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TouchSchool-터치!터치!학교대항전";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -627,7 +631,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Eight.TouchSchool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
