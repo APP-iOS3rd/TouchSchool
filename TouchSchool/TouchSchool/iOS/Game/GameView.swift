@@ -14,7 +14,6 @@ struct GameView: View {
     @Binding var showGame: Bool
     @State private var isImage: Bool = false
     @State private var smokes: [Smoke] = []
-    @State private var currentIndex = 0
     @State private var animationAmount = 0.0
     private let soundSetting = SoundSetting.instance
     
@@ -87,7 +86,6 @@ struct GameView: View {
             VStack{
                 HStack{
                     Button(action: {
-                        // Handle back button action here
                         self.showGame = false
                     }) {
                         Image(systemName: "chevron.left")
@@ -121,7 +119,7 @@ struct GameView: View {
     }
     private func handleTap(location: CGPoint) {
         let angle = Double.random(in: -30...30)
-        let newSmoke = Smoke(location: location, showEffect: true, angle: angle, opacity: 1, isAnimating: true)
+        let newSmoke = Smoke(location: location, showEffect: true, angle: angle, opacity: 1)
         if smokes.count >= 30 {
             smokes.removeFirst()
         }

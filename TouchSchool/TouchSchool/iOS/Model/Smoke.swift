@@ -13,5 +13,4 @@ struct Smoke: Identifiable {
     var showEffect: Bool
     var angle: Double
     var opacity: Double
-    var isAnimating: Bool = false
 }
