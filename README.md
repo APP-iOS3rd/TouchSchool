@@ -278,3 +278,95 @@ class SoundSetting: ObservableObject {
 }
 ```
 </details>
+
+### Step 3
+<details>
+<summary>배포 후 이용자 후기로 알게된 오류</summary>
+
+- `GameView`에서 화면을 아주 많이 터치하다보면 어느순간부터 화면이 버벅이고 멈추는 현상이 있었습니다.
+- 팀원분들과 제작하면서 테스트를 할 때는 기능만 동작하는것만 확인되면 뒤로 돌아가 다른 기능 테스트를 진행하였기에 몰랐었던 오류였습니다.
+- 초기 상태: `smokes` 배열에 화면 탭 이벤트마다 새로운 `Smoke` 객체가 추가되어 사용자가 화면을 많이 탭할수록 배열의 크기가 계속 증가하는 상태였습니다.
+- 배열의 크기가 커질수록, 각 탭 이벤트에 대해 더 많은 `SmokeEffectView` 인스턴스를 렌더링해야 했고, 이로 인해 UI가 버벅이는 성능 문제가 발생했습니다.
+ 
+```Swift
+// 수정 전
+
+  ForEach(smokes.indices, id: \.self) { index in
+                let smoke = smokes[index]
+                if smoke.showEffect {
+                    SmokeEffectView()
+                        .rotationEffect(.degrees(smoke.angle))
+                        .opacity(smoke.opacity)
+                        .offset(x: smoke.location.x - UIScreen.main.bounds.width / 2,
+                                y: smoke.location.y - UIScreen.main.bounds.height / 2)
+                        .onAppear {
+                            withAnimation(.linear(duration: 1)) {
+                                smokes[index].opacity = 0
+                                smokes[index].angle += 30
+                            }
+                        }
+                }
+            }
+
+private func handleTap(location: CGPoint) {
+        let angle = Double.random(in: -30...30)
+        // Smoke 객체를 계속하여 추가
+        smokes.append(Smoke(location: location,
+                            showEffect: true,
+                            angle: angle,
+                            opacity: 1))
+        myTouchCount += 1
+        soundSetting.playSound(sound: .buttonBGM)
+        vm.newAdd()
+        
+        withAnimation {
+            self.animationAmount += 360
+        }
+```
+### 해결방법 
+- 어떻게 해결해야할지 계속 생각하다가 FPS 게임에서 벽에 총을 계속하여 쏘다보면 총자국이 처음 쐈던거부터 사라지는게 생각이 났습니다.
+- 배열 크기 제한: 먼저 `smokes` 배열의 크기를 30으로 제한하였습니다.
+- 코드 변경: `handleTap` 함수에서 새로운 `Smoke` 객체를 배열에 추가하기 전에 배열의 크기가 이미 30이면, 가장 오래된 요소(0번 인덱스)를 제거합니다. 그런 다음 새로운 요소를 배열에 추가합니다.
+- 결과: 이 방식은 `smokes` 배열의 크기를 일정하게 유지하여 각 탭 이벤트에 대해 일정한 수의 `SmokeEffectView` 인스턴스만 렌더링하도록 보장하였고, 화면이 버벅이는 문제를 해결할 수 있었습니다.
+
+```Swift
+// 수정 후
+
+ForEach(smokes) { smoke in
+                if smoke.showEffect {
+                    SmokeEffectView(smoke: smoke)
+                        .rotationEffect(.degrees(smoke.angle))
+                        .opacity(smoke.opacity)
+                        .offset(x: smoke.location.x - UIScreen.main.bounds.width / 2,
+                                y: smoke.location.y - UIScreen.main.bounds.height / 2)
+                        .onAppear {
+                            withAnimation(.linear(duration: 1)) {
+                                smokes[smokes.firstIndex(where: { $0.id == smoke.id })!].opacity = 0
+                                smokes[smokes.firstIndex(where: { $0.id == smoke.id })!].angle += 30
+                            }
+                        }
+                }
+            }
+
+ private func handleTap(location: CGPoint) {
+        let angle = Double.random(in: -30...30)
+        let newSmoke = Smoke(location: location,
+                             showEffect: true,
+                             angle: angle,
+                             opacity: 1)
+        //  배열의 크기가 이미 30이면, 가장 오래된 요소(0번 인덱스)를 제거
+        if smokes.count >= 30 {
+            smokes.removeFirst()
+        }
+        smokes.append(newSmoke)
+        myTouchCount += 1
+        soundSetting.playSound(sound: .buttonBGM)
+        vm.newAdd()
+        
+        withAnimation {
+            self.animationAmount += 360
+        }
+        
+    }
+```
+</details>

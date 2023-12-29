@@ -119,7 +119,10 @@ struct GameView: View {
     }
     private func handleTap(location: CGPoint) {
         let angle = Double.random(in: -30...30)
-        let newSmoke = Smoke(location: location, showEffect: true, angle: angle, opacity: 1)
+        let newSmoke = Smoke(location: location,
+                             showEffect: true,
+                             angle: angle,
+                             opacity: 1)
         if smokes.count >= 30 {
             smokes.removeFirst()
         }
