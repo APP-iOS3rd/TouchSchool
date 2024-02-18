@@ -10,6 +10,7 @@
 		28350C322AF3D22C0068853A /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350C312AF3D22C0068853A /* GameVM.swift */; };
 		413E974E2B2F56AA0055BF85 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E974D2B2F56AA0055BF85 /* GridCell.swift */; };
 		413E97502B2F56E20055BF85 /* IntroGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E974F2B2F56E20055BF85 /* IntroGridView.swift */; };
+		417B8C932B824DE9002C6C9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 417B8C922B824DE9002C6C9D /* GoogleService-Info.plist */; };
 		419793DE2B0F65D5004053E7 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 419793DD2B0F65D5004053E7 /* GoogleMobileAds */; };
 		419CE5512AD62DA700EC4105 /* TouchSchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */; };
 		419CE5532AD62DA700EC4105 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE5522AD62DA700EC4105 /* ContentView.swift */; };
@@ -76,6 +77,7 @@
 		28350C312AF3D22C0068853A /* GameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
 		413E974D2B2F56AA0055BF85 /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		413E974F2B2F56E20055BF85 /* IntroGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroGridView.swift; sourceTree = "<group>"; };
+		417B8C922B824DE9002C6C9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		419CE54D2AD62DA700EC4105 /* TouchSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSchoolApp.swift; sourceTree = "<group>"; };
 		419CE5522AD62DA700EC4105 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				645568AF2B0943E900C3A246 /* Info.plist */,
+				417B8C922B824DE9002C6C9D /* GoogleService-Info.plist */,
 				419CE5502AD62DA700EC4105 /* TouchSchoolApp.swift */,
 				419CE5522AD62DA700EC4105 /* ContentView.swift */,
 				419CE5542AD62DA800EC4105 /* Assets.xcassets */,
@@ -401,6 +404,7 @@
 			files = (
 				645568CA2B0959C900C3A246 /* mainBGM.mp3 in Resources */,
 				642A03532B0BC1C900DBD9AD /* errorBGM.mp3 in Resources */,
+				417B8C932B824DE9002C6C9D /* GoogleService-Info.plist in Resources */,
 				641BC63F2B0E0F9A003B8580 /* buttomBGM.mp3 in Resources */,
 				41A12C642B30514E004D5525 /* Config.xcconfig in Resources */,
 				419CE5582AD62DA800EC4105 /* Preview Assets.xcassets in Resources */,
